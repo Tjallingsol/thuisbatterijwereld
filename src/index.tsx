@@ -1739,18 +1739,17 @@ app.get('/faq', (c) => {
               </h2>
               <div class="space-y-4">
                 {categorie.vragen.map((faq, faqIndex) => (
-                  <div key={faqIndex} class="faq-item bg-white border border-gray-200 rounded-lg">
-                    <button class="faq-question w-full px-6 py-4 text-left focus:outline-none hover:bg-gray-50" 
-                            data-cat-index={catIndex} data-faq-index={faqIndex}>
+                  <details key={faqIndex} class="faq-item bg-white border border-gray-200 rounded-lg">
+                    <summary class="faq-question w-full px-6 py-4 text-left focus:outline-none hover:bg-gray-50 cursor-pointer list-none">
                       <div class="flex justify-between items-center">
                         <h3 class="text-lg font-semibold text-gray-900">{faq.vraag}</h3>
-                        <i class={`faq-icon-${catIndex}-${faqIndex} fas fa-chevron-down text-gray-400 transform transition-transform`}></i>
+                        <i class="fas fa-chevron-down text-gray-400 transform transition-transform duration-200 details-icon"></i>
                       </div>
-                    </button>
-                    <div class={`faq-answer-${catIndex}-${faqIndex} hidden px-6 pb-4`}>
+                    </summary>
+                    <div class="px-6 pb-4">
                       <p class="text-gray-600 leading-relaxed">{faq.antwoord}</p>
                     </div>
-                  </div>
+                  </details>
                 ))}
               </div>
             </div>
@@ -1788,36 +1787,29 @@ app.get('/faq', (c) => {
         </div>
       </section>
 
+      <style>{`
+        /* FAQ Details/Summary styling */
+        details summary::-webkit-details-marker {
+          display: none;
+        }
+        
+        details[open] .details-icon {
+          transform: rotate(180deg);
+        }
+        
+        details summary {
+          outline: none;
+        }
+        
+        details summary:focus {
+          outline: 2px solid #10b981;
+          outline-offset: -2px;
+        }
+      `}</style>
+
       <script>{`
-        // Wacht tot de DOM geladen is
         document.addEventListener('DOMContentLoaded', function() {
           
-          // FAQ toggle functionaliteit
-          function toggleFaq(catIndex, faqIndex) {
-            const answer = document.querySelector('.faq-answer-' + catIndex + '-' + faqIndex);
-            const icon = document.querySelector('.faq-icon-' + catIndex + '-' + faqIndex);
-            
-            if (answer && icon) {
-              if (answer.classList.contains('hidden')) {
-                answer.classList.remove('hidden');
-                icon.style.transform = 'rotate(180deg)';
-              } else {
-                answer.classList.add('hidden');
-                icon.style.transform = 'rotate(0deg)';
-              }
-            }
-          }
-
-          // Event listeners voor FAQ buttons
-          const faqButtons = document.querySelectorAll('.faq-question');
-          faqButtons.forEach(button => {
-            button.addEventListener('click', function() {
-              const catIndex = this.getAttribute('data-cat-index');
-              const faqIndex = this.getAttribute('data-faq-index');
-              toggleFaq(catIndex, faqIndex);
-            });
-          });
-
           // Search functionaliteit
           const searchInput = document.getElementById('faq-search');
           if (searchInput) {
@@ -1826,8 +1818,8 @@ app.get('/faq', (c) => {
               const faqItems = document.querySelectorAll('.faq-item');
               
               faqItems.forEach(item => {
-                const question = item.querySelector('.faq-question h3');
-                const answer = item.querySelector('[class*="faq-answer-"]');
+                const question = item.querySelector('h3');
+                const answer = item.querySelector('p');
                 
                 if (question && answer) {
                   const questionText = question.textContent.toLowerCase();
@@ -1843,7 +1835,7 @@ app.get('/faq', (c) => {
             });
           }
 
-          // Mobile menu functionaliteit (als nog niet gedaan)
+          // Mobile menu functionaliteit
           const mobileMenuButton = document.getElementById('mobile-menu-button');
           const mobileMenu = document.getElementById('mobile-menu');
           
@@ -1854,9 +1846,6 @@ app.get('/faq', (c) => {
           }
           
         });
-
-        // FAQ data voor structured data (globally accessible)
-        window.faqData = ${JSON.stringify(faqCategorieen)};
       `}</script>
     </div>,
     {
