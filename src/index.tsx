@@ -2310,6 +2310,32 @@ app.get('/blog/:articleId', (c) => {
   )
 })
 
+// Eenvoudige merk redirects naar volledige productpagina's
+app.get('/growatt', (c) => {
+  return c.redirect('/merken/growatt-arb-10', 301)
+})
+
+app.get('/dyness', (c) => {
+  return c.redirect('/merken/dyness-powerwall-b4850', 301)
+})
+
+app.get('/victron', (c) => {
+  return c.redirect('/merken/victron-multiplus', 301)
+})
+
+app.get('/homewizard', (c) => {
+  return c.redirect('/merken/homewizard-p1', 301)
+})
+
+app.get('/zonneplan', (c) => {
+  return c.redirect('/merken/zonneplan-battery', 301)
+})
+
+// Producten overzichtspagina
+app.get('/producten', (c) => {
+  return c.redirect('/vergelijken', 301)
+})
+
 // API route voor batterijen data
 app.get('/api/batterijen', (c) => {
   return c.json(batterijen)

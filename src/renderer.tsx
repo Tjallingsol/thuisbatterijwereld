@@ -117,11 +117,11 @@ export const renderer = jsxRenderer(({ children, title, description, keywords })
               <div>
                 <h3 class="text-lg font-semibold mb-4">Producten</h3>
                 <ul class="space-y-2 text-gray-300">
-                  <li><a href="/merken/growatt" class="hover:text-white">Growatt</a></li>
-                  <li><a href="/merken/dyness" class="hover:text-white">Dyness</a></li>
-                  <li><a href="/merken/victron" class="hover:text-white">Victron</a></li>
-                  <li><a href="/merken/homewizard" class="hover:text-white">HomeWizard</a></li>
-                  <li><a href="/merken/zonneplan" class="hover:text-white">Zonneplan</a></li>
+                  <li><a href="/merken/growatt-arb-10" class="hover:text-white">Growatt</a></li>
+                  <li><a href="/merken/dyness-powerwall-b4850" class="hover:text-white">Dyness</a></li>
+                  <li><a href="/merken/victron-multiplus" class="hover:text-white">Victron</a></li>
+                  <li><a href="/merken/homewizard-p1" class="hover:text-white">HomeWizard</a></li>
+                  <li><a href="/merken/zonneplan-battery" class="hover:text-white">Zonneplan</a></li>
                 </ul>
               </div>
               <div>
