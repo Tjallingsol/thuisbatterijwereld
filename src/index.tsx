@@ -2516,7 +2516,7 @@ app.get('/blog/energieonafhankelijkheid', (c) => {
                 <i class="fas fa-calculator mr-2"></i>
                 Bereken Besparing
               </a>
-              <a href="/kopen" class="bg-white text-energy-green px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 hover:scale-105 border-2 border-white transition-all duration-300 shadow-xl hover:shadow-2xl">
+              <a href="/kopen" class="bg-blue-600 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-700 hover:scale-105 border-2 border-blue-600 transition-all duration-300 shadow-xl hover:shadow-2xl">
                 <i class="fas fa-battery-three-quarters mr-2"></i>
                 Thuisbatterij Kopen
               </a>
