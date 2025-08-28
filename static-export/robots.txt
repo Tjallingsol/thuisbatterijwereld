@@ -1,5 +1,5 @@
 # Robots.txt for Thuisbatterijwereld.nl
-# Generated: 2025-08-28T15:48:21.759Z
+# Generated: 2025-08-28T16:00:02.484Z
 
 User-agent: *
 Allow: /
