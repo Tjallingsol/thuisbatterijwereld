@@ -1656,6 +1656,7 @@ app.get('/blog', (c) => {
                 beschrijving: "Alles wat je moet weten voordat je een thuisbatterij koopt",
                 icoon: "fas fa-book",
                 kleur: "energy-green",
+                url: "/gids/kopers-gids",
                 punten: ["Capaciteit berekenen", "Merken vergelijken", "Installatie plannen", "Subsidie aanvragen"]
               },
               {
@@ -1663,6 +1664,7 @@ app.get('/blog', (c) => {
                 beschrijving: "Wat gebeurt er tijdens de installatie van je thuisbatterij",
                 icoon: "fas fa-tools",
                 kleur: "energy-blue",
+                url: "/gids/installatie",
                 punten: ["Voorbereiding", "Installatie dag", "Inbedrijfstelling", "Monitoring"]
               },
               {
@@ -1670,6 +1672,7 @@ app.get('/blog', (c) => {
                 beschrijving: "Hoe houd je je thuisbatterij in optimale conditie",
                 icoon: "fas fa-shield-alt",
                 kleur: "battery-orange",
+                url: "/gids/onderhoud-garantie",
                 punten: ["Jaarlijks onderhoud", "Garantievoorwaarden", "Software updates", "Levensduur verlengen"]
               },
               {
@@ -1677,6 +1680,7 @@ app.get('/blog', (c) => {
                 beschrijving: "Tips om het maximale uit je thuisbatterij te halen",
                 icoon: "fas fa-chart-line",
                 kleur: "energy-green",
+                url: "/gids/besparing-maximaliseren",
                 punten: ["Slim laden", "Monitoring", "Energiegewoonten", "Dynamische tarieven"]
               }
             ].map((gids, index) => (
@@ -1694,7 +1698,7 @@ app.get('/blog', (c) => {
                     </li>
                   ))}
                 </ul>
-                <a href="#" class={`text-${gids.kleur} hover:underline font-semibold`}>
+                <a href={gids.url} class={`text-${gids.kleur} hover:underline font-semibold`}>
                   Bekijk gids →
                 </a>
               </div>
@@ -3320,6 +3324,1941 @@ app.get('/over-ons', (c) => {
       title: 'Over Ons - Thuisbatterij.nl | Jouw betrouwbare energieadviseur',
       description: 'Ontdek wie wij zijn en waarom wij de beste keuze zijn voor thuisbatterij advies. Onafhankelijk, betrouwbaar en transparant sinds 2024.',
       keywords: 'over ons, thuisbatterij adviseurs, onafhankelijk advies, energie experts, betrouwbaar'
+    }
+  )
+})
+
+// Gids Pagina's
+
+// Complete Kopers Gids
+app.get('/gids/kopers-gids', (c) => {
+  return c.render(
+    <div>
+      {/* Hero Section */}
+      <section class="bg-white py-12 border-b">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <nav class="mb-6">
+            <a href="/" class="text-energy-green hover:underline">← Terug naar home</a>
+          </nav>
+          <div class="text-center">
+            <div class="w-20 h-20 bg-energy-green text-white rounded-lg flex items-center justify-center mx-auto mb-6">
+              <i class="fas fa-book text-3xl"></i>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900">Complete Kopers Gids</h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+              Alles wat je moet weten voordat je een thuisbatterij koopt. Van capaciteit berekenen tot subsidie aanvragen.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Hoofdinhoud */}
+      <section class="py-12">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          {/* Inhoudsopgave */}
+          <div class="bg-gray-50 p-6 rounded-lg mb-12">
+            <h2 class="text-2xl font-bold mb-4 text-gray-900">Inhoudsopgave</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <a href="#stap1" class="block text-energy-green hover:underline mb-2">1. Capaciteit berekenen</a>
+                <a href="#stap2" class="block text-energy-green hover:underline mb-2">2. Merken vergelijken</a>
+              </div>
+              <div>
+                <a href="#stap3" class="block text-energy-green hover:underline mb-2">3. Installatie plannen</a>
+                <a href="#stap4" class="block text-energy-green hover:underline mb-2">4. Subsidie aanvragen</a>
+              </div>
+            </div>
+          </div>
+
+          {/* Stap 1: Capaciteit berekenen */}
+          <div id="stap1" class="mb-12">
+            <h2 class="text-3xl font-bold mb-6 text-gray-900">
+              <i class="fas fa-calculator text-energy-green mr-3"></i>
+              Stap 1: Capaciteit berekenen
+            </h2>
+            
+            <div class="prose max-w-none">
+              <p class="text-lg text-gray-600 mb-6">
+                De juiste capaciteit bepalen is cruciaal voor een goede investering. Te klein en je mist besparingen, 
+                te groot en je betaalt te veel.
+              </p>
+
+              <div class="bg-blue-50 p-6 rounded-lg mb-6">
+                <h3 class="text-xl font-semibold mb-4 text-blue-900">Berekeningsformule</h3>
+                <p class="mb-4"><strong>Basis capaciteit = Dagelijks verbruik × 0.3</strong></p>
+                <p class="text-sm text-blue-700">
+                  Voor een huishouden met 3500 kWh/jaar (≈ 10 kWh/dag) = 10 × 0.3 = 3 kWh minimum
+                </p>
+              </div>
+
+              <h4 class="text-lg font-semibold mb-3">Factoren die de capaciteit beïnvloeden:</h4>
+              <ul class="space-y-2 mb-6">
+                <li class="flex items-start">
+                  <i class="fas fa-check text-green-600 mt-1 mr-3"></i>
+                  <span><strong>Zonnepanelen:</strong> Met zonnepanelen kun je voor grotere capaciteit gaan (5-15 kWh)</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check text-green-600 mt-1 mr-3"></i>
+                  <span><strong>Huishoudgrootte:</strong> 1-2 personen: 5-7 kWh, 3-4 personen: 8-12 kWh, 5+ personen: 12-15 kWh</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check text-green-600 mt-1 mr-3"></i>
+                  <span><strong>Energiegewoonten:</strong> Thuiswerken of elektrisch koken verhoogt de behoefte</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check text-green-600 mt-1 mr-3"></i>
+                  <span><strong>Toekomstplannen:</strong> Elektrische auto, warmtepomp, uitbreiding gezin</span>
+                </li>
+              </ul>
+
+              <div class="bg-yellow-50 p-4 rounded-lg">
+                <p class="text-yellow-800">
+                  <i class="fas fa-lightbulb mr-2"></i>
+                  <strong>Tip:</strong> Gebruik onze <a href="/kosten" class="text-energy-green hover:underline">kosten calculator</a> 
+                  om de optimale capaciteit voor jouw situatie te berekenen.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Stap 2: Merken vergelijken */}
+          <div id="stap2" class="mb-12">
+            <h2 class="text-3xl font-bold mb-6 text-gray-900">
+              <i class="fas fa-balance-scale text-energy-green mr-3"></i>
+              Stap 2: Merken vergelijken
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+              <div class="bg-green-50 p-6 rounded-lg">
+                <h4 class="font-semibold mb-3 text-green-900">Budget (€3.000-4.500)</h4>
+                <ul class="space-y-2 text-sm">
+                  <li>• Dyness PowerWall</li>
+                  <li>• Chinese merken</li>
+                  <li>• Basis functionaliteit</li>
+                </ul>
+              </div>
+              <div class="bg-blue-50 p-6 rounded-lg">
+                <h4 class="font-semibold mb-3 text-blue-900">Middensegment (€4.500-6.000)</h4>
+                <ul class="space-y-2 text-sm">
+                  <li>• Growatt ARB</li>
+                  <li>• HomeWizard P1</li>
+                  <li>• Goede prijs-kwaliteit</li>
+                </ul>
+              </div>
+              <div class="bg-purple-50 p-6 rounded-lg">
+                <h4 class="font-semibold mb-3 text-purple-900">Premium (€6.000+)</h4>
+                <ul class="space-y-2 text-sm">
+                  <li>• Victron MultiPlus</li>
+                  <li>• Zonneplan Battery</li>
+                  <li>• Hoogste kwaliteit</li>
+                </ul>
+              </div>
+            </div>
+
+            <h4 class="text-lg font-semibold mb-4">Belangrijke vergelijkingscriteria:</h4>
+            <div class="overflow-x-auto mb-6">
+              <table class="w-full border-collapse border border-gray-300">
+                <thead>
+                  <tr class="bg-gray-50">
+                    <th class="border border-gray-300 px-4 py-2 text-left">Criterium</th>
+                    <th class="border border-gray-300 px-4 py-2 text-left">Waarom belangrijk</th>
+                    <th class="border border-gray-300 px-4 py-2 text-left">Benchmark</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="border border-gray-300 px-4 py-2 font-medium">Efficiency</td>
+                    <td class="border border-gray-300 px-4 py-2">Minder energieverlies = meer besparing</td>
+                    <td class="border border-gray-300 px-4 py-2">95%+ is goed</td>
+                  </tr>
+                  <tr class="bg-gray-50">
+                    <td class="border border-gray-300 px-4 py-2 font-medium">Garantie</td>
+                    <td class="border border-gray-300 px-4 py-2">Bescherming investering</td>
+                    <td class="border border-gray-300 px-4 py-2">10+ jaar standaard</td>
+                  </tr>
+                  <tr>
+                    <td class="border border-gray-300 px-4 py-2 font-medium">App kwaliteit</td>
+                    <td class="border border-gray-300 px-4 py-2">Monitoring en controle</td>
+                    <td class="border border-gray-300 px-4 py-2">Real-time data, historie</td>
+                  </tr>
+                  <tr class="bg-gray-50">
+                    <td class="border border-gray-300 px-4 py-2 font-medium">Uitbreidbaarheid</td>
+                    <td class="border border-gray-300 px-4 py-2">Toekomstige flexibiliteit</td>
+                    <td class="border border-gray-300 px-4 py-2">Modulair systeem</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="bg-green-50 p-4 rounded-lg">
+              <p class="text-green-800">
+                <i class="fas fa-search mr-2"></i>
+                <strong>Vergelijk alle merken:</strong> Bekijk onze uitgebreide 
+                <a href="/vergelijken" class="text-energy-green hover:underline">merkenvergelijking</a> 
+                met actuele prijzen en specificaties.
+              </p>
+            </div>
+          </div>
+
+          {/* Stap 3: Installatie plannen */}
+          <div id="stap3" class="mb-12">
+            <h2 class="text-3xl font-bold mb-6 text-gray-900">
+              <i class="fas fa-tools text-energy-green mr-3"></i>
+              Stap 3: Installatie plannen
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+              <div>
+                <h4 class="text-lg font-semibold mb-4">Voor de installatie</h4>
+                <ul class="space-y-3">
+                  <li class="flex items-start">
+                    <i class="fas fa-home text-blue-600 mt-1 mr-3"></i>
+                    <span><strong>Locatie bepalen:</strong> Meterkast, garage of technische ruimte</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fas fa-plug text-blue-600 mt-1 mr-3"></i>
+                    <span><strong>Aansluitingen:</strong> 230V/400V aansluiting en netwerk/WiFi</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fas fa-file-alt text-blue-600 mt-1 mr-3"></i>
+                    <span><strong>Vergunningen:</strong> Meestal niet nodig, check bij gemeente</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fas fa-phone text-blue-600 mt-1 mr-3"></i>
+                    <span><strong>Netbeheerder:</strong> Melding bij systemen &gt; 3,68 kW</span>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="text-lg font-semibold mb-4">Installatie proces</h4>
+                <div class="space-y-4">
+                  <div class="bg-white p-4 border-l-4 border-energy-green">
+                    <div class="font-semibold">Dag 1: Voorbereiding</div>
+                    <div class="text-sm text-gray-600">Site survey, meting, planning</div>
+                  </div>
+                  <div class="bg-white p-4 border-l-4 border-blue-600">
+                    <div class="font-semibold">Dag 2: Installatie</div>
+                    <div class="text-sm text-gray-600">Montage, bedrading, aansluiting (4-8 uur)</div>
+                  </div>
+                  <div class="bg-white p-4 border-l-4 border-yellow-600">
+                    <div class="font-semibold">Dag 3: Inbedrijfstelling</div>
+                    <div class="text-sm text-gray-600">Testen, configuratie, training</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-red-50 p-4 rounded-lg">
+              <p class="text-red-800">
+                <i class="fas fa-exclamation-triangle mr-2"></i>
+                <strong>Let op:</strong> Kies altijd een gecertificeerde installateur met ervaring in thuisbatterijen. 
+                Vraag referenties en garantie op het installatiewerk.
+              </p>
+            </div>
+          </div>
+
+          {/* Stap 4: Subsidie aanvragen */}
+          <div id="stap4" class="mb-12">
+            <h2 class="text-3xl font-bold mb-6 text-gray-900">
+              <i class="fas fa-euro-sign text-energy-green mr-3"></i>
+              Stap 4: Subsidie aanvragen
+            </h2>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <div>
+                <h4 class="text-lg font-semibold mb-4">Beschikbare subsidies 2025</h4>
+                <div class="space-y-4">
+                  <div class="bg-white p-4 border border-green-200 rounded-lg">
+                    <h5 class="font-semibold text-green-800">ISDE Subsidie</h5>
+                    <p class="text-sm text-gray-600 mb-2">Tot €2.500 voor thuisbatterijen</p>
+                    <ul class="text-sm space-y-1">
+                      <li>• Minimum 5 kWh capaciteit</li>
+                      <li>• Gecertificeerde installateur</li>
+                      <li>• Aanvraag vóór installatie</li>
+                    </ul>
+                  </div>
+                  <div class="bg-white p-4 border border-blue-200 rounded-lg">
+                    <h5 class="font-semibold text-blue-800">BTW Teruggave</h5>
+                    <p class="text-sm text-gray-600 mb-2">21% BTW terug bij zonnepanelen</p>
+                    <ul class="text-sm space-y-1">
+                      <li>• Geldt bij combinatie met zonnepanelen</li>
+                      <li>• Salderingsregeling tot 2027</li>
+                      <li>• Aanvraag bij Belastingdienst</li>
+                    </ul>
+                  </div>
+                  <div class="bg-white p-4 border border-yellow-200 rounded-lg">
+                    <h5 class="font-semibold text-yellow-800">Lokale Subsidies</h5>
+                    <p class="text-sm text-gray-600 mb-2">Extra subsidie van gemeenten</p>
+                    <ul class="text-sm space-y-1">
+                      <li>• Verschilt per gemeente</li>
+                      <li>• €200 - €1.000 extra mogelijk</li>
+                      <li>• Check gemeentelijke website</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              
+              <div>
+                <h4 class="text-lg font-semibold mb-4">Aanvraag stappenplan</h4>
+                <div class="space-y-3">
+                  <div class="flex items-start">
+                    <div class="w-8 h-8 bg-energy-green text-white rounded-full flex items-center justify-center text-sm font-bold mr-3 mt-1">1</div>
+                    <div>
+                      <div class="font-semibold">Check beschikbaarheid</div>
+                      <div class="text-sm text-gray-600">Controleer welke subsidies voor jou gelden</div>
+                    </div>
+                  </div>
+                  <div class="flex items-start">
+                    <div class="w-8 h-8 bg-energy-green text-white rounded-full flex items-center justify-center text-sm font-bold mr-3 mt-1">2</div>
+                    <div>
+                      <div class="font-semibold">Verzamel documenten</div>
+                      <div class="text-sm text-gray-600">Offertes, technische specificaties, installateurgegevens</div>
+                    </div>
+                  </div>
+                  <div class="flex items-start">
+                    <div class="w-8 h-8 bg-energy-green text-white rounded-full flex items-center justify-center text-sm font-bold mr-3 mt-1">3</div>
+                    <div>
+                      <div class="font-semibold">Dien aanvraag in</div>
+                      <div class="text-sm text-gray-600">Vóór installatie via RVO.nl of gemeente</div>
+                    </div>
+                  </div>
+                  <div class="flex items-start">
+                    <div class="w-8 h-8 bg-energy-green text-white rounded-full flex items-center justify-center text-sm font-bold mr-3 mt-1">4</div>
+                    <div>
+                      <div class="font-semibold">Wacht op goedkeuring</div>
+                      <div class="text-sm text-gray-600">2-8 weken verwerkingstijd</div>
+                    </div>
+                  </div>
+                  <div class="flex items-start">
+                    <div class="w-8 h-8 bg-energy-green text-white rounded-full flex items-center justify-center text-sm font-bold mr-3 mt-1">5</div>
+                    <div>
+                      <div class="font-semibold">Installeer en meld</div>
+                      <div class="text-sm text-gray-600">Na goedkeuring installeren en gereedmelding</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="bg-blue-50 p-4 rounded-lg mt-6">
+                  <p class="text-blue-800 text-sm">
+                    <i class="fas fa-info-circle mr-2"></i>
+                    <strong>Actuele info:</strong> Bekijk onze 
+                    <a href="/subsidie" class="text-energy-green hover:underline">subsidie pagina</a> 
+                    voor de meest recente bedragen en voorwaarden.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Call to Action */}
+          <div class="bg-energy-green text-white p-8 rounded-lg text-center">
+            <h3 class="text-2xl font-bold mb-4">Klaar om te beginnen?</h3>
+            <p class="mb-6">Gebruik onze tools om de perfecte thuisbatterij voor jou te vinden</p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+              <a href="/kosten" class="bg-white text-energy-green px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                <i class="fas fa-calculator mr-2"></i>
+                Bereken Kosten
+              </a>
+              <a href="/vergelijken" class="bg-white text-energy-green px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                <i class="fas fa-balance-scale mr-2"></i>
+                Vergelijk Merken
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </div>,
+    {
+      title: 'Complete Kopers Gids - Thuisbatterij | Stap-voor-stap naar de juiste keuze',
+      description: 'Uitgebreide kopers gids voor thuisbatterijen. ✓ Capaciteit berekenen ✓ Merken vergelijken ✓ Installatie plannen ✓ Subsidie aanvragen. Alles wat je moet weten.',
+      keywords: 'thuisbatterij kopers gids, capaciteit berekenen, merken vergelijken, installatie planning, subsidie aanvraag, thuisbatterij kopen'
+    }
+  )
+})
+
+// Installatie Handleiding
+app.get('/gids/installatie', (c) => {
+  return c.render(
+    <div>
+      {/* Hero Section */}
+      <section class="bg-white py-12 border-b">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <nav class="mb-6">
+            <a href="/" class="text-energy-blue hover:underline">← Terug naar home</a>
+          </nav>
+          <div class="text-center">
+            <div class="w-20 h-20 bg-energy-blue text-white rounded-lg flex items-center justify-center mx-auto mb-6">
+              <i class="fas fa-tools text-3xl"></i>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900">Installatie Handleiding</h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+              Wat gebeurt er tijdens de installatie van je thuisbatterij? Een complete gids door het installatieproces.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Tijdlijn */}
+      <section class="py-12">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold mb-4 text-gray-900">Installatie Tijdlijn</h2>
+            <p class="text-lg text-gray-600">Van eerste contact tot volledige inbedrijfstelling</p>
+          </div>
+
+          <div class="relative">
+            {/* Verticale lijn */}
+            <div class="absolute left-8 top-0 bottom-0 w-0.5 bg-energy-blue"></div>
+            
+            <div class="space-y-12">
+              {/* Fase 1: Voorbereiding */}
+              <div class="flex items-start">
+                <div class="w-16 h-16 bg-energy-blue text-white rounded-full flex items-center justify-center text-xl font-bold mr-8 z-10">
+                  1
+                </div>
+                <div class="flex-1">
+                  <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-bold mb-4 text-gray-900">Voorbereiding (1-2 weken)</h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div>
+                        <h4 class="text-lg font-semibold mb-3 text-blue-800">Site Survey</h4>
+                        <ul class="space-y-2 text-sm">
+                          <li class="flex items-center">
+                            <i class="fas fa-check text-green-600 mr-2"></i>
+                            Locatie bepaling (meterkast, garage, kelder)
+                          </li>
+                          <li class="flex items-center">
+                            <i class="fas fa-check text-green-600 mr-2"></i>
+                            Bestaande elektrische installatie checken
+                          </li>
+                          <li class="flex items-center">
+                            <i class="fas fa-check text-green-600 mr-2"></i>
+                            Ruimte en ventilatie beoordelen
+                          </li>
+                          <li class="flex items-center">
+                            <i class="fas fa-check text-green-600 mr-2"></i>
+                            Netwerk/WiFi bereik testen
+                          </li>
+                        </ul>
+                      </div>
+                      <div>
+                        <h4 class="text-lg font-semibold mb-3 text-blue-800">Planning & Vergunningen</h4>
+                        <ul class="space-y-2 text-sm">
+                          <li class="flex items-center">
+                            <i class="fas fa-check text-green-600 mr-2"></i>
+                            Installatiedatum inplannen
+                          </li>
+                          <li class="flex items-center">
+                            <i class="fas fa-check text-green-600 mr-2"></i>
+                            Melding netbeheerder (indien nodig)
+                          </li>
+                          <li class="flex items-center">
+                            <i class="fas fa-check text-green-600 mr-2"></i>
+                            Materiaal bestellen en leveren
+                          </li>
+                          <li class="flex items-center">
+                            <i class="fas fa-check text-green-600 mr-2"></i>
+                            Bewoners informeren over proces
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div class="mt-6 bg-blue-50 p-4 rounded-lg">
+                      <p class="text-blue-800 text-sm">
+                        <i class="fas fa-info-circle mr-2"></i>
+                        <strong>Wat kun je verwachten:</strong> De installateur komt langs voor een grondige inspectie. 
+                        Dit duurt ongeveer 1 uur en is gratis bij de meeste bedrijven.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Fase 2: Installatie Dag */}
+              <div class="flex items-start">
+                <div class="w-16 h-16 bg-energy-blue text-white rounded-full flex items-center justify-center text-xl font-bold mr-8 z-10">
+                  2
+                </div>
+                <div class="flex-1">
+                  <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-bold mb-4 text-gray-900">Installatie Dag (4-8 uur)</h3>
+                    
+                    <div class="space-y-6">
+                      <div class="flex items-start">
+                        <div class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mr-4">
+                          <i class="fas fa-clock text-gray-600"></i>
+                        </div>
+                        <div>
+                          <h4 class="font-semibold mb-2">08:00 - Aankomst team</h4>
+                          <p class="text-sm text-gray-600">Installatieteam (2-3 personen) arriveert met materiaal en gereedschap</p>
+                        </div>
+                      </div>
+
+                      <div class="flex items-start">
+                        <div class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mr-4">
+                          <i class="fas fa-power-off text-red-600"></i>
+                        </div>
+                        <div>
+                          <h4 class="font-semibold mb-2">09:00 - Stroom uitschakelen</h4>
+                          <p class="text-sm text-gray-600">Hoofdstroom wordt veilig uitgeschakeld voor werkzaamheden aan meterkast</p>
+                        </div>
+                      </div>
+
+                      <div class="flex items-start">
+                        <div class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mr-4">
+                          <i class="fas fa-hammer text-blue-600"></i>
+                        </div>
+                        <div>
+                          <h4 class="font-semibold mb-2">10:00 - Montage batterij</h4>
+                          <p class="text-sm text-gray-600">Batterijsysteem monteren op gekozen locatie, bevestiging aan wand/vloer</p>
+                        </div>
+                      </div>
+
+                      <div class="flex items-start">
+                        <div class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mr-4">
+                          <i class="fas fa-plug text-yellow-600"></i>
+                        </div>
+                        <div>
+                          <h4 class="font-semibold mb-2">12:00 - Elektrische aansluitingen</h4>
+                          <p class="text-sm text-gray-600">DC/AC bekabeling, aansluiting op meterkast, monteren van monitoring</p>
+                        </div>
+                      </div>
+
+                      <div class="flex items-start">
+                        <div class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mr-4">
+                          <i class="fas fa-wifi text-green-600"></i>
+                        </div>
+                        <div>
+                          <h4 class="font-semibold mb-2">15:00 - Netwerkverbinding</h4>
+                          <p class="text-sm text-gray-600">WiFi/ethernet configureren voor monitoring en remote updates</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="mt-6 bg-yellow-50 p-4 rounded-lg">
+                      <p class="text-yellow-800 text-sm">
+                        <i class="fas fa-exclamation-triangle mr-2"></i>
+                        <strong>Let op:</strong> Tijdens de installatie is er 4-6 uur geen stroom. 
+                        Plan geen thuiswerk en zorg voor alternatieven voor koeling/verwarming.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Fase 3: Inbedrijfstelling */}
+              <div class="flex items-start">
+                <div class="w-16 h-16 bg-energy-blue text-white rounded-full flex items-center justify-center text-xl font-bold mr-8 z-10">
+                  3
+                </div>
+                <div class="flex-1">
+                  <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-bold mb-4 text-gray-900">Inbedrijfstelling (2-3 uur)</h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div>
+                        <h4 class="text-lg font-semibold mb-3 text-green-800">Technische Tests</h4>
+                        <ul class="space-y-2 text-sm">
+                          <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-600 mr-2"></i>
+                            Alle elektrische verbindingen testen
+                          </li>
+                          <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-600 mr-2"></i>
+                            Laad/ontlaad cyclus uitvoeren
+                          </li>
+                          <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-600 mr-2"></i>
+                            Veiligheidssystemen controleren
+                          </li>
+                          <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-600 mr-2"></i>
+                            Isolatie en aarding meten
+                          </li>
+                        </ul>
+                      </div>
+                      <div>
+                        <h4 class="text-lg font-semibold mb-3 text-green-800">Configuratie & Training</h4>
+                        <ul class="space-y-2 text-sm">
+                          <li class="flex items-center">
+                            <i class="fas fa-mobile-alt text-blue-600 mr-2"></i>
+                            App installeren en account aanmaken
+                          </li>
+                          <li class="flex items-center">
+                            <i class="fas fa-cog text-blue-600 mr-2"></i>
+                            Laad/ontlaad schema configureren
+                          </li>
+                          <li class="flex items-center">
+                            <i class="fas fa-graduation-cap text-blue-600 mr-2"></i>
+                            Uitleg werking en monitoring
+                          </li>
+                          <li class="flex items-center">
+                            <i class="fas fa-file-alt text-blue-600 mr-2"></i>
+                            Documentatie en garantie overhandigen
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div class="mt-6 bg-green-50 p-4 rounded-lg">
+                      <p class="text-green-800 text-sm">
+                        <i class="fas fa-thumbs-up mr-2"></i>
+                        <strong>Klaar!</strong> Je thuisbatterij is nu volledig operationeel. 
+                        De eerste week wordt automatisch gemonitord voor optimale prestaties.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Fase 4: Nazorg */}
+              <div class="flex items-start">
+                <div class="w-16 h-16 bg-energy-blue text-white rounded-full flex items-center justify-center text-xl font-bold mr-8 z-10">
+                  4
+                </div>
+                <div class="flex-1">
+                  <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-bold mb-4 text-gray-900">Monitoring & Nazorg</h3>
+                    
+                    <div class="space-y-6">
+                      <div>
+                        <h4 class="text-lg font-semibold mb-3">Eerste week</h4>
+                        <ul class="space-y-2 text-sm">
+                          <li>• Dagelijkse monitoring van prestaties</li>
+                          <li>• Automatische optimalisatie van laadschema's</li>
+                          <li>• Contact bij afwijkingen of problemen</li>
+                        </ul>
+                      </div>
+
+                      <div>
+                        <h4 class="text-lg font-semibold mb-3">Eerste maand</h4>
+                        <ul class="space-y-2 text-sm">
+                          <li>• Prestatie rapport en optimalisatie tips</li>
+                          <li>• Controle op warranty registratie</li>
+                          <li>• Training refresh indien gewenst</li>
+                        </ul>
+                      </div>
+
+                      <div>
+                        <h4 class="text-lg font-semibold mb-3">Doorlopende support</h4>
+                        <ul class="space-y-2 text-sm">
+                          <li>• 24/7 monitoring en foutmeldingen</li>
+                          <li>• Software updates (automatisch)</li>
+                          <li>• Jaarlijkse controle en onderhoud</li>
+                          <li>• Helpdesk voor vragen en problemen</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Praktische Tips */}
+      <section class="py-12 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 class="text-3xl font-bold mb-8 text-center text-gray-900">Praktische Tips voor de Installatie</h2>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+              <h3 class="text-xl font-bold mb-4 text-green-800">
+                <i class="fas fa-check-circle mr-2"></i>
+                Wat te doen
+              </h3>
+              <ul class="space-y-3">
+                <li class="flex items-start">
+                  <i class="fas fa-home text-green-600 mt-1 mr-3"></i>
+                  <span>Zorg voor vrije toegang tot meterkast en installatielocatie</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-car text-green-600 mt-1 mr-3"></i>
+                  <span>Parkeerplaats dichtbij huis reserveren voor installatieteam</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-coffee text-green-600 mt-1 mr-3"></i>
+                  <span>Zorg voor koffie/thee - installateurs waarderen dat enorm</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-mobile-alt text-green-600 mt-1 mr-3"></i>
+                  <span>Houd WiFi gegevens bij de hand voor netwerkverbinding</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-camera text-green-600 mt-1 mr-3"></i>
+                  <span>Maak foto's van voor en na de installatie</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+              <h3 class="text-xl font-bold mb-4 text-red-800">
+                <i class="fas fa-times-circle mr-2"></i>
+                Wat te vermijden
+              </h3>
+              <ul class="space-y-3">
+                <li class="flex items-start">
+                  <i class="fas fa-laptop text-red-600 mt-1 mr-3"></i>
+                  <span>Plan geen belangrijke thuiswerk tijdens stroomuitval</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-snowflake text-red-600 mt-1 mr-3"></i>
+                  <span>Vermijd installatie bij extreem weer (hitte, vorst, storm)</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-users text-red-600 mt-1 mr-3"></i>
+                  <span>Laat het team rustig werken - te veel hulp kan hinderen</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-tools text-red-600 mt-1 mr-3"></i>
+                  <span>Raak niets aan tijdens de installatie (veiligheid)</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-clock text-red-600 mt-1 mr-3"></i>
+                  <span>Plan geen andere werkzaamheden op dezelfde dag</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Call to Action */}
+      <section class="py-12">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div class="bg-energy-blue text-white p-8 rounded-lg">
+            <h3 class="text-2xl font-bold mb-4">Klaar voor installatie?</h3>
+            <p class="mb-6">Vergelijk eerst de beste merken en bereken je besparing</p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+              <a href="/vergelijken" class="bg-white text-energy-blue px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                <i class="fas fa-balance-scale mr-2"></i>
+                Vergelijk Merken
+              </a>
+              <a href="/kosten" class="bg-white text-energy-blue px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                <i class="fas fa-calculator mr-2"></i>
+                Bereken Kosten
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>,
+    {
+      title: 'Installatie Handleiding Thuisbatterij | Complete gids door het installatieproces',
+      description: 'Alles over thuisbatterij installatie. ✓ Voorbereiding ✓ Installatie dag ✓ Inbedrijfstelling ✓ Monitoring ✓ Praktische tips voor een succesvolle installatie.',
+      keywords: 'thuisbatterij installatie, installatie handleiding, thuisbatterij monteren, installateur, inbedrijfstelling, batterij installatie tips'
+    }
+  )
+})
+
+// Onderhoud & Garantie
+app.get('/gids/onderhoud-garantie', (c) => {
+  return c.render(
+    <div>
+      {/* Hero Section */}
+      <section class="bg-white py-12 border-b">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <nav class="mb-6">
+            <a href="/" class="text-battery-orange hover:underline">← Terug naar home</a>
+          </nav>
+          <div class="text-center">
+            <div class="w-20 h-20 bg-battery-orange text-white rounded-lg flex items-center justify-center mx-auto mb-6">
+              <i class="fas fa-shield-alt text-3xl"></i>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900">Onderhoud & Garantie</h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+              Hoe houd je je thuisbatterij in optimale conditie en wat kun je verwachten van de garantie?
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Onderhoud Sectie */}
+      <section class="py-12">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 class="text-3xl font-bold mb-8 text-gray-900">
+            <i class="fas fa-wrench text-battery-orange mr-3"></i>
+            Jaarlijks Onderhoud
+          </h2>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+            <div>
+              <h3 class="text-xl font-semibold mb-6 text-gray-900">Wat wordt er gecontroleerd?</h3>
+              
+              <div class="space-y-4">
+                <div class="bg-white border border-gray-200 p-4 rounded-lg">
+                  <h4 class="font-semibold mb-2 text-orange-800">
+                    <i class="fas fa-battery-three-quarters mr-2"></i>
+                    Batterij Gezondheid
+                  </h4>
+                  <ul class="text-sm space-y-1 text-gray-600">
+                    <li>• Capaciteit en prestatiemeting</li>
+                    <li>• Celbalans en spanning controle</li>
+                    <li>• Temperatuur monitoring</li>
+                    <li>• Laad/ontlaad cycles analyse</li>
+                  </ul>
+                </div>
+
+                <div class="bg-white border border-gray-200 p-4 rounded-lg">
+                  <h4 class="font-semibold mb-2 text-blue-800">
+                    <i class="fas fa-plug mr-2"></i>
+                    Elektrische Verbindingen
+                  </h4>
+                  <ul class="text-sm space-y-1 text-gray-600">
+                    <li>• Aansluitklemmen controle</li>
+                    <li>• Isolatieweerstand meting</li>
+                    <li>• Aarding en veiligheid</li>
+                    <li>• DC/AC omkeer prestaties</li>
+                  </ul>
+                </div>
+
+                <div class="bg-white border border-gray-200 p-4 rounded-lg">
+                  <h4 class="font-semibold mb-2 text-green-800">
+                    <i class="fas fa-cog mr-2"></i>
+                    Software & Monitoring
+                  </h4>
+                  <ul class="text-sm space-y-1 text-gray-600">
+                    <li>• Software updates installeren</li>
+                    <li>• Configuratie optimaliseren</li>
+                    <li>• Monitoring systeem testen</li>
+                    <li>• Foutlogboek analyse</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-xl font-semibold mb-6 text-gray-900">Onderhoud Planning</h3>
+              
+              <div class="bg-gray-50 p-6 rounded-lg mb-6">
+                <h4 class="font-semibold mb-3">Jaarlijkse Controle</h4>
+                <div class="space-y-2 text-sm">
+                  <div class="flex justify-between">
+                    <span>Frequentie:</span>
+                    <span class="font-medium">1x per jaar</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span>Duur:</span>
+                    <span class="font-medium">1-2 uur</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span>Kosten:</span>
+                    <span class="font-medium">€100-200</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span>Beste moment:</span>
+                    <span class="font-medium">Voor/na winter</span>
+                  </div>
+                </div>
+              </div>
+
+              <h4 class="font-semibold mb-3">Eigen Controles (maandelijks)</h4>
+              <ul class="space-y-2 text-sm">
+                <li class="flex items-center">
+                  <i class="fas fa-mobile-alt text-green-600 mr-2"></i>
+                  App prestaties bekijken
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-eye text-green-600 mr-2"></i>
+                  Visuele inspectie op schade
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-thermometer-half text-green-600 mr-2"></i>
+                  Temperatuur en ventilatie
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-volume-up text-green-600 mr-2"></i>
+                  Ongewone geluiden controleren
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-chart-line text-green-600 mr-2"></i>
+                  Energie opbrengst trends
+                </li>
+              </ul>
+
+              <div class="bg-yellow-50 p-4 rounded-lg mt-6">
+                <p class="text-yellow-800 text-sm">
+                  <i class="fas fa-lightbulb mr-2"></i>
+                  <strong>Tip:</strong> Veel problemen kun je zelf spotten via de app. 
+                  Let op plotselinge veranderingen in prestaties of waarschuwingsmeldingen.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Garantie Sectie */}
+      <section class="py-12 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 class="text-3xl font-bold mb-8 text-gray-900">
+            <i class="fas fa-shield-alt text-battery-orange mr-3"></i>
+            Garantievoorwaarden
+          </h2>
+
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+              <h3 class="text-lg font-semibold mb-4 text-green-800">Product Garantie</h3>
+              <div class="space-y-3">
+                <div>
+                  <div class="font-medium">Standaard periode</div>
+                  <div class="text-sm text-gray-600">5-15 jaar (merkafhankelijk)</div>
+                </div>
+                <div>
+                  <div class="font-medium">Dekt</div>
+                  <div class="text-sm text-gray-600">Fabricagefouten, defecte onderdelen</div>
+                </div>
+                <div>
+                  <div class="font-medium">Dekt niet</div>
+                  <div class="text-sm text-gray-600">Normale slijtage, verkeerd gebruik</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+              <h3 class="text-lg font-semibold mb-4 text-blue-800">Prestatie Garantie</h3>
+              <div class="space-y-3">
+                <div>
+                  <div class="font-medium">Capaciteit behoud</div>
+                  <div class="text-sm text-gray-600">80% na 10 jaar (typisch)</div>
+                </div>
+                <div>
+                  <div class="font-medium">Cyclus garantie</div>
+                  <div class="text-sm text-gray-600">6.000-10.000 cycli</div>
+                </div>
+                <div>
+                  <div class="font-medium">Efficiency</div>
+                  <div class="text-sm text-gray-600">Minimaal 85% gedurende garantieperiode</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+              <h3 class="text-lg font-semibold mb-4 text-orange-800">Installatie Garantie</h3>
+              <div class="space-y-3">
+                <div>
+                  <div class="font-medium">Werkmanschap</div>
+                  <div class="text-sm text-gray-600">2-5 jaar op installatiewerk</div>
+                </div>
+                <div>
+                  <div class="font-medium">Dekking</div>
+                  <div class="text-sm text-gray-600">Montage, bedrading, configuratie</div>
+                </div>
+                <div>
+                  <div class="font-medium">Support</div>
+                  <div class="text-sm text-gray-600">Gratis nazorg eerste jaar</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Garantie Vergelijking */}
+          <div class="bg-white p-6 rounded-lg shadow-sm mb-8">
+            <h3 class="text-xl font-semibold mb-6">Garantie Overzicht per Merk</h3>
+            <div class="overflow-x-auto">
+              <table class="w-full text-sm">
+                <thead>
+                  <tr class="bg-gray-50">
+                    <th class="text-left p-3 border">Merk</th>
+                    <th class="text-left p-3 border">Product Garantie</th>
+                    <th class="text-left p-3 border">Prestatie Garantie</th>
+                    <th class="text-left p-3 border">Cyclus Garantie</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="p-3 border font-medium">Growatt</td>
+                    <td class="p-3 border">10 jaar</td>
+                    <td class="p-3 border">80% na 10 jaar</td>
+                    <td class="p-3 border">6.000 cycli</td>
+                  </tr>
+                  <tr class="bg-gray-50">
+                    <td class="p-3 border font-medium">Victron</td>
+                    <td class="p-3 border">5 jaar (uitbreidbaar)</td>
+                    <td class="p-3 border">85% na 10 jaar</td>
+                    <td class="p-3 border">10.000 cycli</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 border font-medium">Zonneplan</td>
+                    <td class="p-3 border">12 jaar all-inclusive</td>
+                    <td class="p-3 border">80% na 12 jaar</td>
+                    <td class="p-3 border">8.000 cycli</td>
+                  </tr>
+                  <tr class="bg-gray-50">
+                    <td class="p-3 border font-medium">HomeWizard</td>
+                    <td class="p-3 border">8 jaar</td>
+                    <td class="p-3 border">80% na 8 jaar</td>
+                    <td class="p-3 border">6.000 cycli</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 border font-medium">Dyness</td>
+                    <td class="p-3 border">10 jaar</td>
+                    <td class="p-3 border">80% na 10 jaar</td>
+                    <td class="p-3 border">6.000 cycli</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          {/* Garantie Claims */}
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+              <h3 class="text-xl font-semibold mb-4 text-red-800">Wanneer garantie vervalt</h3>
+              <ul class="space-y-2 text-sm">
+                <li class="flex items-start">
+                  <i class="fas fa-times text-red-600 mt-1 mr-3"></i>
+                  <span>Installatie door niet-gecertificeerde partij</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-times text-red-600 mt-1 mr-3"></i>
+                  <span>Fysieke schade door externe oorzaken</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-times text-red-600 mt-1 mr-3"></i>
+                  <span>Modificatie aan het systeem</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-times text-red-600 mt-1 mr-3"></i>
+                  <span>Gebruik buiten specificaties</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-times text-red-600 mt-1 mr-3"></i>
+                  <span>Geen onderhoud volgens voorschriften</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+              <h3 class="text-xl font-semibold mb-4 text-green-800">Garantie claim proces</h3>
+              <div class="space-y-3">
+                <div class="flex items-start">
+                  <div class="w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center text-sm font-bold mr-3 mt-0.5">1</div>
+                  <div>
+                    <div class="font-medium">Probleem melden</div>
+                    <div class="text-sm text-gray-600">Via installateur of fabrikant helpdesk</div>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <div class="w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center text-sm font-bold mr-3 mt-0.5">2</div>
+                  <div>
+                    <div class="font-medium">Diagnose</div>
+                    <div class="text-sm text-gray-600">Remote analyse en eventueel bezoek ter plaatse</div>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <div class="w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center text-sm font-bold mr-3 mt-0.5">3</div>
+                  <div>
+                    <div class="font-medium">Beslissing</div>
+                    <div class="text-sm text-gray-600">Reparatie, vervanging of afwijzing claim</div>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <div class="w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center text-sm font-bold mr-3 mt-0.5">4</div>
+                  <div>
+                    <div class="font-medium">Oplossing</div>
+                    <div class="text-sm text-gray-600">Uitvoering binnen 2-4 weken</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Software Updates */}
+      <section class="py-12">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 class="text-3xl font-bold mb-8 text-gray-900">
+            <i class="fas fa-download text-battery-orange mr-3"></i>
+            Software Updates
+          </h2>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div>
+              <div class="bg-white p-6 rounded-lg shadow-sm mb-6">
+                <h3 class="text-xl font-semibold mb-4">Automatische Updates</h3>
+                <p class="text-gray-600 mb-4">
+                  Moderne thuisbatterijen ontvangen automatisch software updates via internet. 
+                  Deze verbeteringen zorgen voor optimale prestaties en nieuwe functies.
+                </p>
+                
+                <h4 class="font-semibold mb-3">Wat wordt er geupdate?</h4>
+                <ul class="space-y-2 text-sm">
+                  <li class="flex items-center">
+                    <i class="fas fa-cog text-blue-600 mr-2"></i>
+                    Laad/ontlaad algoritmes optimalisatie
+                  </li>
+                  <li class="flex items-center">
+                    <i class="fas fa-shield-alt text-green-600 mr-2"></i>
+                    Veiligheidsfuncties en monitoring
+                  </li>
+                  <li class="flex items-center">
+                    <i class="fas fa-mobile-alt text-purple-600 mr-2"></i>
+                    App functionaliteiten en interface
+                  </li>
+                  <li class="flex items-center">
+                    <i class="fas fa-chart-bar text-orange-600 mr-2"></i>
+                    Prestatie analyse en rapportage
+                  </li>
+                  <li class="flex items-center">
+                    <i class="fas fa-plug text-red-600 mr-2"></i>
+                    Compatibiliteit met smart grid
+                  </li>
+                </ul>
+              </div>
+
+              <div class="bg-blue-50 p-4 rounded-lg">
+                <p class="text-blue-800 text-sm">
+                  <i class="fas fa-info-circle mr-2"></i>
+                  <strong>Updates frequentie:</strong> Gemiddeld 2-4x per jaar voor nieuwe functies, 
+                  en direct bij kritieke veiligheidsupdates.
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-xl font-semibold mb-6">Update Geschiedenis Voorbeeld</h3>
+              
+              <div class="space-y-4">
+                <div class="bg-white p-4 border-l-4 border-green-500 rounded-r-lg">
+                  <div class="flex justify-between items-start">
+                    <div>
+                      <div class="font-semibold">v2.1.4 - Prestatie Optimalisatie</div>
+                      <div class="text-sm text-gray-600">15% betere efficiency bij gedeeltelijke lading</div>
+                    </div>
+                    <div class="text-sm text-gray-500">Jan 2025</div>
+                  </div>
+                </div>
+
+                <div class="bg-white p-4 border-l-4 border-blue-500 rounded-r-lg">
+                  <div class="flex justify-between items-start">
+                    <div>
+                      <div class="font-semibold">v2.0.8 - Smart Grid Integratie</div>
+                      <div class="text-sm text-gray-600">Dynamische tarieven ondersteuning toegevoegd</div>
+                    </div>
+                    <div class="text-sm text-gray-500">Okt 2024</div>
+                  </div>
+                </div>
+
+                <div class="bg-white p-4 border-l-4 border-yellow-500 rounded-r-lg">
+                  <div class="flex justify-between items-start">
+                    <div>
+                      <div class="font-semibold">v1.9.2 - Veiligheidsupdate</div>
+                      <div class="text-sm text-gray-600">Verbeterde temperatuur monitoring</div>
+                    </div>
+                    <div class="text-sm text-gray-500">Aug 2024</div>
+                  </div>
+                </div>
+
+                <div class="bg-white p-4 border-l-4 border-purple-500 rounded-r-lg">
+                  <div class="flex justify-between items-start">
+                    <div>
+                      <div class="font-semibold">v1.8.5 - App Verbetering</div>
+                      <div class="text-sm text-gray-600">Nieuwe dashboard en export functies</div>
+                    </div>
+                    <div class="text-sm text-gray-500">Jun 2024</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-yellow-50 p-4 rounded-lg mt-6">
+                <p class="text-yellow-800 text-sm">
+                  <i class="fas fa-lightbulb mr-2"></i>
+                  <strong>Tip:</strong> Houd update notificaties in de app aan. 
+                  Sommige updates vereisen een korte herstart van het systeem.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Levensduur Verlengen */}
+      <section class="py-12 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 class="text-3xl font-bold mb-8 text-gray-900">
+            <i class="fas fa-heart text-battery-orange mr-3"></i>
+            Levensduur Verlengen
+          </h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+              <div class="w-12 h-12 bg-green-100 text-green-600 rounded-lg flex items-center justify-center mb-4">
+                <i class="fas fa-thermometer-half text-xl"></i>
+              </div>
+              <h3 class="text-lg font-semibold mb-3">Temperatuur Beheer</h3>
+              <ul class="text-sm space-y-2 text-gray-600">
+                <li>• Optimale range: 15-25°C</li>
+                <li>• Vermijd directe zonnestraling</li>
+                <li>• Zorg voor goede ventilatie</li>
+                <li>• Isoleer tegen extreme kou</li>
+              </ul>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+              <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center mb-4">
+                <i class="fas fa-battery-half text-xl"></i>
+              </div>
+              <h3 class="text-lg font-semibold mb-3">Laad Gewoonten</h3>
+              <ul class="text-sm space-y-2 text-gray-600">
+                <li>• Vermijd 100% lading dagelijks</li>
+                <li>• Ideaal: 20-80% bereik</li>
+                <li>• Diepe ontlading (&lt;10%) vermijden</li>
+                <li>• Gebruik slimme laadschema's</li>
+              </ul>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+              <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-lg flex items-center justify-center mb-4">
+                <i class="fas fa-chart-line text-xl"></i>
+              </div>
+              <h3 class="text-lg font-semibold mb-3">Monitoring</h3>
+              <ul class="text-sm space-y-2 text-gray-600">
+                <li>• Wekelijks prestaties checken</li>
+                <li>• Trends in capaciteit bijhouden</li>
+                <li>• Waarschuwingen direct oppakken</li>
+                <li>• Jaarlijkse prestatie analyse</li>
+              </ul>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+              <div class="w-12 h-12 bg-orange-100 text-orange-600 rounded-lg flex items-center justify-center mb-4">
+                <i class="fas fa-broom text-xl"></i>
+              </div>
+              <h3 class="text-lg font-semibold mb-3">Fysiek Onderhoud</h3>
+              <ul class="text-sm space-y-2 text-gray-600">
+                <li>• Maandelijks stof verwijderen</li>
+                <li>• Ventilatie roosters schoonhouden</li>
+                <li>• Verbindingen controleren</li>
+                <li>• Vochtschade voorkomen</li>
+              </ul>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+              <div class="w-12 h-12 bg-red-100 text-red-600 rounded-lg flex items-center justify-center mb-4">
+                <i class="fas fa-exclamation-triangle text-xl"></i>
+              </div>
+              <h3 class="text-lg font-semibold mb-3">Wat te Vermijden</h3>
+              <ul class="text-sm space-y-2 text-gray-600">
+                <li>• Overbelasting van het systeem</li>
+                <li>• Negeren van waarschuwingen</li>
+                <li>• Zelf reparaties uitvoeren</li>
+                <li>• Omgevingstemperaturen &gt;40°C</li>
+              </ul>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+              <div class="w-12 h-12 bg-gray-100 text-gray-600 rounded-lg flex items-center justify-center mb-4">
+                <i class="fas fa-clock text-xl"></i>
+              </div>
+              <h3 class="text-lg font-semibold mb-3">Levensduur Verwachting</h3>
+              <ul class="text-sm space-y-2 text-gray-600">
+                <li>• Lithium-ion: 10-15 jaar</li>
+                <li>• LiFePO4: 15-20 jaar</li>
+                <li>• Optimaal gebruik: +20% langer</li>
+                <li>• Slechte zorg: -30% korter</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="bg-green-50 p-6 rounded-lg mt-8">
+            <h3 class="text-xl font-semibold mb-4 text-green-900">Optimale Levensduur Checklist</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <ul class="space-y-2">
+                <li class="flex items-center text-sm">
+                  <input type="checkbox" class="mr-3 text-green-600" />
+                  Jaarlijkse professionele controle ingepland
+                </li>
+                <li class="flex items-center text-sm">
+                  <input type="checkbox" class="mr-3 text-green-600" />
+                  App monitoring ingesteld en actief gebruikt
+                </li>
+                <li class="flex items-center text-sm">
+                  <input type="checkbox" class="mr-3 text-green-600" />
+                  Temperatuur binnen optimaal bereik (15-25°C)
+                </li>
+                <li class="flex items-center text-sm">
+                  <input type="checkbox" class="mr-3 text-green-600" />
+                  Laadschema geconfigureerd voor 20-80% bereik
+                </li>
+              </ul>
+              <ul class="space-y-2">
+                <li class="flex items-center text-sm">
+                  <input type="checkbox" class="mr-3 text-green-600" />
+                  Maandelijkse visuele inspectie uitgevoerd
+                </li>
+                <li class="flex items-center text-sm">
+                  <input type="checkbox" class="mr-3 text-green-600" />
+                  Software updates automatisch ingeschakeld
+                </li>
+                <li class="flex items-center text-sm">
+                  <input type="checkbox" class="mr-3 text-green-600" />
+                  Garantie documentatie bewaard en actueel
+                </li>
+                <li class="flex items-center text-sm">
+                  <input type="checkbox" class="mr-3 text-green-600" />
+                  Contact gegevens installateur/support bekend
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Call to Action */}
+      <section class="py-12">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div class="bg-battery-orange text-white p-8 rounded-lg">
+            <h3 class="text-2xl font-bold mb-4">Vragen over onderhoud of garantie?</h3>
+            <p class="mb-6">Bekijk onze FAQ of neem contact op voor persoonlijk advies</p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+              <a href="/faq" class="bg-white text-battery-orange px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                <i class="fas fa-question-circle mr-2"></i>
+                Bekijk FAQ
+              </a>
+              <a href="/contact" class="bg-white text-battery-orange px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                <i class="fas fa-envelope mr-2"></i>
+                Contact Opnemen
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>,
+    {
+      title: 'Onderhoud & Garantie Thuisbatterij | Complete gids voor optimaal beheer',
+      description: 'Alles over thuisbatterij onderhoud en garantie. ✓ Jaarlijks onderhoud ✓ Garantievoorwaarden ✓ Software updates ✓ Levensduur verlengen ✓ Praktische tips.',
+      keywords: 'thuisbatterij onderhoud, garantie thuisbatterij, software updates, levensduur verlengen, batterij onderhoud, garantievoorwaarden'
+    }
+  )
+})
+
+// Besparing Maximaliseren
+app.get('/gids/besparing-maximaliseren', (c) => {
+  return c.render(
+    <div>
+      {/* Hero Section */}
+      <section class="bg-white py-12 border-b">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <nav class="mb-6">
+            <a href="/" class="text-energy-green hover:underline">← Terug naar home</a>
+          </nav>
+          <div class="text-center">
+            <div class="w-20 h-20 bg-energy-green text-white rounded-lg flex items-center justify-center mx-auto mb-6">
+              <i class="fas fa-chart-line text-3xl"></i>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900">Besparing Maximaliseren</h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+              Tips en strategieën om het maximale uit je thuisbatterij te halen en je energiebesparing te optimaliseren.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Slim Laden */}
+      <section class="py-12">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 class="text-3xl font-bold mb-8 text-gray-900">
+            <i class="fas fa-brain text-energy-green mr-3"></i>
+            Slim Laden Strategieën
+          </h2>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+            <div>
+              <div class="bg-white p-6 rounded-lg shadow-sm border border-green-200">
+                <h3 class="text-xl font-semibold mb-4 text-green-800">
+                  <i class="fas fa-sun mr-2"></i>
+                  Zonne-energie Optimalisatie
+                </h3>
+                
+                <div class="space-y-4">
+                  <div>
+                    <h4 class="font-semibold mb-2">Zelfconsumptie verhogen</h4>
+                    <ul class="text-sm space-y-2 text-gray-600">
+                      <li class="flex items-start">
+                        <i class="fas fa-arrow-right text-green-600 mt-1 mr-2"></i>
+                        <span>Laad batterij tijdens zonnepieken (11:00-15:00)</span>
+                      </li>
+                      <li class="flex items-start">
+                        <i class="fas fa-arrow-right text-green-600 mt-1 mr-2"></i>
+                        <span>Gebruik opgeslagen energie 's avonds (17:00-22:00)</span>
+                      </li>
+                      <li class="flex items-start">
+                        <i class="fas fa-arrow-right text-green-600 mt-1 mr-2"></i>
+                        <span>Vermijd teruglevering tijdens lage vergoeding</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="bg-green-50 p-4 rounded-lg">
+                    <h5 class="font-semibold text-green-800 mb-2">Optimaal Laadschema</h5>
+                    <div class="text-sm space-y-1">
+                      <div class="flex justify-between">
+                        <span>10:00-15:00:</span>
+                        <span class="font-medium">Laden van zonnepanelen</span>
+                      </div>
+                      <div class="flex justify-between">
+                        <span>17:00-22:00:</span>
+                        <span class="font-medium">Ontladen voor huisverbruik</span>
+                      </div>
+                      <div class="flex justify-between">
+                        <span>22:00-06:00:</span>
+                        <span class="font-medium">Spaarstand (80% geladen)</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="bg-white p-6 rounded-lg shadow-sm border border-blue-200">
+                <h3 class="text-xl font-semibold mb-4 text-blue-800">
+                  <i class="fas fa-bolt mr-2"></i>
+                  Netwerk Smart Charging
+                </h3>
+                
+                <div class="space-y-4">
+                  <div>
+                    <h4 class="font-semibold mb-2">Dal/piek tarieven benutten</h4>
+                    <ul class="text-sm space-y-2 text-gray-600">
+                      <li class="flex items-start">
+                        <i class="fas fa-moon text-blue-600 mt-1 mr-2"></i>
+                        <span>Laden tijdens daltarieven (23:00-07:00)</span>
+                      </li>
+                      <li class="flex items-start">
+                        <i class="fas fa-sun text-blue-600 mt-1 mr-2"></i>
+                        <span>Ontladen tijdens piektarieven (17:00-20:00)</span>
+                      </li>
+                      <li class="flex items-start">
+                        <i class="fas fa-chart-line text-blue-600 mt-1 mr-2"></i>
+                        <span>Dynamische tarieven volgen (uurprijzen)</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="bg-blue-50 p-4 rounded-lg">
+                    <h5 class="font-semibold text-blue-800 mb-2">Besparing Potentieel</h5>
+                    <div class="text-sm space-y-1">
+                      <div class="flex justify-between">
+                        <span>Dal vs piek:</span>
+                        <span class="font-medium">€0.15/kWh verschil</span>
+                      </div>
+                      <div class="flex justify-between">
+                        <span>10 kWh cyclus:</span>
+                        <span class="font-medium">€1.50/dag extra</span>
+                      </div>
+                      <div class="flex justify-between">
+                        <span>Jaarlijks:</span>
+                        <span class="font-medium text-green-600">+€500 besparing</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-yellow-50 p-6 rounded-lg">
+            <h3 class="text-lg font-semibold mb-4 text-yellow-800">
+              <i class="fas fa-lightbulb mr-2"></i>
+              Geavanceerde Laadstrategieën
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+              <div>
+                <h4 class="font-semibold mb-2">Weersvoorspelling</h4>
+                <p class="text-gray-600">Laad minder bij verwachte zonnige dagen, meer bij bewolkt weer</p>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-2">Seizoen Aanpassing</h4>
+                <p class="text-gray-600">Winter: meer netwerk laden, Zomer: maximale zelfconsumptie</p>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-2">AI Leeralgoritmes</h4>
+                <p class="text-gray-600">Automatische optimalisatie op basis van verbruikspatronen</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Monitoring & Analytics */}
+      <section class="py-12 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 class="text-3xl font-bold mb-8 text-gray-900">
+            <i class="fas fa-chart-bar text-energy-green mr-3"></i>
+            Monitoring & Analytics
+          </h2>
+
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+              <h3 class="text-lg font-semibold mb-4 text-gray-900">Key Performance Indicators</h3>
+              
+              <div class="space-y-4">
+                <div class="border-l-4 border-green-500 pl-4">
+                  <div class="font-semibold">Zelfconsumptie Ratio</div>
+                  <div class="text-sm text-gray-600">Doel: &gt;70% van zonne-energie direct gebruiken</div>
+                  <div class="text-xs text-green-600">Goed: 65-75% | Uitstekend: &gt;75%</div>
+                </div>
+
+                <div class="border-l-4 border-blue-500 pl-4">
+                  <div class="font-semibold">Cyclus Efficiency</div>
+                  <div class="text-sm text-gray-600">Doel: &gt;90% round-trip efficiency</div>
+                  <div class="text-xs text-blue-600">Goed: 88-92% | Uitstekend: &gt;92%</div>
+                </div>
+
+                <div class="border-l-4 border-orange-500 pl-4">
+                  <div class="font-semibold">Capaciteit Behoud</div>
+                  <div class="text-sm text-gray-600">Doel: &lt;2% verlies per jaar</div>
+                  <div class="text-xs text-orange-600">Monitor maandelijks voor trends</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+              <h3 class="text-lg font-semibold mb-4 text-gray-900">Dagelijkse Controles</h3>
+              
+              <div class="space-y-3">
+                <div class="flex items-center">
+                  <input type="checkbox" class="mr-3 text-green-600" />
+                  <span class="text-sm">Energie opbrengst vs verbruik</span>
+                </div>
+                <div class="flex items-center">
+                  <input type="checkbox" class="mr-3 text-green-600" />
+                  <span class="text-sm">Laad/ontlaad patronen optimaal</span>
+                </div>
+                <div class="flex items-center">
+                  <input type="checkbox" class="mr-3 text-green-600" />
+                  <span class="text-sm">Geen foutmeldingen in app</span>
+                </div>
+                <div class="flex items-center">
+                  <input type="checkbox" class="mr-3 text-green-600" />
+                  <span class="text-sm">Temperatuur binnen bereik</span>
+                </div>
+                <div class="flex items-center">
+                  <input type="checkbox" class="mr-3 text-green-600" />
+                  <span class="text-sm">Netwerk connectie actief</span>
+                </div>
+              </div>
+
+              <div class="mt-4 bg-gray-50 p-3 rounded text-sm text-gray-600">
+                <i class="fas fa-clock mr-2"></i>
+                Dagelijkse check duurt <strong>2-3 minuten</strong> en voorkomt 95% van de problemen
+              </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+              <h3 class="text-lg font-semibold mb-4 text-gray-900">Rapportage Tools</h3>
+              
+              <div class="space-y-4">
+                <div>
+                  <h4 class="font-semibold text-sm mb-2">Automatische Rapporten</h4>
+                  <ul class="text-xs space-y-1 text-gray-600">
+                    <li>• Wekelijkse prestatie email</li>
+                    <li>• Maandelijks besparingoverzicht</li>
+                    <li>• Kwartaal optimalisatie tips</li>
+                    <li>• Jaarlijkse ROI analyse</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h4 class="font-semibold text-sm mb-2">Export Mogelijkheden</h4>
+                  <ul class="text-xs space-y-1 text-gray-600">
+                    <li>• CSV data export</li>
+                    <li>• PDF prestatie rapporten</li>
+                    <li>• API toegang voor integratie</li>
+                    <li>• Historische data (5+ jaar)</li>
+                  </ul>
+                </div>
+
+                <div class="bg-blue-50 p-3 rounded text-xs text-blue-800">
+                  <i class="fas fa-download mr-2"></i>
+                  Data exporteren helpt bij belasting aangifte en subsidie claims
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Prestatie Dashboard Voorbeeld */}
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <h3 class="text-xl font-semibold mb-4">Ideaal Dashboard Overzicht</h3>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+              <div class="text-center p-4 bg-green-50 rounded-lg">
+                <div class="text-2xl font-bold text-green-600">73%</div>
+                <div class="text-sm text-gray-600">Zelfconsumptie</div>
+              </div>
+              <div class="text-center p-4 bg-blue-50 rounded-lg">
+                <div class="text-2xl font-bold text-blue-600">€847</div>
+                <div class="text-sm text-gray-600">Maand Besparing</div>
+              </div>
+              <div class="text-center p-4 bg-orange-50 rounded-lg">
+                <div class="text-2xl font-bold text-orange-600">94%</div>
+                <div class="text-sm text-gray-600">Efficiency</div>
+              </div>
+              <div class="text-center p-4 bg-purple-50 rounded-lg">
+                <div class="text-2xl font-bold text-purple-600">287</div>
+                <div class="text-sm text-gray-600">Cycles</div>
+              </div>
+            </div>
+
+            <div class="bg-gray-50 p-4 rounded-lg text-sm text-gray-600">
+              <i class="fas fa-info-circle mr-2"></i>
+              <strong>Tip:</strong> Screenshot je beste prestaties en deel ze met vrienden/familie. 
+              Goede resultaten motiveren anderen om ook te investeren in duurzame energie.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Energiegewoonten Optimaliseren */}
+      <section class="py-12">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 class="text-3xl font-bold mb-8 text-gray-900">
+            <i class="fas fa-home text-energy-green mr-3"></i>
+            Energiegewoonten Optimaliseren
+          </h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+              <h3 class="text-xl font-semibold mb-4 text-green-800">Timing van Apparaten</h3>
+              
+              <div class="space-y-4">
+                <div>
+                  <h4 class="font-semibold mb-3">Overdag (zonne-energie beschikbaar)</h4>
+                  <div class="grid grid-cols-2 gap-4 text-sm">
+                    <div>
+                      <div class="font-medium text-green-600 mb-2">Slim Programmeren</div>
+                      <ul class="space-y-1 text-gray-600">
+                        <li>• Wasmachine: 12:00-15:00</li>
+                        <li>• Vaatwasser: 13:00-16:00</li>
+                        <li>• Droger: 14:00-17:00</li>
+                        <li>• Warmtepomp: overdag boost</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <div class="font-medium text-green-600 mb-2">Besparing</div>
+                      <ul class="space-y-1 text-gray-600">
+                        <li>• Directe zonnestroom</li>
+                        <li>• Geen batterij cyclus</li>
+                        <li>• Maximale efficiency</li>
+                        <li>• €300-500/jaar extra</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="bg-green-50 p-4 rounded-lg">
+                  <h5 class="font-semibold text-green-800 mb-2">Smart Home Integratie</h5>
+                  <p class="text-sm text-green-700">
+                    Gebruik home automation om apparaten automatisch te starten wanneer er 
+                    overtollige zonne-energie beschikbaar is. Slimme stekkers en timers 
+                    kunnen dit eenvoudig regelen.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+              <h3 class="text-xl font-semibold mb-4 text-blue-800">Verbruikspatronen Aanpassen</h3>
+              
+              <div class="space-y-4">
+                <div>
+                  <h4 class="font-semibold mb-3">'s Avonds (batterij energie)</h4>
+                  <div class="grid grid-cols-2 gap-4 text-sm">
+                    <div>
+                      <div class="font-medium text-blue-600 mb-2">Prioriteit Volgorde</div>
+                      <ul class="space-y-1 text-gray-600">
+                        <li>1. Verlichting LED</li>
+                        <li>2. TV & Entertainment</li>
+                        <li>3. Koken (inductie)</li>
+                        <li>4. Laden apparaten</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <div class="font-medium text-blue-600 mb-2">Vermijden 17-20u</div>
+                      <ul class="space-y-1 text-gray-600">
+                        <li>• Hoog verbruik apparaten</li>
+                        <li>• Elektrische verwarming</li>
+                        <li>• Wasmachine/droger</li>
+                        <li>• Auto laden (indien mogelijk)</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="bg-blue-50 p-4 rounded-lg">
+                  <h5 class="font-semibold text-blue-800 mb-2">Piektijd Strategie</h5>
+                  <p class="text-sm text-blue-700">
+                    Tijdens piekuren (17:00-20:00) zijn tarieven het hoogst. 
+                    Gebruik dan bij voorkeur batterij energie en vermijd hoog verbruik. 
+                    Dit kan €200-400 per jaar besparen.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Seizoens Strategieën */}
+          <div class="bg-white p-6 rounded-lg shadow-sm mb-8">
+            <h3 class="text-xl font-semibold mb-6 text-gray-900">Seizoens Optimalisatie Strategieën</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div class="text-center">
+                <div class="w-16 h-16 bg-yellow-100 text-yellow-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <i class="fas fa-sun text-2xl"></i>
+                </div>
+                <h4 class="font-semibold mb-3">Zomer</h4>
+                <ul class="text-sm space-y-1 text-gray-600">
+                  <li>• Maximale zelfconsumptie</li>
+                  <li>• Overdag apparaten draaien</li>
+                  <li>• Koeling optimaliseren</li>
+                  <li>• Excess verkopen</li>
+                </ul>
+              </div>
+              
+              <div class="text-center">
+                <div class="w-16 h-16 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <i class="fas fa-leaf text-2xl"></i>
+                </div>
+                <h4 class="font-semibold mb-3">Herfst</h4>
+                <ul class="text-sm space-y-1 text-gray-600">
+                  <li>• Gemengde strategie</li>
+                  <li>• Dal tarieven benutten</li>
+                  <li>• Verwarming instellen</li>
+                  <li>• Buffer opbouwen</li>
+                </ul>
+              </div>
+
+              <div class="text-center">
+                <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <i class="fas fa-snowflake text-2xl"></i>
+                </div>
+                <h4 class="font-semibold mb-3">Winter</h4>
+                <ul class="text-sm space-y-1 text-gray-600">
+                  <li>• Netwerk laden prioriteit</li>
+                  <li>• Daluren maximaal gebruiken</li>
+                  <li>• Warmte optimalisatie</li>
+                  <li>• Pieken vermijden</li>
+                </ul>
+              </div>
+
+              <div class="text-center">
+                <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <i class="fas fa-seedling text-2xl"></i>
+                </div>
+                <h4 class="font-semibold mb-3">Lente</h4>
+                <ul class="text-sm space-y-1 text-gray-600">
+                  <li>• Transitie naar zomer</li>
+                  <li>• Systeem optimaliseren</li>
+                  <li>• Onderhoud plannen</li>
+                  <li>• Updates installeren</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Dynamische Tarieven */}
+      <section class="py-12 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 class="text-3xl font-bold mb-8 text-gray-900">
+            <i class="fas fa-chart-area text-energy-green mr-3"></i>
+            Dynamische Tarieven Benutten
+          </h2>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+            <div>
+              <div class="bg-white p-6 rounded-lg shadow-sm">
+                <h3 class="text-xl font-semibold mb-4 text-purple-800">
+                  <i class="fas fa-clock mr-2"></i>
+                  Uurprijzen Strategie
+                </h3>
+                
+                <p class="text-gray-600 mb-4">
+                  Dynamische tarieven variëren elk uur. Met slimme algoritmes kun je automatisch 
+                  laden wanneer prijzen laag zijn en ontladen tijdens hoge prijzen.
+                </p>
+
+                <div class="space-y-4">
+                  <div class="bg-red-50 p-4 rounded-lg">
+                    <h4 class="font-semibold text-red-800 mb-2">Hoge Prijzen (ontladen)</h4>
+                    <div class="text-sm space-y-1">
+                      <div>🕕 17:00-20:00: Piekuren werkdagen</div>
+                      <div>⚡ Hoge vraag: &gt;€0.40/kWh</div>
+                      <div>💰 Strategie: Batterij energie gebruiken</div>
+                    </div>
+                  </div>
+
+                  <div class="bg-green-50 p-4 rounded-lg">
+                    <h4 class="font-semibold text-green-800 mb-2">Lage Prijzen (laden)</h4>
+                    <div class="text-sm space-y-1">
+                      <div>🕛 23:00-07:00: Daluren</div>
+                      <div>⚡ Lage vraag: &lt;€0.20/kWh</div>
+                      <div>💰 Strategie: Batterij laden van net</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="bg-white p-6 rounded-lg shadow-sm">
+                <h3 class="text-xl font-semibold mb-4 text-blue-800">
+                  <i class="fas fa-robot mr-2"></i>
+                  Automatische Optimalisatie
+                </h3>
+
+                <p class="text-gray-600 mb-4">
+                  Moderne thuisbatterijen kunnen automatisch reageren op prijssignalen 
+                  en je besparing maximaliseren zonder handmatige interventie.
+                </p>
+
+                <div class="space-y-4">
+                  <div>
+                    <h4 class="font-semibold mb-2">AI Algoritmes Features</h4>
+                    <ul class="text-sm space-y-2">
+                      <li class="flex items-center">
+                        <i class="fas fa-chart-line text-green-600 mr-2"></i>
+                        <span>Prijsvoorspelling 24-48 uur vooruit</span>
+                      </li>
+                      <li class="flex items-center">
+                        <i class="fas fa-brain text-blue-600 mr-2"></i>
+                        <span>Leeralgoritme voor verbruikspatronen</span>
+                      </li>
+                      <li class="flex items-center">
+                        <i class="fas fa-cloud text-purple-600 mr-2"></i>
+                        <span>Weersintegratie voor zonneopbrengst</span>
+                      </li>
+                      <li class="flex items-center">
+                        <i class="fas fa-cog text-orange-600 mr-2"></i>
+                        <span>Automatische optimalisatie instellingen</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="bg-blue-50 p-4 rounded-lg">
+                    <h5 class="font-semibold text-blue-800 mb-2">Besparing Potentieel</h5>
+                    <div class="text-sm space-y-1">
+                      <div class="flex justify-between">
+                        <span>Basis arbitrage:</span>
+                        <span class="font-medium">€200-400/jaar</span>
+                      </div>
+                      <div class="flex justify-between">
+                        <span>Met AI optimalisatie:</span>
+                        <span class="font-medium">€400-800/jaar</span>
+                      </div>
+                      <div class="flex justify-between">
+                        <span>ROI verbetering:</span>
+                        <span class="font-medium text-green-600">+15-25%</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Praktisch Voorbeeld */}
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <h3 class="text-xl font-semibold mb-6 text-gray-900">Praktisch Voorbeeld: Optimale Dag</h3>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <div>
+                <h4 class="font-semibold mb-4">Tijdlijn Woensdag 15 januari</h4>
+                <div class="space-y-3">
+                  <div class="flex items-center justify-between p-3 bg-blue-50 rounded">
+                    <span class="font-medium">06:00</span>
+                    <span class="text-sm">Laden €0.18/kWh (dal)</span>
+                    <span class="text-green-600">+3 kWh</span>
+                  </div>
+                  <div class="flex items-center justify-between p-3 bg-yellow-50 rounded">
+                    <span class="font-medium">12:00</span>
+                    <span class="text-sm">Zonne-energie direct</span>
+                    <span class="text-blue-600">+4 kWh</span>
+                  </div>
+                  <div class="flex items-center justify-between p-3 bg-orange-50 rounded">
+                    <span class="font-medium">18:00</span>
+                    <span class="text-sm">Ontladen €0.45/kWh (piek)</span>
+                    <span class="text-red-600">-5 kWh</span>
+                  </div>
+                  <div class="flex items-center justify-between p-3 bg-green-50 rounded">
+                    <span class="font-medium">23:00</span>
+                    <span class="text-sm">Laden €0.16/kWh (dal)</span>
+                    <span class="text-green-600">+2 kWh</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div>
+                <h4 class="font-semibold mb-4">Resultaat Berekening</h4>
+                <div class="space-y-3 text-sm">
+                  <div class="flex justify-between p-2 border-b">
+                    <span>Ingekocht (dal):</span>
+                    <span>5 kWh × €0.17 = €0.85</span>
+                  </div>
+                  <div class="flex justify-between p-2 border-b">
+                    <span>Verkocht (piek):</span>
+                    <span>5 kWh × €0.45 = €2.25</span>
+                  </div>
+                  <div class="flex justify-between p-2 border-b">
+                    <span>Zonne-energie direct:</span>
+                    <span>4 kWh × €0.40 = €1.60</span>
+                  </div>
+                  <div class="flex justify-between p-2 bg-green-50 font-semibold">
+                    <span>Totale dagbesparing:</span>
+                    <span class="text-green-600">€3.00</span>
+                  </div>
+                  <div class="text-xs text-gray-600 mt-2">
+                    × 365 dagen = <strong class="text-green-600">€1.095/jaar extra</strong> ten opzichte van vaste tarieven
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-6 bg-purple-50 p-4 rounded-lg">
+              <p class="text-purple-800 text-sm">
+                <i class="fas fa-magic mr-2"></i>
+                <strong>Pro Tip:</strong> Combineer dynamische tarieven met slimme apparaten. 
+                Programmeer je vaatwasser, wasmachine en auto-lader om automatisch te starten 
+                tijdens de goedkoopste uren.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Call to Action */}
+      <section class="py-12">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div class="bg-energy-green text-white p-8 rounded-lg">
+            <h3 class="text-2xl font-bold mb-4">Start met besparing maximaliseren!</h3>
+            <p class="mb-6">Bereken je potentiële besparing en vergelijk de beste thuisbatterijen</p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+              <a href="/kosten" class="bg-white text-energy-green px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                <i class="fas fa-calculator mr-2"></i>
+                Bereken Besparing
+              </a>
+              <a href="/vergelijken" class="bg-white text-energy-green px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                <i class="fas fa-balance-scale mr-2"></i>
+                Vergelijk Systemen
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>,
+    {
+      title: 'Besparing Maximaliseren Thuisbatterij | Tips voor optimale prestaties',
+      description: 'Maximaliseer je thuisbatterij besparing. ✓ Slim laden ✓ Monitoring ✓ Energiegewoonten ✓ Dynamische tarieven ✓ Praktische optimalisatie tips.',
+      keywords: 'besparing maximaliseren, thuisbatterij optimalisatie, slim laden, dynamische tarieven, energie besparen, batterij efficiency'
     }
   )
 })
