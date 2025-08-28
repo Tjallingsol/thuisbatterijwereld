@@ -31,7 +31,7 @@ const batterijen = [
     cons: ['Iets lagere efficiency dan premium merken', 'Beperkte app functies'],
     rating: 4.2, // Gebaseerd op: goede prijs-kwaliteit (4.5) + betrouwbaarheid (4.3) - app beperkingen (3.8) = 4.2 gemiddeld
     reviewCount: 89, // Realistisch aantal voor mid-range merk
-    affiliate_url: '#growatt-affiliate'
+    affiliate_url: 'https://www.bol.com/nl/nl/s/?searchtext=growatt+arb+thuisbatterij'
   },
   {
     id: 'dyness-powerwall-b4850',
@@ -48,7 +48,7 @@ const batterijen = [
     cons: ['Lagere efficiency', 'Minder geavanceerde monitoring'],
     rating: 3.9, // Gebaseerd op: lage prijs (4.5) + eenvoudige installatie (4.2) - lagere efficiency (3.4) - beperkte monitoring (3.5) = 3.9 gemiddeld
     reviewCount: 67, // Minder reviews voor budget merk
-    affiliate_url: '#dyness-affiliate'
+    affiliate_url: 'https://www.bol.com/nl/nl/s/?searchtext=dyness+powerwall+thuisbatterij'
   },
   {
     id: 'victron-multiplus',
@@ -65,7 +65,7 @@ const batterijen = [
     cons: ['Zeer duur', 'Complexe installatie vereist'],
     rating: 4.4, // Gebaseerd op: premium kwaliteit (4.8) + hoogste efficiency (4.9) + geavanceerde monitoring (4.7) - hoge prijs (3.2) - complexe installatie (3.6) = 4.4 gemiddeld
     reviewCount: 156, // Meer reviews voor gevestigd premium merk
-    affiliate_url: '#victron-affiliate'
+    affiliate_url: 'https://www.bol.com/nl/nl/s/?searchtext=victron+multiplus+thuisbatterij'
   },
   {
     id: 'homewizard-p1',
@@ -82,7 +82,7 @@ const batterijen = [
     cons: ['Beperkte capaciteit', 'Hogere prijs per kWh'],
     rating: 4.1, // Gebaseerd op: Nederlandse kwaliteit (4.4) + uitstekende app (4.6) + plug&play (4.5) - beperkte capaciteit (3.7) - hogere prijs per kWh (3.3) = 4.1 gemiddeld
     reviewCount: 134, // Goede hoeveelheid voor populair Nederlands merk
-    affiliate_url: '#homewizard-affiliate'
+    affiliate_url: 'https://www.homewizard.nl/p1-meter/'
   },
   {
     id: 'zonneplan-battery',
@@ -99,7 +99,7 @@ const batterijen = [
     cons: ['Duurder dan alternatieven', 'Afhankelijk van één leverancier'],
     rating: 4.0, // Gebaseerd op: all-in service (4.3) + lange garantie (4.5) + Nederlandse support (4.2) - hogere prijs (3.4) - vendor lock-in (3.6) = 4.0 gemiddeld
     reviewCount: 203, // Veel reviews voor grote Nederlandse speler
-    affiliate_url: '#zonneplan-affiliate'
+    affiliate_url: 'https://www.zonneplan.nl/thuisbatterij'
   }
 ];
 
@@ -965,6 +965,26 @@ app.get('/kosten', (c) => {
         window.berekenBesparing = berekenBesparing;
         `
       }} />
+
+      {/* Call to Action */}
+      <section class="py-12">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div class="bg-energy-green text-white p-8 rounded-lg">
+            <h3 class="text-2xl font-bold mb-4">Weet je welke thuisbatterij bij je past?</h3>
+            <p class="mb-6">Vergelijk alle beschikbare merken en vind de beste thuisbatterij voor jouw situatie en budget</p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+              <a href="/vergelijken" class="bg-blue-600 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-700 hover:scale-105 border-2 border-blue-600 transition-all duration-300 shadow-xl hover:shadow-2xl">
+                <i class="fas fa-balance-scale mr-2"></i>
+                Vergelijk Alle Merken
+              </a>
+              <a href="/gids/kopers-gids" class="bg-orange-500 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-orange-600 hover:scale-105 border-2 border-orange-500 transition-all duration-300 shadow-xl hover:shadow-2xl">
+                <i class="fas fa-book mr-2"></i>
+                Complete Kopers Gids
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>,
     {
       title: 'Wat kost een thuisbatterij? - Prijzen & Besparing Calculator 2025',
