@@ -16,19 +16,201 @@ export const renderer = jsxRenderer(({ children, title, description, keywords })
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="nl_NL" />
         
-        {/* Schema.org JSON-LD */}
+        {/* Enhanced Schema.org JSON-LD */}
         <script type="application/ld+json">{`
           {
             "@context": "https://schema.org",
             "@type": "WebSite",
             "name": "Thuisbatterijwereld",
+            "alternateName": "Thuisbatterijwereld.nl",
             "description": "De beste thuisbatterijen vergelijken en kopen. Reviews, prijzen en subsidie informatie.",
-            "url": "https://thuisbatterijwereld.pages.dev",
+            "url": "https://thuisbatterijwereld.nl",
+            "sameAs": [
+              "https://github.com/Tjallingsol/thuisbatterijwereld"
+            ],
             "potentialAction": {
               "@type": "SearchAction",
-              "target": "https://thuisbatterijwereld.pages.dev/vergelijken?q={search_term_string}",
+              "target": "https://thuisbatterijwereld.nl/vergelijken?q={search_term_string}",
               "query-input": "required name=search_term_string"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Thuisbatterijwereld",
+              "url": "https://thuisbatterijwereld.nl",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://thuisbatterijwereld.nl/logo.png"
+              }
+            },
+            "mainEntity": {
+              "@type": "ItemList",
+              "name": "Beste Thuisbatterijen 2025",
+              "description": "Vergelijking van de beste thuisbatterijen in Nederland",
+              "numberOfItems": 5,
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "item": {
+                    "@type": "Product",
+                    "name": "Growatt ARB 10.24kWh",
+                    "description": "Beste prijs-kwaliteit thuisbatterij",
+                    "offers": {
+                      "@type": "Offer",
+                      "price": "4500",
+                      "priceCurrency": "EUR"
+                    }
+                  }
+                },
+                {
+                  "@type": "ListItem", 
+                  "position": 2,
+                  "item": {
+                    "@type": "Product",
+                    "name": "Zonneplan Thuisbatterij 13.5kWh",
+                    "description": "Premium thuisbatterij met uitstekende service",
+                    "offers": {
+                      "@type": "Offer",
+                      "price": "9000",
+                      "priceCurrency": "EUR"
+                    }
+                  }
+                }
+              ]
             }
+          }
+        `}</script>
+
+        {/* Organization Schema */}
+        <script type="application/ld+json">{`
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Thuisbatterijwereld",
+            "url": "https://thuisbatterijwereld.nl",
+            "description": "Nederlands platform voor thuisbatterij vergelijking en advies",
+            "foundingDate": "2025",
+            "areaServed": {
+              "@type": "Country",
+              "name": "Nederland"
+            },
+            "serviceType": [
+              "Thuisbatterij vergelijking",
+              "Energieopslag advies", 
+              "Subsidie informatie",
+              "Product reviews"
+            ],
+            "knowsAbout": [
+              "Thuisbatterijen",
+              "Energieopslag",
+              "Zonnepanelen", 
+              "Energiebesparing",
+              "Duurzame energie",
+              "Nederlandse energiemarkt"
+            ]
+          }
+        `}</script>
+
+        {/* FAQ Schema for common questions */}
+        <script type="application/ld+json">{`
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Wat kost een thuisbatterij?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Een thuisbatterij kost tussen €3.500 en €10.000 inclusief installatie. De prijs hangt af van capaciteit (5-15 kWh), merk (Growatt, Dyness, Victron) en functionaliteiten. Met ISDE subsidie tot €2.500 korting."
+                }
+              },
+              {
+                "@type": "Question", 
+                "name": "Hoeveel bespaar je met een thuisbatterij?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Met een thuisbatterij bespaar je €500-€1.200 per jaar op energiekosten. Door optimaal gebruik van zonnestroom verhoog je zelfconsumptie van 30% naar 80%. Terugverdientijd: 7-12 jaar."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Welke thuisbatterij is de beste?", 
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "De beste thuisbatterij hangt af van budget en behoeften. Growatt ARB (€4.500) biedt beste prijs-kwaliteit. Zonneplan (€9.000) voor premium service. Victron voor technische flexibiliteit."
+                }
+              }
+            ]
+          }
+        `}</script>
+
+        {/* LocalBusiness Schema for better local SEO */}
+        <script type="application/ld+json">{`
+          {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "@id": "https://thuisbatterijwereld.nl/#business",
+            "name": "Thuisbatterijwereld",
+            "alternateName": "Thuisbatterijwereld.nl",
+            "description": "Nederlands informatie- en vergelijkingsplatform voor thuisbatterijen. Onafhankelijke reviews en advies over energieopslag systemen.",
+            "url": "https://thuisbatterijwereld.nl",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://thuisbatterijwereld.nl/logo.png"
+            },
+            "foundingDate": "2025",
+            "areaServed": [
+              {
+                "@type": "Country",
+                "name": "Nederland"
+              },
+              {
+                "@type": "Country", 
+                "name": "België"
+              }
+            ],
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Thuisbatterij Vergelijking",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Thuisbatterij Vergelijking",
+                    "description": "Vergelijk alle thuisbatterijen op prijs, capaciteit en prestaties"
+                  }
+                },
+                {
+                  "@type": "Offer", 
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Subsidie Advies",
+                    "description": "Actuele informatie over ISDE subsidie en gemeentelijke premies"
+                  }
+                }
+              ]
+            },
+            "knowsAbout": [
+              "Thuisbatterij",
+              "Energieopslag", 
+              "Zonnepanelen",
+              "Growatt ARB",
+              "Dyness PowerWall",
+              "Victron Energy",
+              "HomeWizard P1",
+              "Zonneplan Battery",
+              "ISDE Subsidie",
+              "Energiebesparing",
+              "Nederlandse energiemarkt"
+            ],
+            "serviceType": [
+              "Thuisbatterij informatie",
+              "Product vergelijking",
+              "Subsidie advies",
+              "Energieopslag consultancy"
+            ]
           }
         `}</script>
         

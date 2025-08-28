@@ -1,151 +1,144 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    
-    <!-- Homepage -->
-    <url>
-        <loc>https://thuisbatterijwereld.nl/</loc>
-        <lastmod>2025-08-28</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>1.0</priority>
-    </url>
-    
-    <!-- Main Pages -->
-    <url>
-        <loc>https://thuisbatterijwereld.nl/vergelijken</loc>
-        <lastmod>2025-08-28</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    
-    <url>
-        <loc>https://thuisbatterijwereld.nl/kopen</loc>
-        <lastmod>2025-08-28</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    
-    <url>
-        <loc>https://thuisbatterijwereld.nl/kosten</loc>
-        <lastmod>2025-08-28</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>https://thuisbatterijwereld.nl/subsidie</loc>
-        <lastmod>2025-08-28</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <!-- Guide Pages -->
-    <url>
-        <loc>https://thuisbatterijwereld.nl/gids/kopers-gids</loc>
-        <lastmod>2025-08-28</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>https://thuisbatterijwereld.nl/gids/installatie</loc>
-        <lastmod>2025-08-28</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <url>
-        <loc>https://thuisbatterijwereld.nl/gids/onderhoud-garantie</loc>
-        <lastmod>2025-08-28</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <url>
-        <loc>https://thuisbatterijwereld.nl/gids/besparing-maximaliseren</loc>
-        <lastmod>2025-08-28</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <!-- Blog Pages -->
-    <url>
-        <loc>https://thuisbatterijwereld.nl/blog</loc>
-        <lastmod>2025-08-28</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    
-    <url>
-        <loc>https://thuisbatterijwereld.nl/blog/energieonafhankelijkheid</loc>
-        <lastmod>2025-08-28</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <!-- Brand Pages -->
-    <url>
-        <loc>https://thuisbatterijwereld.nl/zonneplan-thuisbatterij</loc>
-        <lastmod>2025-08-28</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>https://thuisbatterijwereld.nl/growatt-thuisbatterij</loc>
-        <lastmod>2025-08-28</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <!-- Product Pages -->
-    <url>
-        <loc>https://thuisbatterijwereld.nl/merken/growatt-arb-10</loc>
-        <lastmod>2025-08-28</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <url>
-        <loc>https://thuisbatterijwereld.nl/merken/dyness-powerwall-b4850</loc>
-        <lastmod>2025-08-28</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <url>
-        <loc>https://thuisbatterijwereld.nl/merken/victron-multiplus</loc>
-        <lastmod>2025-08-28</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <url>
-        <loc>https://thuisbatterijwereld.nl/merken/homewizard-p1</loc>
-        <lastmod>2025-08-28</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <url>
-        <loc>https://thuisbatterijwereld.nl/merken/zonneplan-battery</loc>
-        <lastmod>2025-08-28</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <!-- Info Pages -->
-    <url>
-        <loc>https://thuisbatterijwereld.nl/faq</loc>
-        <lastmod>2025-08-28</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    
-    <url>
-        <loc>https://thuisbatterijwereld.nl/over-ons</loc>
-        <lastmod>2025-08-28</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  <url>
+    <loc>https://thuisbatterijwereld.nl/</loc>
+    <lastmod>2025-08-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://thuisbatterijwereld.nl/vergelijken</loc>
+    <lastmod>2025-08-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://thuisbatterijwereld.nl/kopen</loc>
+    <lastmod>2025-08-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://thuisbatterijwereld.nl/kosten</loc>
+    <lastmod>2025-08-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://thuisbatterijwereld.nl/subsidie</loc>
+    <lastmod>2025-08-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://thuisbatterijwereld.nl/zonneplan-thuisbatterij</loc>
+    <lastmod>2025-08-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://thuisbatterijwereld.nl/growatt-thuisbatterij</loc>
+    <lastmod>2025-08-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://thuisbatterijwereld.nl/merken/growatt-arb-10</loc>
+    <lastmod>2025-08-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://thuisbatterijwereld.nl/merken/dyness-powerwall-b4850</loc>
+    <lastmod>2025-08-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://thuisbatterijwereld.nl/merken/victron-multiplus</loc>
+    <lastmod>2025-08-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://thuisbatterijwereld.nl/merken/homewizard-p1</loc>
+    <lastmod>2025-08-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://thuisbatterijwereld.nl/merken/zonneplan-battery</loc>
+    <lastmod>2025-08-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://thuisbatterijwereld.nl/gids/kopers-gids</loc>
+    <lastmod>2025-08-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thuisbatterijwereld.nl/gids/installatie</loc>
+    <lastmod>2025-08-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thuisbatterijwereld.nl/gids/onderhoud-garantie</loc>
+    <lastmod>2025-08-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thuisbatterijwereld.nl/gids/besparing-maximaliseren</loc>
+    <lastmod>2025-08-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thuisbatterijwereld.nl/blog</loc>
+    <lastmod>2025-08-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://thuisbatterijwereld.nl/blog/energieonafhankelijkheid</loc>
+    <lastmod>2025-08-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://thuisbatterijwereld.nl/faq</loc>
+    <lastmod>2025-08-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://thuisbatterijwereld.nl/privacy</loc>
+    <lastmod>2025-08-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://thuisbatterijwereld.nl/disclaimer</loc>
+    <lastmod>2025-08-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://thuisbatterijwereld.nl/contact</loc>
+    <lastmod>2025-08-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://thuisbatterijwereld.nl/over-ons</loc>
+    <lastmod>2025-08-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>

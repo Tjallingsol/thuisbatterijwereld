@@ -1,21 +1,18 @@
+# Robots.txt for Thuisbatterijwereld.nl
+# Generated: 2025-08-28T15:48:21.759Z
+
 User-agent: *
 Allow: /
 
 # Sitemap
 Sitemap: https://thuisbatterijwereld.nl/sitemap.xml
 
-# Disallow sensitive areas (if any)
-# Disallow: /admin/
-# Disallow: /private/
+# Block specific paths
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.json$
+Disallow: /*?print=
+Disallow: /*?utm_
 
-# Allow important pages for SEO
-Allow: /vergelijken
-Allow: /kopen
-Allow: /kosten
-Allow: /subsidie
-Allow: /gids/
-Allow: /blog/
-Allow: /merken/
-
-# Crawl-delay (optional, remove if not needed)
-# Crawl-delay: 1
+# Crawl delay
+Crawl-delay: 1
