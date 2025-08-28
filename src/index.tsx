@@ -103,7 +103,7 @@ app.get('/', (c) => {
   return c.render(
     <div>
       {/* Hero Section */}
-      <section class="bg-gradient-to-r from-energy-green to-energy-blue text-white py-20">
+      <section class="text-white py-20" style="background: linear-gradient(135deg, #10b981, #3b82f6)">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="text-center">
             <h1 class="text-4xl md:text-6xl font-bold mb-6">
@@ -113,11 +113,11 @@ app.get('/', (c) => {
               Vergelijk de beste thuisbatterijen van 2025. Bespaar tot 70% op je energiekosten en verhoog je zelfconsumptie van zonne-energie.
             </p>
             <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-              <a href="/vergelijken" class="bg-white text-energy-green px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors">
+              <a href="/vergelijken" class="bg-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors" style="color: #10b981">
                 <i class="fas fa-search mr-2"></i>
                 Vergelijk Nu
               </a>
-              <a href="#voordelen" class="border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-energy-green transition-colors">
+              <a href="#voordelen" class="border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors" onmouseover="this.style.background='white'; this.style.color='#10b981'" onmouseout="this.style.background='transparent'; this.style.color='white'">
                 <i class="fas fa-info-circle mr-2"></i>
                 Meer Info
               </a>
@@ -137,17 +137,17 @@ app.get('/', (c) => {
             </p>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div class="bg-gray-50 p-6 rounded-lg">
-                <i class="fas fa-sun text-battery-orange text-3xl mb-4"></i>
+                <i class="fas fa-sun text-3xl mb-4" style="color: #f59e0b"></i>
                 <h3 class="text-xl font-semibold mb-3">Opslag zonne-energie</h3>
                 <p class="text-gray-600">Sla overtollige zonne-energie op voor gebruik 's avonds en 's nachts</p>
               </div>
               <div class="bg-gray-50 p-6 rounded-lg">
-                <i class="fas fa-euro-sign text-energy-green text-3xl mb-4"></i>
+                <i class="fas fa-euro-sign text-3xl mb-4" style="color: #10b981"></i>
                 <h3 class="text-xl font-semibold mb-3">Bespaar geld</h3>
                 <p class="text-gray-600">Verminder je energierekening tot 70% door slimme opslag</p>
               </div>
               <div class="bg-gray-50 p-6 rounded-lg">
-                <i class="fas fa-leaf text-energy-blue text-3xl mb-4"></i>
+                <i class="fas fa-leaf text-3xl mb-4" style="color: #3b82f6"></i>
                 <h3 class="text-xl font-semibold mb-3">Duurzaam</h3>
                 <p class="text-gray-600">Verhoog je zelfvoorzienendheid en verminder CO2-uitstoot</p>
               </div>
@@ -167,34 +167,34 @@ app.get('/', (c) => {
           </div>
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div class="bg-white p-8 rounded-lg shadow-lg">
-              <div class="bg-energy-green text-white w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+              <div class="text-white w-12 h-12 rounded-lg flex items-center justify-center mb-4" style="background-color: #10b981">
                 <i class="fas fa-piggy-bank text-xl"></i>
               </div>
               <h3 class="text-xl font-bold mb-3">Bespaar op energiekosten</h3>
               <p class="text-gray-600 mb-4">
                 Bespaar gemiddeld €500-1200 per jaar op je energierekening door slimme opslag van goedkope energie.
               </p>
-              <a href="/kosten" class="text-energy-green font-semibold hover:underline">Bereken je besparing →</a>
+              <a href="/kosten" class="font-semibold hover:underline" style="color: #10b981">Bereken je besparing →</a>
             </div>
             <div class="bg-white p-8 rounded-lg shadow-lg">
-              <div class="bg-energy-blue text-white w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+              <div class="text-white w-12 h-12 rounded-lg flex items-center justify-center mb-4" style="background-color: #3b82f6">
                 <i class="fas fa-solar-panel text-xl"></i>
               </div>
               <h3 class="text-xl font-bold mb-3">Verhoog zelfconsumptie</h3>
               <p class="text-gray-600 mb-4">
                 Verhoog je zelfconsumptie van zonne-energie van 30% naar 80% met een thuisbatterij.
               </p>
-              <a href="/blog/thuisbatterij-met-zonnepanelen" class="text-energy-blue font-semibold hover:underline">Meer lezen →</a>
+              <a href="/blog/thuisbatterij-met-zonnepanelen" class="font-semibold hover:underline" style="color: #3b82f6">Meer lezen →</a>
             </div>
             <div class="bg-white p-8 rounded-lg shadow-lg">
-              <div class="bg-battery-orange text-white w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+              <div class="text-white w-12 h-12 rounded-lg flex items-center justify-center mb-4" style="background-color: #f59e0b">
                 <i class="fas fa-home text-xl"></i>
               </div>
               <h3 class="text-xl font-bold mb-3">Energieonafhankelijkheid</h3>
               <p class="text-gray-600 mb-4">
                 Word minder afhankelijk van stijgende energieprijzen en netcongestie.
               </p>
-              <a href="/blog/energieonafhankelijkheid" class="text-battery-orange font-semibold hover:underline">Ontdek hoe →</a>
+              <a href="/blog/energieonafhankelijkheid" class="font-semibold hover:underline" style="color: #f59e0b">Ontdek hoe →</a>
             </div>
           </div>
         </div>
@@ -209,9 +209,9 @@ app.get('/', (c) => {
           </div>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             {batterijen.slice(0, 3).map((batterij, index) => (
-              <div key={batterij.id} class="bg-gray-50 p-6 rounded-lg border-2 border-transparent hover:border-energy-green transition-colors">
+              <div key={batterij.id} class="bg-gray-50 p-6 rounded-lg border-2 border-transparent transition-colors" onmouseover="this.style.borderColor='#10b981'" onmouseout="this.style.borderColor='transparent'">
                 {index === 0 && (
-                  <div class="bg-energy-green text-white text-sm font-bold px-3 py-1 rounded-full inline-block mb-4">
+                  <div class="text-white text-sm font-bold px-3 py-1 rounded-full inline-block mb-4" style="background-color: #10b981">
                     #1 AANBEVOLEN
                   </div>
                 )}
@@ -231,7 +231,7 @@ app.get('/', (c) => {
                   </div>
                   <div class="flex justify-between">
                     <span class="text-gray-600">Prijs:</span>
-                    <span class="font-semibold text-energy-green">€{batterij.prijs.toLocaleString()}</span>
+                    <span class="font-semibold" style="color: #10b981">€{batterij.prijs.toLocaleString()}</span>
                   </div>
                   <div class="flex justify-between">
                     <span class="text-gray-600">Garantie:</span>
@@ -239,10 +239,10 @@ app.get('/', (c) => {
                   </div>
                 </div>
                 <div class="space-y-2">
-                  <a href={`/merken/${batterij.id}`} class="block bg-energy-green text-white text-center py-2 rounded hover:bg-energy-green/90 transition-colors">
+                  <a href={`/merken/${batterij.id}`} class="block text-white text-center py-2 rounded transition-colors" style="background-color: #10b981" onmouseover="this.style.backgroundColor='#059669'" onmouseout="this.style.backgroundColor='#10b981'">
                     Bekijk Review
                   </a>
-                  <a href={batterij.affiliate_url} class="block bg-white border-2 border-energy-green text-energy-green text-center py-2 rounded hover:bg-energy-green hover:text-white transition-colors" target="_blank">
+                  <a href={batterij.affiliate_url} class="block bg-white border-2 text-center py-2 rounded transition-colors" style="border-color: #10b981; color: #10b981" onmouseover="this.style.backgroundColor='#10b981'; this.style.color='white'" onmouseout="this.style.backgroundColor='white'; this.style.color='#10b981'" target="_blank">
                     Beste Prijs →
                   </a>
                 </div>
@@ -250,7 +250,7 @@ app.get('/', (c) => {
             ))}
           </div>
           <div class="text-center mt-8">
-            <a href="/vergelijken" class="inline-block bg-energy-blue text-white px-8 py-4 rounded-lg font-bold hover:bg-energy-blue/90 transition-colors">
+            <a href="/vergelijken" class="inline-block text-white px-8 py-4 rounded-lg font-bold transition-colors" style="background-color: #3b82f6" onmouseover="this.style.backgroundColor='#2563eb'" onmouseout="this.style.backgroundColor='#3b82f6'">
               <i class="fas fa-list mr-2"></i>
               Vergelijk Alle Thuisbatterijen
             </a>
@@ -259,14 +259,14 @@ app.get('/', (c) => {
       </section>
 
       {/* CTA Section */}
-      <section class="py-16 bg-gradient-to-r from-gray-900 to-gray-800 text-white">
+      <section class="py-16 text-white" style="background: linear-gradient(135deg, #1f2937, #111827)">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 class="text-3xl md:text-4xl font-bold mb-4">Klaar om te besparen op je energiekosten?</h2>
           <p class="text-xl mb-8 max-w-3xl mx-auto">
             Gebruik onze slimme vergelijkingstool en vind de perfecte thuisbatterij voor jouw situatie. 
             Inclusief subsidie-informatie en terugverdientijd berekening.
           </p>
-          <a href="/vergelijken" class="inline-block bg-energy-green text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-energy-green/90 transition-colors mr-4">
+          <a href="/vergelijken" class="inline-block text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors mr-4" style="background: #10b981" onmouseover="this.style.background='#059669'" onmouseout="this.style.background='#10b981'">
             <i class="fas fa-calculator mr-2"></i>
             Start Vergelijking
           </a>
@@ -1355,7 +1355,7 @@ app.get('/blog', (c) => {
       {/* Featured artikel */}
       <section class="py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="bg-gradient-to-r from-energy-green to-energy-blue rounded-lg text-white p-8 md:p-12">
+          <div class="rounded-lg text-white p-8 md:p-12" style="background: linear-gradient(135deg, #10b981, #3b82f6)">
             <div class="max-w-4xl">
               <div class="text-sm font-semibold mb-2">FEATURED ARTIKEL</div>
               <h2 class="text-3xl md:text-4xl font-bold mb-4">
@@ -1381,9 +1381,19 @@ app.get('/blog', (c) => {
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {Object.entries(blogArtikelen).slice(1).map(([id, artikel]) => (
               <div key={id} class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                <div class="h-48 bg-gray-200 relative">
-                  <div class="absolute inset-0 bg-gradient-to-br from-energy-green/20 to-energy-blue/20 flex items-center justify-center">
-                    <i class="fas fa-image text-4xl text-gray-400"></i>
+                <div class="h-48 relative overflow-hidden">
+                  <div class={`absolute inset-0 flex items-center justify-center text-6xl ${
+                    id === 'wat-kost-thuisbatterij-2025' ? 'bg-gradient-to-br from-green-400 to-blue-500 text-white' :
+                    id === 'thuisbatterij-vs-dynamisch-contract' ? 'bg-gradient-to-br from-blue-500 to-purple-600 text-white' :
+                    id === 'fouten-bij-aanschaf-thuisbatterij' ? 'bg-gradient-to-br from-red-400 to-orange-500 text-white' :
+                    'bg-gradient-to-br from-yellow-400 to-green-500 text-white'
+                  }`}>
+                    <i class={`fas ${
+                      id === 'wat-kost-thuisbatterij-2025' ? 'fa-calendar-alt' :
+                      id === 'thuisbatterij-vs-dynamisch-contract' ? 'fa-balance-scale' :
+                      id === 'fouten-bij-aanschaf-thuisbatterij' ? 'fa-exclamation-triangle' :
+                      'fa-solar-panel'
+                    }`}></i>
                   </div>
                 </div>
                 <div class="p-6">
@@ -2155,14 +2165,35 @@ app.get('/blog/:articleId', (c) => {
       <nav class="bg-gray-50 py-4">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <ol class="flex items-center space-x-2 text-sm">
-            <li><a href="/" class="text-energy-green hover:underline">Home</a></li>
+            <li><a href="/" class="hover:underline" style="color: #10b981">Home</a></li>
             <li><i class="fas fa-chevron-right text-gray-400 mx-2"></i></li>
-            <li><a href="/blog" class="text-energy-green hover:underline">Blog</a></li>
+            <li><a href="/blog" class="hover:underline" style="color: #10b981">Blog</a></li>
             <li><i class="fas fa-chevron-right text-gray-400 mx-2"></i></li>
             <li class="text-gray-600 truncate">{artikel.titel}</li>
           </ol>
         </div>
       </nav>
+
+      {/* Hero Image */}
+      <section class="relative h-64 overflow-hidden">
+        <div class={`absolute inset-0 flex items-center justify-center ${
+          articleId === 'thuisbatterij-met-zonnepanelen' ? 'bg-gradient-to-r from-yellow-400 to-green-500' :
+          articleId === 'wat-kost-thuisbatterij-2025' ? 'bg-gradient-to-r from-green-400 to-blue-500' :
+          articleId === 'thuisbatterij-vs-dynamisch-contract' ? 'bg-gradient-to-r from-blue-500 to-purple-600' :
+          articleId === 'fouten-bij-aanschaf-thuisbatterij' ? 'bg-gradient-to-r from-red-400 to-orange-500' :
+          'bg-gradient-to-r from-purple-400 to-pink-500'
+        }`}>
+          <div class="text-center text-white">
+            <i class={`fas ${
+              articleId === 'thuisbatterij-met-zonnepanelen' ? 'fa-solar-panel' :
+              articleId === 'wat-kost-thuisbatterij-2025' ? 'fa-calendar-alt' :
+              articleId === 'thuisbatterij-vs-dynamisch-contract' ? 'fa-balance-scale' :
+              articleId === 'fouten-bij-aanschaf-thuisbatterij' ? 'fa-exclamation-triangle' :
+              'fa-lightbulb'
+            } text-8xl mb-4 opacity-30`}></i>
+          </div>
+        </div>
+      </section>
 
       {/* Article Header */}
       <article class="py-12">
@@ -2170,7 +2201,7 @@ app.get('/blog/:articleId', (c) => {
           <header class="mb-8">
             <div class="flex flex-wrap gap-2 mb-4">
               {artikel.tags.map((tag) => (
-                <span key={tag} class="bg-energy-green/10 text-energy-green px-3 py-1 rounded-full text-sm font-medium">
+                <span key={tag} class="px-3 py-1 rounded-full text-sm font-medium" style="background-color: rgba(16, 185, 129, 0.1); color: #10b981">
                   {tag}
                 </span>
               ))}
@@ -2236,9 +2267,21 @@ app.get('/blog/:articleId', (c) => {
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {Object.entries(blogArtikelen).filter(([id]) => id !== articleId).slice(0, 3).map(([id, relatedArtikel]) => (
               <div key={id} class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                <div class="h-48 bg-gray-200 relative">
-                  <div class="absolute inset-0 bg-gradient-to-br from-energy-green/20 to-energy-blue/20 flex items-center justify-center">
-                    <i class="fas fa-image text-4xl text-gray-400"></i>
+                <div class="h-48 relative overflow-hidden">
+                  <div class={`absolute inset-0 flex items-center justify-center text-6xl ${
+                    id === 'thuisbatterij-met-zonnepanelen' ? 'bg-gradient-to-br from-yellow-400 to-green-500 text-white' :
+                    id === 'wat-kost-thuisbatterij-2025' ? 'bg-gradient-to-br from-green-400 to-blue-500 text-white' :
+                    id === 'thuisbatterij-vs-dynamisch-contract' ? 'bg-gradient-to-br from-blue-500 to-purple-600 text-white' :
+                    id === 'fouten-bij-aanschaf-thuisbatterij' ? 'bg-gradient-to-br from-red-400 to-orange-500 text-white' :
+                    'bg-gradient-to-br from-purple-400 to-pink-500 text-white'
+                  }`}>
+                    <i class={`fas ${
+                      id === 'thuisbatterij-met-zonnepanelen' ? 'fa-solar-panel' :
+                      id === 'wat-kost-thuisbatterij-2025' ? 'fa-calendar-alt' :
+                      id === 'thuisbatterij-vs-dynamisch-contract' ? 'fa-balance-scale' :
+                      id === 'fouten-bij-aanschaf-thuisbatterij' ? 'fa-exclamation-triangle' :
+                      'fa-lightbulb'
+                    }`}></i>
                   </div>
                 </div>
                 <div class="p-6">
