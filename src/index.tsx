@@ -1584,7 +1584,7 @@ app.get('/blog', (c) => {
                 Van 30% naar 80% zelfconsumptie in één stap.
               </p>
               <a href="/blog/thuisbatterij-met-zonnepanelen" 
-                 class="inline-block bg-white text-energy-green px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                 class="inline-block bg-yellow-400 text-gray-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-yellow-300 hover:scale-105 border-2 border-yellow-400 transition-all duration-300 shadow-xl hover:shadow-2xl">
                 <i class="fas fa-arrow-right mr-2"></i>
                 Lees het artikel
               </a>
@@ -3656,11 +3656,11 @@ app.get('/gids/kopers-gids', (c) => {
             <h3 class="text-2xl font-bold mb-4">Klaar om te beginnen?</h3>
             <p class="mb-6">Gebruik onze tools om de perfecte thuisbatterij voor jou te vinden</p>
             <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-              <a href="/kosten" class="bg-white text-energy-green px-6 py-3 rounded-lg font-semibold hover:bg-energy-green hover:text-white border-2 border-white transition-colors shadow-lg">
+              <a href="/kosten" class="bg-orange-500 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-orange-600 hover:scale-105 border-2 border-orange-500 transition-all duration-300 shadow-xl hover:shadow-2xl">
                 <i class="fas fa-calculator mr-2"></i>
                 Bereken Kosten
               </a>
-              <a href="/vergelijken" class="bg-white text-energy-green px-6 py-3 rounded-lg font-semibold hover:bg-energy-green hover:text-white border-2 border-white transition-colors shadow-lg">
+              <a href="/vergelijken" class="bg-blue-600 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-700 hover:scale-105 border-2 border-blue-600 transition-all duration-300 shadow-xl hover:shadow-2xl">
                 <i class="fas fa-balance-scale mr-2"></i>
                 Vergelijk Merken
               </a>
@@ -5242,11 +5242,11 @@ app.get('/gids/besparing-maximaliseren', (c) => {
             <h3 class="text-2xl font-bold mb-4">Start met besparing maximaliseren!</h3>
             <p class="mb-6">Bereken je potentiële besparing en vergelijk de beste thuisbatterijen</p>
             <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-              <a href="/kosten" class="bg-white text-energy-green px-6 py-3 rounded-lg font-semibold hover:bg-energy-green hover:text-white border-2 border-white transition-colors shadow-lg">
+              <a href="/kosten" class="bg-orange-500 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-orange-600 hover:scale-105 border-2 border-orange-500 transition-all duration-300 shadow-xl hover:shadow-2xl">
                 <i class="fas fa-calculator mr-2"></i>
                 Bereken Besparing
               </a>
-              <a href="/vergelijken" class="bg-white text-energy-green px-6 py-3 rounded-lg font-semibold hover:bg-energy-green hover:text-white border-2 border-white transition-colors shadow-lg">
+              <a href="/vergelijken" class="bg-blue-600 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-700 hover:scale-105 border-2 border-blue-600 transition-all duration-300 shadow-xl hover:shadow-2xl">
                 <i class="fas fa-balance-scale mr-2"></i>
                 Vergelijk Systemen
               </a>
