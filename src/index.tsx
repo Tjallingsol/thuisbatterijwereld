@@ -2174,6 +2174,365 @@ app.get('/subsidie', (c) => {
   )
 })
 
+// Energieonafhankelijkheid artikel
+app.get('/blog/energieonafhankelijkheid', (c) => {
+  return c.render(
+    <div>
+      {/* Header */}
+      <section class="bg-white py-12 border-b">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <nav class="mb-6">
+            <a href="/blog" class="text-energy-green hover:underline">← Terug naar blog</a>
+          </nav>
+          <div class="text-center">
+            <div class="w-20 h-20 bg-gradient-to-r from-energy-green to-blue-600 text-white rounded-lg flex items-center justify-center mx-auto mb-6">
+              <i class="fas fa-leaf text-3xl"></i>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
+              Energieonafhankelijkheid met een Thuisbatterij
+            </h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+              Ontdek hoe je met een thuisbatterij minder afhankelijk wordt van stijgende energieprijzen, netcongestie en stroomstoringen.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Inleiding */}
+      <section class="py-12">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="prose max-w-none">
+            <p class="text-lg text-gray-600 mb-8">
+              Energieonafhankelijkheid is meer dan een trend – het is een noodzaak geworden. Met stijgende energieprijzen, 
+              netcongestie en de overgang naar duurzame energie wordt het steeds belangrijker om de controle over je 
+              eigen energievoorziening te hebben. Een thuisbatterij is daarbij een cruciale stap.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Wat is energieonafhankelijkheid */}
+      <section class="py-12 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 class="text-3xl font-bold mb-8 text-gray-900">
+            Wat betekent energieonafhankelijkheid?
+          </h2>
+          
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                <i class="fas fa-coins text-green-600 text-xl"></i>
+              </div>
+              <h3 class="text-xl font-semibold mb-3">Financiële Onafhankelijkheid</h3>
+              <p class="text-gray-600">Minder afhankelijk van stijgende energieprijzen en variabele tarieven van energieleveranciers.</p>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                <i class="fas fa-plug text-blue-600 text-xl"></i>
+              </div>
+              <h3 class="text-xl font-semibold mb-3">Technische Onafhankelijkheid</h3>
+              <p class="text-gray-600">Eigen energievoorziening tijdens stroomstoringen en netcongestie.</p>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
+                <i class="fas fa-leaf text-orange-600 text-xl"></i>
+              </div>
+              <h3 class="text-xl font-semibold mb-3">Duurzame Onafhankelijkheid</h3>
+              <p class="text-gray-600">100% hernieuwbare energie uit eigen zonnepanelen en batterijopslag.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* De rol van thuisbatterijen */}
+      <section class="py-12">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 class="text-3xl font-bold mb-8 text-gray-900">
+            De rol van thuisbatterijen in energieonafhankelijkheid
+          </h2>
+          
+          <div class="space-y-8">
+            <div class="bg-green-50 p-8 rounded-lg">
+              <h3 class="text-2xl font-semibold mb-4 text-green-900">
+                <i class="fas fa-sun mr-3"></i>
+                Maximale benutting van zonne-energie
+              </h3>
+              <p class="text-green-800 mb-4">
+                Zonder batterij gebruik je maar 30% van je eigen zonnestroom direct. Met een thuisbatterij stijgt dit naar 80-90%.
+              </p>
+              <div class="bg-white p-4 rounded-lg">
+                <h4 class="font-semibold mb-2">Voorbeeld: Huishouden met 12 zonnepanelen (4.320 Wp)</h4>
+                <ul class="space-y-2 text-sm">
+                  <li>• <strong>Zonder batterij:</strong> 30% zelfconsumptie = 1.300 kWh/jaar eigen verbruik</li>
+                  <li>• <strong>Met 10 kWh batterij:</strong> 80% zelfconsumptie = 3.500 kWh/jaar eigen verbruik</li>
+                  <li>• <strong>Extra besparing:</strong> 2.200 kWh × €0,35 = €770 per jaar</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="bg-blue-50 p-8 rounded-lg">
+              <h3 class="text-2xl font-semibold mb-4 text-blue-900">
+                <i class="fas fa-shield-alt mr-3"></i>
+                Bescherming tegen stroomstoringen
+              </h3>
+              <p class="text-blue-800 mb-4">
+                Een thuisbatterij met noodstroomfunctie houdt je huis draaiende tijdens stroomstoringen.
+              </p>
+              <div class="bg-white p-4 rounded-lg">
+                <h4 class="font-semibold mb-2">Wat blijft werken tijdens een stroomstoring?</h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                  <div>
+                    <h5 class="font-semibold text-green-600">✓ Wel beschikbaar</h5>
+                    <ul class="space-y-1">
+                      <li>• Verlichting</li>
+                      <li>• Koelkast en vriezer</li>
+                      <li>• Internet en WiFi</li>
+                      <li>• Telefoons opladen</li>
+                      <li>• Alarmsystemen</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h5 class="font-semibold text-red-600">✗ Beperkt beschikbaar</h5>
+                    <ul class="space-y-1">
+                      <li>• Wasmachine (hoog verbruik)</li>
+                      <li>• Elektrische kookplaat</li>
+                      <li>• Warmtepomp (afhankelijk van vermogen)</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-orange-50 p-8 rounded-lg">
+              <h3 class="text-2xl font-semibold mb-4 text-orange-900">
+                <i class="fas fa-chart-line mr-3"></i>
+                Smart energy management
+              </h3>
+              <p class="text-orange-800 mb-4">
+                Moderne thuisbatterijen kunnen slim laden en ontladen op basis van energieprijzen en je verbruikspatroon.
+              </p>
+              <div class="bg-white p-4 rounded-lg">
+                <h4 class="font-semibold mb-2">Slimme functies voor maximale onafhankelijkheid:</h4>
+                <ul class="space-y-2 text-sm">
+                  <li class="flex items-start">
+                    <i class="fas fa-clock text-green-600 mt-1 mr-2"></i>
+                    <span><strong>Tijd-gebaseerd laden:</strong> Opladen tijdens daluren (€0,15/kWh) en ontladen tijdens piekuren (€0,45/kWh)</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fas fa-weather-sun text-blue-600 mt-1 mr-2"></i>
+                    <span><strong>Weersvoorspelling:</strong> Batterij leeg houden als er veel zon verwacht wordt</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fas fa-home text-orange-600 mt-1 mr-2"></i>
+                    <span><strong>Verbruikspatroon herkenning:</strong> Anticiperen op je dagelijkse energiebehoeften</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Stappen naar energieonafhankelijkheid */}
+      <section class="py-12 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 class="text-3xl font-bold mb-8 text-gray-900">
+            5 stappen naar energieonafhankelijkheid
+          </h2>
+          
+          <div class="space-y-6">
+            <div class="flex items-start">
+              <div class="flex-shrink-0 w-12 h-12 bg-energy-green text-white rounded-full flex items-center justify-center text-xl font-bold mr-6">
+                1
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold mb-2">Analyseer je energieverbruik</h3>
+                <p class="text-gray-600 mb-3">
+                  Bekijk je jaarverbruik, pieken en dalen, en je huidige energiekosten. Dit bepaalt de benodigde batterijcapaciteit.
+                </p>
+                <a href="/kosten" class="text-energy-green hover:underline font-semibold">
+                  → Gebruik onze energiecalculator
+                </a>
+              </div>
+            </div>
+
+            <div class="flex items-start">
+              <div class="flex-shrink-0 w-12 h-12 bg-energy-green text-white rounded-full flex items-center justify-center text-xl font-bold mr-6">
+                2
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold mb-2">Installeer zonnepanelen (indien nog niet gedaan)</h3>
+                <p class="text-gray-600 mb-3">
+                  Zonnepanelen zijn de basis voor energieonafhankelijkheid. Een thuisbatterij zonder zonnepanelen heeft beperkte voordelen.
+                </p>
+                <div class="text-sm text-gray-500">
+                  Aanbevolen: 12-20 panelen (4-7 kWp) voor een gemiddeld huishouden
+                </div>
+              </div>
+            </div>
+
+            <div class="flex items-start">
+              <div class="flex-shrink-0 w-12 h-12 bg-energy-green text-white rounded-full flex items-center justify-center text-xl font-bold mr-6">
+                3
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold mb-2">Kies de juiste thuisbatterij</h3>
+                <p class="text-gray-600 mb-3">
+                  Selecteer een batterij op basis van je verbruik, budget en gewenste onafhankelijkheidsniveau.
+                </p>
+                <a href="/vergelijken" class="text-energy-green hover:underline font-semibold">
+                  → Vergelijk thuisbatterijen
+                </a>
+              </div>
+            </div>
+
+            <div class="flex items-start">
+              <div class="flex-shrink-0 w-12 h-12 bg-energy-green text-white rounded-full flex items-center justify-center text-xl font-bold mr-6">
+                4
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold mb-2">Optimaliseer je energiegewoonten</h3>
+                <p class="text-gray-600 mb-3">
+                  Pas je verbruik aan om maximaal te profiteren van je eigen opgewekte energie.
+                </p>
+                <ul class="text-sm text-gray-600 space-y-1">
+                  <li>• Wasmachine en vaatwasser overdag laten draaien</li>
+                  <li>• Elektrische auto opladen met zonnestroom</li>
+                  <li>• Warmtepomp slim programmeren</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="flex items-start">
+              <div class="flex-shrink-0 w-12 h-12 bg-energy-green text-white rounded-full flex items-center justify-center text-xl font-bold mr-6">
+                5
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold mb-2">Monitor en optimaliseer</h3>
+                <p class="text-gray-600 mb-3">
+                  Gebruik een slimme energie-app om je verbruik en opwekking te monitoren en verder te optimaliseren.
+                </p>
+                <div class="text-sm text-gray-500">
+                  Streef naar 80%+ zelfvoorzieningsgraad
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Kosten en baten */}
+      <section class="py-12">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 class="text-3xl font-bold mb-8 text-gray-900">
+            Kosten en baten van energieonafhankelijkheid
+          </h2>
+          
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div>
+              <h3 class="text-xl font-semibold mb-4">Investeringen</h3>
+              <div class="bg-red-50 p-6 rounded-lg">
+                <div class="space-y-3">
+                  <div class="flex justify-between">
+                    <span>Zonnepanelen (15 stuks):</span>
+                    <span class="font-bold">€8.000 - €12.000</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span>Thuisbatterij (10 kWh):</span>
+                    <span class="font-bold">€5.000 - €8.000</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span>Installatie & configuratie:</span>
+                    <span class="font-bold">€2.000 - €3.000</span>
+                  </div>
+                  <hr class="border-red-200" />
+                  <div class="flex justify-between text-lg">
+                    <span class="font-bold">Totaal investering:</span>
+                    <span class="font-bold text-red-600">€15.000 - €23.000</span>
+                  </div>
+                  <div class="text-sm text-red-600">
+                    Met subsidie: €12.500 - €20.500
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-xl font-semibold mb-4">Jaarlijkse besparing</h3>
+              <div class="bg-green-50 p-6 rounded-lg">
+                <div class="space-y-3">
+                  <div class="flex justify-between">
+                    <span>Energierekening besparing:</span>
+                    <span class="font-bold">€800 - €1.400</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span>Netwerk tarieven besparing:</span>
+                    <span class="font-bold">€200 - €400</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span>Inflatiebescherming:</span>
+                    <span class="font-bold">€100 - €300</span>
+                  </div>
+                  <hr class="border-green-200" />
+                  <div class="flex justify-between text-lg">
+                    <span class="font-bold">Totaal per jaar:</span>
+                    <span class="font-bold text-green-600">€1.100 - €2.100</span>
+                  </div>
+                  <div class="text-sm text-green-600">
+                    Terugverdientijd: 7-12 jaar
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-8 bg-blue-50 p-6 rounded-lg">
+            <h4 class="font-semibold text-blue-900 mb-3">
+              <i class="fas fa-lightbulb mr-2"></i>
+              Onzichtbare voordelen
+            </h4>
+            <ul class="space-y-2 text-blue-800 text-sm">
+              <li>• <strong>Comfort tijdens stroomstoringen:</strong> Geen koude koelkast of donker huis</li>
+              <li>• <strong>Zekerheid over toekomstige energiekosten:</strong> Minder gevoelig voor prijsstijgingen</li>
+              <li>• <strong>Bijdrage aan energietransitie:</strong> Verminderde belasting elektriciteitsnet</li>
+              <li>• <strong>Hogere woningwaarde:</strong> Energielabel verbetering en duurzame voorzieningen</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* Call to Action */}
+      <section class="py-16 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div class="bg-gradient-to-r from-energy-green to-blue-600 text-white p-8 rounded-lg">
+            <h3 class="text-2xl font-bold mb-4">Start jouw weg naar energieonafhankelijkheid</h3>
+            <p class="mb-6">
+              Bereken je potentiële besparing en ontdek welke thuisbatterij het beste bij jou past
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+              <a href="/kosten" class="bg-orange-500 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-orange-600 hover:scale-105 border-2 border-orange-500 transition-all duration-300 shadow-xl hover:shadow-2xl">
+                <i class="fas fa-calculator mr-2"></i>
+                Bereken Besparing
+              </a>
+              <a href="/kopen" class="bg-white text-energy-green px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 hover:scale-105 border-2 border-white transition-all duration-300 shadow-xl hover:shadow-2xl">
+                <i class="fas fa-battery-three-quarters mr-2"></i>
+                Thuisbatterij Kopen
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>,
+    {
+      title: 'Energieonafhankelijkheid met Thuisbatterij - Complete Gids 2025',
+      description: 'Word energieonafhankelijk met een thuisbatterij ✓ 80% zelfconsumptie ✓ Bescherming tegen stroomstoringen ✓ €1.400/jaar besparing ✓ 5-stappen plan ✓ Kosten & baten',
+      keywords: 'energieonafhankelijkheid, thuisbatterij onafhankelijk, zelfvoorzienend energie, energie onafhankelijk, batterij zelfconsumptie, stroomstoring bescherming'
+    }
+  )
+})
+
 // Blog/Kennisbank sectie
 app.get('/blog', (c) => {
 
@@ -3368,7 +3727,7 @@ app.get('/disclaimer', (c) => {
 
             <h2>1. Algemene informatie</h2>
             <p>
-              Deze website (Thuisbatterij.nl) biedt informatieve content over thuisbatterijen, 
+              Deze website (Thuisbatterijwereld.nl) biedt informatieve content over thuisbatterijen, 
               prijzen, subsidies en gerelateerde onderwerpen. De informatie is met zorg samengesteld, 
               maar er kunnen geen rechten aan worden ontleend.
             </p>
@@ -3493,8 +3852,8 @@ app.get('/disclaimer', (c) => {
       </section>
     </div>,
     {
-      title: 'Disclaimer - Juridische informatie Thuisbatterij.nl',
-      description: 'Disclaimer en juridische informatie over het gebruik van Thuisbatterij.nl. Belangrijke informatie over aansprakelijkheid en gebruik van onze content.',
+      title: 'Disclaimer - Juridische informatie Thuisbatterijwereld.nl',
+      description: 'Disclaimer en juridische informatie over het gebruik van Thuisbatterijwereld.nl. Belangrijke informatie over aansprakelijkheid en gebruik van onze content.',
       keywords: 'disclaimer, juridische informatie, aansprakelijkheid, voorwaarden, thuisbatterij'
     }
   )
@@ -3738,7 +4097,7 @@ app.get('/over-ons', (c) => {
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="text-center">
             <h1 class="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
-              Over Thuisbatterij.nl
+              Over Thuisbatterijwereld.nl
             </h1>
             <p class="text-xl text-gray-600 max-w-4xl mx-auto">
               Jouw betrouwbare gids in de wereld van thuisbatterijen en energieopslag
@@ -3778,7 +4137,7 @@ app.get('/over-ons', (c) => {
           </div>
 
           <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-900 mb-4">Waarom Thuisbatterij.nl?</h2>
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Waarom Thuisbatterijwereld.nl?</h2>
             <p class="text-xl text-gray-600 max-w-3xl mx-auto">
               In een markt vol technische jargon en verwarrende claims, bieden wij duidelijkheid en onafhankelijk advies
             </p>
@@ -3945,7 +4304,7 @@ app.get('/over-ons', (c) => {
       </section>
     </div>,
     {
-      title: 'Over Ons - Thuisbatterij.nl | Jouw betrouwbare energieadviseur',
+      title: 'Over Ons - Thuisbatterijwereld.nl | Jouw betrouwbare energieadviseur',
       description: 'Ontdek wie wij zijn en waarom wij de beste keuze zijn voor thuisbatterij advies. Onafhankelijk, betrouwbaar en transparant sinds 2024.',
       keywords: 'over ons, thuisbatterij adviseurs, onafhankelijk advies, energie experts, betrouwbaar'
     }
