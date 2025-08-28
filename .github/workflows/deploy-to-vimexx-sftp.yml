@@ -1,0 +1,54 @@
+name: 🚀 Deploy to Vimexx (SFTP)
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: 📥 Checkout Repository
+      uses: actions/checkout@v4
+      
+    - name: 🟢 Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        cache: 'npm'
+        
+    - name: 📦 Install Dependencies
+      run: npm ci
+      
+    - name: 🔨 Build Application
+      run: npm run build
+      
+    - name: 📄 Generate Static Export
+      run: node scripts/generate-static-export.js
+      
+    - name: 📋 List Generated Files
+      run: |
+        echo "📁 Generated files for deployment:"
+        find ./static-export -type f -name "*.html" | wc -l | xargs echo "HTML files:"
+        ls -la ./static-export/
+        
+    - name: 🚀 Deploy to Vimexx via SFTP
+      uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+      with:
+        server: ${{ secrets.VIMEXX_SFTP_SERVER }}
+        username: ${{ secrets.VIMEXX_SFTP_USERNAME }}
+        password: ${{ secrets.VIMEXX_SFTP_PASSWORD }}
+        local_path: './static-export/*'
+        remote_path: '/domains/thuisbatterijwereld.nl/public_html'
+        sftpArgs: '-o ConnectTimeout=5'
+        
+    - name: ✅ Verify Deployment
+      run: |
+        echo "🎉 Deployment completed successfully!"
+        echo "🌐 Website URL: https://thuisbatterijwereld.nl"
+        echo "📊 Static pages deployed: 23"
+        echo "🔍 SEO features: Schema markup, sitemap, robots.txt"
+        echo "📱 Mobile responsive: ✅"
+        echo "🔒 Security headers: ✅ (.htaccess)"

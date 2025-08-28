@@ -1,0 +1,56 @@
+name: 📁 Deploy Static Files to Vimexx
+
+# Deze workflow deployed direct de static-export folder 
+# zonder opnieuw te builden (sneller voor quick updates)
+
+on:
+  workflow_dispatch:
+    inputs:
+      deploy_message:
+        description: 'Deployment message'
+        required: false
+        default: 'Manual deployment of static files'
+
+jobs:
+  deploy-static:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: 📥 Checkout Repository
+      uses: actions/checkout@v4
+      
+    - name: 📋 Verify Static Export Exists
+      run: |
+        if [ -d "./static-export" ]; then
+          echo "✅ Static export directory found"
+          echo "📄 Files to deploy:"
+          find ./static-export -name "*.html" | wc -l | xargs echo "HTML files:"
+          find ./static-export -name "*.xml" | wc -l | xargs echo "XML files:"
+          find ./static-export -name ".htaccess" | wc -l | xargs echo "htaccess files:"
+          ls -la ./static-export/ | head -10
+        else
+          echo "❌ Static export directory not found!"
+          echo "Run the full build workflow first to generate static files"
+          exit 1
+        fi
+        
+    - name: 🚀 Deploy Static Files via FTP
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      with:
+        server: ${{ secrets.VIMEXX_FTP_SERVER }}
+        username: ${{ secrets.VIMEXX_FTP_USERNAME }}
+        password: ${{ secrets.VIMEXX_FTP_PASSWORD }}
+        local-dir: ./static-export/
+        server-dir: /domains/thuisbatterijwereld.nl/public_html/
+        exclude: |
+          **/.git*
+          **/.git*/**
+          **/DEPLOYMENT_README.md
+          **/package*.json
+          
+    - name: ✅ Deployment Summary
+      run: |
+        echo "🎉 Static files deployed successfully!"
+        echo "📝 Message: ${{ github.event.inputs.deploy_message }}"
+        echo "🌐 Website: https://thuisbatterijwereld.nl"
+        echo "⏰ Deployed at: $(date)"
