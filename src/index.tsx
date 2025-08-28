@@ -2496,6 +2496,752 @@ app.get('/producten', (c) => {
   return c.redirect('/vergelijken', 301)
 })
 
+// Privacy Pagina
+app.get('/privacy', (c) => {
+  return c.render(
+    <div>
+      {/* Header */}
+      <section class="bg-white py-12 border-b">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+              Privacybeleid
+            </h1>
+            <p class="text-xl text-gray-600 max-w-4xl mx-auto">
+              Hoe wij omgaan met je persoonlijke gegevens en privacy
+            </p>
+            <p class="text-sm text-gray-500 mt-4">Laatst bijgewerkt: 28 augustus 2025</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Privacy Content */}
+      <section class="py-12">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="prose prose-lg mx-auto">
+            
+            <h2>1. Welke gegevens verzamelen wij?</h2>
+            <p>
+              Wij verzamelen alleen gegevens die noodzakelijk zijn voor het functioneren van onze website 
+              en het leveren van onze diensten:
+            </p>
+            <ul>
+              <li><strong>Contactgegevens:</strong> Naam, e-mailadres, telefoonnummer (alleen bij contact)</li>
+              <li><strong>Website gebruik:</strong> Pagina bezoeken, klikgedrag (via cookies)</li>
+              <li><strong>Technische gegevens:</strong> IP-adres, browsertype, apparaattype</li>
+            </ul>
+
+            <h2>2. Hoe gebruiken wij je gegevens?</h2>
+            <p>Je gegevens gebruiken wij uitsluitend voor:</p>
+            <ul>
+              <li>Het beantwoorden van je vragen en verzoeken</li>
+              <li>Het verbeteren van onze website en diensten</li>
+              <li>Het naleven van wettelijke verplichtingen</li>
+            </ul>
+            
+            <div class="bg-green-50 border-l-4 border-green-400 p-6 my-8">
+              <h3 class="text-lg font-semibold mb-2 text-green-800">✅ Geen commerciële doeleinden</h3>
+              <p class="text-green-700">
+                Wij verkopen je gegevens NOOIT aan derden en gebruiken ze niet voor commercial marketing zonder je toestemming.
+              </p>
+            </div>
+
+            <h2>3. Cookies en tracking</h2>
+            <p>
+              Onze website gebruikt alleen essentiële cookies die nodig zijn voor het functioneren van de website. 
+              We gebruiken geen tracking cookies van derden zonder je toestemming.
+            </p>
+            
+            <h3>Welke cookies gebruiken wij:</h3>
+            <ul>
+              <li><strong>Functionele cookies:</strong> Voor website functionaliteit</li>
+              <li><strong>Analytische cookies:</strong> Voor bezoekersstatistieken (geanonimiseerd)</li>
+              <li><strong>Voorkeurscookies:</strong> Voor het onthouden van je voorkeuren</li>
+            </ul>
+
+            <h2>4. Beveiliging van gegevens</h2>
+            <p>
+              Wij nemen de beveiliging van je gegevens serieus en hebben passende technische en 
+              organisatorische maatregelen getroffen:
+            </p>
+            <ul>
+              <li>SSL-versleuteling voor alle data uitwisseling</li>
+              <li>Beveiligde opslag van gegevens</li>
+              <li>Beperkte toegang tot persoonlijke gegevens</li>
+              <li>Regelmatige beveiligingsupdates</li>
+            </ul>
+
+            <h2>5. Bewaartermijn gegevens</h2>
+            <p>
+              Wij bewaren je gegevens niet langer dan noodzakelijk:
+            </p>
+            <ul>
+              <li><strong>Contactformulier:</strong> 1 jaar na laatste contact</li>
+              <li><strong>Website analytics:</strong> 26 maanden (Google Analytics standaard)</li>
+              <li><strong>E-mail correspondentie:</strong> 3 jaar voor klantenservice doeleinden</li>
+            </ul>
+
+            <h2>6. Jouw rechten</h2>
+            <p>Op grond van de AVG heb je de volgende rechten:</p>
+            <ul>
+              <li><strong>Inzagerecht:</strong> Je kunt opvragen welke gegevens wij van je hebben</li>
+              <li><strong>Rectificatierecht:</strong> Je kunt onjuiste gegevens laten corrigeren</li>
+              <li><strong>Recht op vergetelheid:</strong> Je kunt je gegevens laten verwijderen</li>
+              <li><strong>Recht op overdraagbaarheid:</strong> Je kunt je gegevens in een standaardformaat opvragen</li>
+              <li><strong>Bezwaarrecht:</strong> Je kunt bezwaar maken tegen verwerking van je gegevens</li>
+            </ul>
+
+            <h2>7. Externe links</h2>
+            <p>
+              Onze website bevat links naar externe websites van partners en leveranciers. 
+              Wij zijn niet verantwoordelijk voor het privacybeleid van deze externe websites.
+            </p>
+
+            <h2>8. Wijzigingen in dit privacybeleid</h2>
+            <p>
+              Wij kunnen dit privacybeleid van tijd tot tijd wijzigen. Belangrijke wijzigingen 
+              communiceren wij via onze website.
+            </p>
+
+            <h2>9. Contact</h2>
+            <p>
+              Heb je vragen over dit privacybeleid of wil je gebruik maken van je rechten? 
+              Neem dan contact met ons op:
+            </p>
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <p><strong>E-mail:</strong> tjallingsol@gmail.com</p>
+              <p><strong>Responstijd:</strong> Binnen 48 uur</p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+    </div>,
+    {
+      title: 'Privacybeleid - Hoe wij omgaan met je gegevens',
+      description: 'Ons privacybeleid. Transparant over hoe we je gegevens verzamelen, gebruiken en beschermen. AVG-compliant en jouw privacy gerespecteerd.',
+      keywords: 'privacybeleid, privacy, AVG, gegevensbescherming, cookies, persoonlijke gegevens'
+    }
+  )
+})
+
+// Disclaimer Pagina
+app.get('/disclaimer', (c) => {
+  return c.render(
+    <div>
+      {/* Header */}
+      <section class="bg-white py-12 border-b">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+              Disclaimer
+            </h1>
+            <p class="text-xl text-gray-600 max-w-4xl mx-auto">
+              Belangrijke juridische informatie over het gebruik van onze website
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Disclaimer Content */}
+      <section class="py-12">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="prose prose-lg mx-auto">
+
+            <div class="bg-yellow-50 border-l-4 border-yellow-400 p-6 mb-8">
+              <h3 class="text-lg font-semibold mb-2 text-yellow-800">⚠️ Belangrijke mededeling</h3>
+              <p class="text-yellow-700">
+                Deze website is bedoeld voor informatieve doeleinden. Raadpleeg altijd een professional 
+                voor specifiek advies over jouw situatie.
+              </p>
+            </div>
+
+            <h2>1. Algemene informatie</h2>
+            <p>
+              Deze website (Thuisbatterij.nl) biedt informatieve content over thuisbatterijen, 
+              prijzen, subsidies en gerelateerde onderwerpen. De informatie is met zorg samengesteld, 
+              maar er kunnen geen rechten aan worden ontleend.
+            </p>
+
+            <h2>2. Geen garantie op juistheid</h2>
+            <p>
+              Hoewel wij streven naar actuele en correcte informatie, kunnen wij niet garanderen dat:
+            </p>
+            <ul>
+              <li>Alle informatie op elk moment volledig actueel is</li>
+              <li>Prijzen en specificaties van producten kloppen</li>
+              <li>Subsidie informatie up-to-date is</li>
+              <li>Berekeningen en besparingen kloppen voor jouw situatie</li>
+            </ul>
+
+            <h2>3. Geen professioneel advies</h2>
+            <p>
+              De content op deze website vervangt geen professioneel advies van:
+            </p>
+            <ul>
+              <li>Energie adviseurs</li>
+              <li>Elektrische installateurs</li>
+              <li>Belastingadviseurs (voor subsidies)</li>
+              <li>Financiële adviseurs</li>
+            </ul>
+            
+            <div class="bg-blue-50 border-l-4 border-blue-400 p-6 my-8">
+              <h3 class="text-lg font-semibold mb-2 text-blue-800">💡 Advies</h3>
+              <p class="text-blue-700">
+                Vraag altijd meerdere offertes op en laat je adviseren door gecertificeerde professionals 
+                voordat je een thuisbatterij aanschaft.
+              </p>
+            </div>
+
+            <h2>4. Affiliate links en commissies</h2>
+            <p>
+              Deze website kan affiliate links bevatten naar producten en diensten. Dit betekent dat wij 
+              een commissie kunnen ontvangen wanneer je via onze links een aankoop doet. Dit heeft geen 
+              invloed op:
+            </p>
+            <ul>
+              <li>De prijs die jij betaalt</li>
+              <li>Onze objectieve beoordeling van producten</li>
+              <li>De kwaliteit van onze reviews</li>
+            </ul>
+
+            <h2>5. Externe websites</h2>
+            <p>
+              Onze website bevat links naar externe websites van fabrikanten, leveranciers en 
+              installatieservices. Wij zijn niet verantwoordelijk voor:
+            </p>
+            <ul>
+              <li>De inhoud van externe websites</li>
+              <li>De beschikbaarheid van externe diensten</li>
+              <li>Transacties via externe websites</li>
+              <li>Het privacybeleid van derden</li>
+            </ul>
+
+            <h2>6. Prijzen en beschikbaarheid</h2>
+            <p>
+              Prijzen en productbeschikbaarheid kunnen wijzigen zonder voorafgaande kennisgeving. 
+              Controleer altijd de actuele prijs en beschikbaarheid bij de leverancier.
+            </p>
+
+            <h2>7. Reviews en ervaringen</h2>
+            <p>
+              Reviews en ervaringen op onze website zijn gebaseerd op:
+            </p>
+            <ul>
+              <li>Objectieve productspecificaties</li>
+              <li>Marktonderzoek en vergelijkingen</li>
+              <li>Gebruikerservaringen waar beschikbaar</li>
+            </ul>
+            <p>
+              Individuele ervaringen kunnen afwijken van onze beoordelingen.
+            </p>
+
+            <h2>8. Subsidie informatie</h2>
+            <p>
+              Subsidie regelingen wijzigen regelmatig. De informatie op onze website is indicatief. 
+              Controleer altijd de actuele voorwaarden bij de betreffende overheidsinstanties zoals:
+            </p>
+            <ul>
+              <li>RVO (Rijksdienst voor Ondernemend Nederland)</li>
+              <li>Jouw gemeente</li>
+              <li>Provinciale subsidie verstrekkers</li>
+            </ul>
+
+            <h2>9. Aansprakelijkheid</h2>
+            <p>
+              Wij zijn niet aansprakelijk voor:
+            </p>
+            <ul>
+              <li>Schade door gebruik van informatie op deze website</li>
+              <li>Verkeerde investeringsbeslissingen</li>
+              <li>Financiële verliezen</li>
+              <li>Indirect gevolgschade</li>
+            </ul>
+
+            <h2>10. Intellectueel eigendom</h2>
+            <p>
+              Alle content op deze website (teksten, afbeeldingen, logo's) is beschermd door auteursrecht. 
+              Gebruik zonder toestemming is niet toegestaan.
+            </p>
+
+            <h2>11. Wijzigingen disclaimer</h2>
+            <p>
+              Wij behouden ons het recht voor deze disclaimer te wijzigen. Controleer regelmatig 
+              voor updates.
+            </p>
+
+            <h2>12. Contact</h2>
+            <p>
+              Vragen over deze disclaimer? Neem contact op via:
+            </p>
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <p><strong>E-mail:</strong> tjallingsol@gmail.com</p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+    </div>,
+    {
+      title: 'Disclaimer - Juridische informatie Thuisbatterij.nl',
+      description: 'Disclaimer en juridische informatie over het gebruik van Thuisbatterij.nl. Belangrijke informatie over aansprakelijkheid en gebruik van onze content.',
+      keywords: 'disclaimer, juridische informatie, aansprakelijkheid, voorwaarden, thuisbatterij'
+    }
+  )
+})
+
+// Contact Pagina
+app.get('/contact', (c) => {
+  return c.render(
+    <div>
+      {/* Header */}
+      <section class="bg-white py-12 border-b">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+              Contact
+            </h1>
+            <p class="text-xl text-gray-600 max-w-4xl mx-auto">
+              Heb je vragen over thuisbatterijen? Wij helpen je graag verder!
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Content */}
+      <section class="py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            
+            {/* Contact Form */}
+            <div class="bg-white p-8 rounded-lg shadow-lg">
+              <h2 class="text-2xl font-bold mb-6 text-gray-900">
+                <i class="fas fa-envelope text-energy-green mr-3"></i>
+                Stuur ons een bericht
+              </h2>
+              
+              <form id="contact-form" class="space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label for="firstName" class="block text-sm font-medium text-gray-700 mb-2">
+                      Voornaam *
+                    </label>
+                    <input type="text" id="firstName" name="firstName" required
+                           class="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-energy-green focus:border-energy-green" />
+                  </div>
+                  <div>
+                    <label for="lastName" class="block text-sm font-medium text-gray-700 mb-2">
+                      Achternaam *
+                    </label>
+                    <input type="text" id="lastName" name="lastName" required
+                           class="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-energy-green focus:border-energy-green" />
+                  </div>
+                </div>
+
+                <div>
+                  <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
+                    E-mailadres *
+                  </label>
+                  <input type="email" id="email" name="email" required
+                         class="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-energy-green focus:border-energy-green" />
+                </div>
+
+                <div>
+                  <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">
+                    Telefoonnummer
+                  </label>
+                  <input type="tel" id="phone" name="phone"
+                         class="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-energy-green focus:border-energy-green" />
+                </div>
+
+                <div>
+                  <label for="subject" class="block text-sm font-medium text-gray-700 mb-2">
+                    Onderwerp *
+                  </label>
+                  <select id="subject" name="subject" required
+                          class="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-energy-green focus:border-energy-green">
+                    <option value="">Selecteer een onderwerp</option>
+                    <option value="product-advies">Productadvies thuisbatterij</option>
+                    <option value="prijsinfo">Prijsinformatie</option>
+                    <option value="subsidie">Subsidie vragen</option>
+                    <option value="installatie">Installatie informatie</option>
+                    <option value="technisch">Technische vragen</option>
+                    <option value="klacht">Klacht of probleem</option>
+                    <option value="anders">Anders</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label for="message" class="block text-sm font-medium text-gray-700 mb-2">
+                    Bericht *
+                  </label>
+                  <textarea id="message" name="message" rows="6" required
+                            placeholder="Beschrijf je vraag zo specifiek mogelijk. Bijvoorbeeld: huidige energieverbruik, type woning, of welke batterij je overweegt."
+                            class="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-energy-green focus:border-energy-green"></textarea>
+                </div>
+
+                <div class="flex items-start">
+                  <input type="checkbox" id="privacy" name="privacy" required
+                         class="mt-1 rounded border-gray-300 text-energy-green focus:ring-energy-green" />
+                  <label for="privacy" class="ml-2 text-sm text-gray-600">
+                    Ik ga akkoord met het <a href="/privacy" class="text-energy-green hover:underline">privacybeleid</a> 
+                    en geef toestemming voor het verwerken van mijn gegevens *
+                  </label>
+                </div>
+
+                <div class="flex items-start">
+                  <input type="checkbox" id="newsletter" name="newsletter"
+                         class="mt-1 rounded border-gray-300 text-energy-green focus:ring-energy-green" />
+                  <label for="newsletter" class="ml-2 text-sm text-gray-600">
+                    Ja, ik wil tips en updates over thuisbatterijen ontvangen (optioneel)
+                  </label>
+                </div>
+
+                <button type="submit" 
+                        class="w-full bg-energy-green text-white py-3 px-6 rounded-lg font-bold hover:bg-energy-green/90 transition-colors">
+                  <i class="fas fa-paper-plane mr-2"></i>
+                  Verstuur bericht
+                </button>
+              </form>
+
+              <div id="form-message" class="mt-4 hidden"></div>
+            </div>
+
+            {/* Contact Info */}
+            <div class="space-y-8">
+              <div class="bg-gray-50 p-8 rounded-lg">
+                <h3 class="text-xl font-bold mb-4 text-gray-900">
+                  <i class="fas fa-clock text-energy-blue mr-2"></i>
+                  Responstijd
+                </h3>
+                <p class="text-gray-600 mb-4">
+                  Wij streven ernaar om alle vragen binnen 24 uur te beantwoorden. 
+                  Voor dringende vragen kun je ons bellen.
+                </p>
+                <ul class="text-sm text-gray-600 space-y-2">
+                  <li><strong>Maandag - Vrijdag:</strong> Binnen 4 uur</li>
+                  <li><strong>Weekend:</strong> Binnen 24 uur</li>
+                  <li><strong>Feestdagen:</strong> Binnen 48 uur</li>
+                </ul>
+              </div>
+
+              <div class="bg-gray-50 p-8 rounded-lg">
+                <h3 class="text-xl font-bold mb-4 text-gray-900">
+                  <i class="fas fa-question-circle text-energy-green mr-2"></i>
+                  Veel gestelde vragen
+                </h3>
+                <p class="text-gray-600 mb-4">
+                  Controleer eerst onze <a href="/faq" class="text-energy-green hover:underline">FAQ pagina</a>. 
+                  Daar vind je antwoorden op de meest gestelde vragen over:
+                </p>
+                <ul class="text-sm text-gray-600 space-y-1">
+                  <li>• Kosten en besparing</li>
+                  <li>• Subsidie aanvragen</li>
+                  <li>• Installatie proces</li>
+                  <li>• Technische specificaties</li>
+                </ul>
+              </div>
+
+              <div class="bg-gray-50 p-8 rounded-lg">
+                <h3 class="text-xl font-bold mb-4 text-gray-900">
+                  <i class="fas fa-users text-battery-orange mr-2"></i>
+                  Persoonlijk advies
+                </h3>
+                <p class="text-gray-600">
+                  Voor uitgebreid persoonlijk advies over de beste thuisbatterij voor jouw situatie 
+                  kun je een gratis adviesgesprek aanvragen. We helpen je bij:
+                </p>
+                <ul class="text-sm text-gray-600 space-y-1 mt-4">
+                  <li>• Capaciteit berekening</li>
+                  <li>• Merk selectie</li>
+                  <li>• ROI berekening</li>
+                  <li>• Subsidie maximalisatie</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <script>{`
+        document.addEventListener('DOMContentLoaded', function() {
+          const form = document.getElementById('contact-form');
+          const messageDiv = document.getElementById('form-message');
+
+          form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(form);
+            const data = {
+              firstName: formData.get('firstName'),
+              lastName: formData.get('lastName'),
+              email: formData.get('email'),
+              phone: formData.get('phone') || 'Niet opgegeven',
+              subject: formData.get('subject'),
+              message: formData.get('message'),
+              newsletter: formData.get('newsletter') ? 'Ja' : 'Nee',
+              timestamp: new Date().toLocaleString('nl-NL')
+            };
+
+            // Create mailto link
+            const emailBody = 'Naam: ' + data.firstName + ' ' + data.lastName + '\\n' +
+                             'E-mail: ' + data.email + '\\n' +
+                             'Telefoon: ' + data.phone + '\\n' +
+                             'Onderwerp: ' + data.subject + '\\n' +
+                             'Newsletter: ' + data.newsletter + '\\n' +
+                             'Tijdstip: ' + data.timestamp + '\\n\\n' +
+                             'Bericht:\\n' + data.message;
+
+            const mailtoLink = 'mailto:tjallingsol@gmail.com?subject=Contact thuisbatterij.nl - ' + data.subject + '&body=' + encodeURIComponent(emailBody);
+            
+            // Open email client
+            window.location.href = mailtoLink;
+            
+            // Show success message
+            messageDiv.className = 'mt-4 p-4 bg-green-50 border border-green-200 rounded-lg';
+            messageDiv.innerHTML = '<div class="flex items-center">' +
+                                   '<i class="fas fa-check-circle text-green-600 mr-2"></i>' +
+                                   '<span class="text-green-800">Je e-mailclient wordt geopend. Verstuur de e-mail om je bericht te verzenden.</span>' +
+                                   '</div>';
+            
+            // Reset form
+            form.reset();
+          });
+        });
+      `}</script>
+    </div>,
+    {
+      title: 'Contact - Vragen over thuisbatterijen? Wij helpen je graag!',
+      description: 'Neem contact op voor vragen over thuisbatterijen. Gratis advies over kosten, subsidies, installatie en productadvies. Reactie binnen 24 uur.',
+      keywords: 'contact thuisbatterij, vragen thuisbatterij, advies thuisbatterij, hulp thuisbatterij'
+    }
+  )
+})
+
+// Over Ons Pagina  
+app.get('/over-ons', (c) => {
+  return c.render(
+    <div>
+      {/* Header */}
+      <section class="bg-white py-12 border-b">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+              Over Thuisbatterij.nl
+            </h1>
+            <p class="text-xl text-gray-600 max-w-4xl mx-auto">
+              Jouw betrouwbare gids in de wereld van thuisbatterijen en energieopslag
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Missie & Visie */}
+      <section class="py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+            
+            <div class="bg-green-50 p-8 rounded-lg">
+              <h2 class="text-2xl font-bold mb-4 text-gray-900">
+                <i class="fas fa-bullseye text-energy-green mr-3"></i>
+                Onze Missie
+              </h2>
+              <p class="text-gray-700 leading-relaxed">
+                Wij maken duurzame energie toegankelijk voor iedereen door heldere, onafhankelijke 
+                informatie te bieden over thuisbatterijen. Ons doel is om Nederlandse huishoudens 
+                te helpen de beste keuze te maken voor hun energietoekomst.
+              </p>
+            </div>
+
+            <div class="bg-blue-50 p-8 rounded-lg">
+              <h2 class="text-2xl font-bold mb-4 text-gray-900">
+                <i class="fas fa-eye text-energy-blue mr-3"></i>
+                Onze Visie  
+              </h2>
+              <p class="text-gray-700 leading-relaxed">
+                Een Nederland waar elk huishouden optimaal profiteert van duurzame energie door 
+                slimme energieopslag. Wij geloven in een toekomst waarin iedereen energieonafhankelijk 
+                kan zijn tegen betaalbare kosten.
+              </p>
+            </div>
+          </div>
+
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Waarom Thuisbatterij.nl?</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+              In een markt vol technische jargon en verwarrende claims, bieden wij duidelijkheid en onafhankelijk advies
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            <div class="text-center p-6">
+              <div class="w-16 h-16 bg-energy-green rounded-full flex items-center justify-center mx-auto mb-4">
+                <i class="fas fa-search text-white text-2xl"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-gray-900">Onafhankelijk Onderzoek</h3>
+              <p class="text-gray-600">
+                Wij testen en vergelijken producten objectief, zonder beïnvloeding door fabrikanten. 
+                Onze reviews zijn gebaseerd op feiten en specificaties.
+              </p>
+            </div>
+
+            <div class="text-center p-6">
+              <div class="w-16 h-16 bg-energy-blue rounded-full flex items-center justify-center mx-auto mb-4">
+                <i class="fas fa-graduation-cap text-white text-2xl"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-gray-900">Expertise & Ervaring</h3>
+              <p class="text-gray-600">
+                Ons team heeft jarenlange ervaring in de energiesector en volgt alle ontwikkelingen 
+                op het gebied van batterijtech-nologie en subsidies.
+              </p>
+            </div>
+
+            <div class="text-center p-6">
+              <div class="w-16 h-16 bg-battery-orange rounded-full flex items-center justify-center mx-auto mb-4">
+                <i class="fas fa-heart text-white text-2xl"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-gray-900">Klantvriendelijk</h3>
+              <p class="text-gray-600">
+                Geen technische jargon, maar begrijpelijke uitleg. Wij helpen je om de juiste keuze 
+                te maken die past bij jouw situatie en budget.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Wat we doen */}
+      <section class="py-12 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Wat wij voor je doen</h2>
+            <p class="text-xl text-gray-600">
+              Van productadvies tot subsidie-informatie - wij begeleiden je door het hele proces
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+              <i class="fas fa-balance-scale text-3xl text-energy-green mb-4"></i>
+              <h3 class="font-bold mb-2">Product Vergelijking</h3>
+              <p class="text-sm text-gray-600">Objectieve vergelijking van merken en specificaties</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+              <i class="fas fa-calculator text-3xl text-energy-blue mb-4"></i>
+              <h3 class="font-bold mb-2">Kosten Berekening</h3>
+              <p class="text-sm text-gray-600">Realistische berekening van kosten en besparing</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+              <i class="fas fa-euro-sign text-3xl text-battery-orange mb-4"></i>
+              <h3 class="font-bold mb-2">Subsidie Advies</h3>
+              <p class="text-sm text-gray-600">Actuele informatie over beschikbare subsidies</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+              <i class="fas fa-tools text-3xl text-gray-600 mb-4"></i>
+              <h3 class="font-bold mb-2">Installatie Tips</h3>
+              <p class="text-sm text-gray-600">Praktische adviezen voor installatie en onderhoud</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Onze Waarden */}
+      <section class="py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Onze Waarden</h2>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0">
+                <i class="fas fa-shield-alt text-2xl text-energy-green"></i>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold mb-2">Transparantie</h3>
+                <p class="text-gray-600">
+                  Wij zijn open over onze werkwijze, financieringsmodel en eventuele partnerships. 
+                  Geen verborgen agenda's of misleidende claims.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0">
+                <i class="fas fa-thumbs-up text-2xl text-energy-blue"></i>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold mb-2">Betrouwbaarheid</h3>
+                <p class="text-gray-600">
+                  Onze informatie is gebaseerd op feiten, onderzoek en ervaring. Wij checken 
+                  alle gegevens zorgvuldig voordat we ze publiceren.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0">
+                <i class="fas fa-leaf text-2xl text-green-600"></i>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold mb-2">Duurzaamheid</h3>
+                <p class="text-gray-600">
+                  Wij geloven in een duurzame energietoekomst en helpen consumenten om 
+                  verantwoorde keuzes te maken voor het milieu.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0">
+                <i class="fas fa-users text-2xl text-battery-orange"></i>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold mb-2">Klantvriendelijkheid</h3>
+                <p class="text-gray-600">
+                  De klant staat centraal. Wij bieden begrijpelijke informatie en persoonlijk 
+                  advies dat aansluit bij jouw specifieke situatie.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact CTA */}
+      <section class="py-12 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 class="text-3xl font-bold mb-4 text-gray-900">Heb je vragen?</h2>
+          <p class="text-lg text-gray-600 mb-8">
+            Wij helpen je graag verder met persoonlijk advies over thuisbatterijen
+          </p>
+          <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+            <a href="/contact" 
+               class="bg-energy-green text-white px-8 py-3 rounded-lg font-bold hover:bg-energy-green/90 transition-colors">
+              <i class="fas fa-envelope mr-2"></i>
+              Neem contact op
+            </a>
+            <a href="/faq" 
+               class="bg-white border-2 border-energy-green text-energy-green px-8 py-3 rounded-lg font-bold hover:bg-energy-green hover:text-white transition-colors">
+              <i class="fas fa-question-circle mr-2"></i>
+              Bekijk FAQ
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>,
+    {
+      title: 'Over Ons - Thuisbatterij.nl | Jouw betrouwbare energieadviseur',
+      description: 'Ontdek wie wij zijn en waarom wij de beste keuze zijn voor thuisbatterij advies. Onafhankelijk, betrouwbaar en transparant sinds 2024.',
+      keywords: 'over ons, thuisbatterij adviseurs, onafhankelijk advies, energie experts, betrouwbaar'
+    }
+  )
+})
+
 // API route voor batterijen data
 app.get('/api/batterijen', (c) => {
   return c.json(batterijen)
