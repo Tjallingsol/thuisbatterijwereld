@@ -1,0 +1,21 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://thuisbatterijwereld.nl/sitemap.xml
+
+# Disallow sensitive areas (if any)
+# Disallow: /admin/
+# Disallow: /private/
+
+# Allow important pages for SEO
+Allow: /vergelijken
+Allow: /kopen
+Allow: /kosten
+Allow: /subsidie
+Allow: /gids/
+Allow: /blog/
+Allow: /merken/
+
+# Crawl-delay (optional, remove if not needed)
+# Crawl-delay: 1
