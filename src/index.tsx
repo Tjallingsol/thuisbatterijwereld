@@ -3656,11 +3656,11 @@ app.get('/gids/kopers-gids', (c) => {
             <h3 class="text-2xl font-bold mb-4">Klaar om te beginnen?</h3>
             <p class="mb-6">Gebruik onze tools om de perfecte thuisbatterij voor jou te vinden</p>
             <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-              <a href="/kosten" class="bg-white text-energy-green px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+              <a href="/kosten" class="bg-white text-energy-green px-6 py-3 rounded-lg font-semibold hover:bg-energy-green hover:text-white border-2 border-white transition-colors shadow-lg">
                 <i class="fas fa-calculator mr-2"></i>
                 Bereken Kosten
               </a>
-              <a href="/vergelijken" class="bg-white text-energy-green px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+              <a href="/vergelijken" class="bg-white text-energy-green px-6 py-3 rounded-lg font-semibold hover:bg-energy-green hover:text-white border-2 border-white transition-colors shadow-lg">
                 <i class="fas fa-balance-scale mr-2"></i>
                 Vergelijk Merken
               </a>
@@ -4035,11 +4035,11 @@ app.get('/gids/installatie', (c) => {
             <h3 class="text-2xl font-bold mb-4">Klaar voor installatie?</h3>
             <p class="mb-6">Vergelijk eerst de beste merken en bereken je besparing</p>
             <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-              <a href="/vergelijken" class="bg-white text-energy-blue px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+              <a href="/vergelijken" class="bg-white text-energy-blue px-6 py-3 rounded-lg font-semibold hover:bg-energy-blue hover:text-white border-2 border-white transition-colors shadow-lg">
                 <i class="fas fa-balance-scale mr-2"></i>
                 Vergelijk Merken
               </a>
-              <a href="/kosten" class="bg-white text-energy-blue px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+              <a href="/kosten" class="bg-white text-energy-blue px-6 py-3 rounded-lg font-semibold hover:bg-energy-blue hover:text-white border-2 border-white transition-colors shadow-lg">
                 <i class="fas fa-calculator mr-2"></i>
                 Bereken Kosten
               </a>
@@ -4618,11 +4618,11 @@ app.get('/gids/onderhoud-garantie', (c) => {
             <h3 class="text-2xl font-bold mb-4">Vragen over onderhoud of garantie?</h3>
             <p class="mb-6">Bekijk onze FAQ of neem contact op voor persoonlijk advies</p>
             <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-              <a href="/faq" class="bg-white text-battery-orange px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+              <a href="/faq" class="bg-white text-battery-orange px-6 py-3 rounded-lg font-semibold hover:bg-battery-orange hover:text-white border-2 border-white transition-colors shadow-lg">
                 <i class="fas fa-question-circle mr-2"></i>
                 Bekijk FAQ
               </a>
-              <a href="/contact" class="bg-white text-battery-orange px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+              <a href="/contact" class="bg-white text-battery-orange px-6 py-3 rounded-lg font-semibold hover:bg-battery-orange hover:text-white border-2 border-white transition-colors shadow-lg">
                 <i class="fas fa-envelope mr-2"></i>
                 Contact Opnemen
               </a>
@@ -5242,11 +5242,11 @@ app.get('/gids/besparing-maximaliseren', (c) => {
             <h3 class="text-2xl font-bold mb-4">Start met besparing maximaliseren!</h3>
             <p class="mb-6">Bereken je potentiële besparing en vergelijk de beste thuisbatterijen</p>
             <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-              <a href="/kosten" class="bg-white text-energy-green px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+              <a href="/kosten" class="bg-white text-energy-green px-6 py-3 rounded-lg font-semibold hover:bg-energy-green hover:text-white border-2 border-white transition-colors shadow-lg">
                 <i class="fas fa-calculator mr-2"></i>
                 Bereken Besparing
               </a>
-              <a href="/vergelijken" class="bg-white text-energy-green px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+              <a href="/vergelijken" class="bg-white text-energy-green px-6 py-3 rounded-lg font-semibold hover:bg-energy-green hover:text-white border-2 border-white transition-colors shadow-lg">
                 <i class="fas fa-balance-scale mr-2"></i>
                 Vergelijk Systemen
               </a>

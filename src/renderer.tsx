@@ -70,6 +70,55 @@ export const renderer = jsxRenderer(({ children, title, description, keywords })
                 <a href="/vergelijken" class="text-gray-700 hover:text-energy-green font-medium">Vergelijken</a>
                 <a href="/kosten" class="text-gray-700 hover:text-energy-green font-medium">Kosten</a>
                 <a href="/subsidie" class="text-gray-700 hover:text-energy-green font-medium">Subsidie</a>
+                
+                {/* Gidsen Dropdown */}
+                <div class="relative group">
+                  <button class="text-gray-700 hover:text-energy-green font-medium flex items-center">
+                    Gidsen
+                    <i class="fas fa-chevron-down ml-1 text-sm"></i>
+                  </button>
+                  <div class="absolute left-0 mt-2 w-80 bg-white rounded-lg shadow-lg border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                    <div class="py-2">
+                      <a href="/gids/kopers-gids" class="block px-4 py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-energy-green border-b border-gray-100">
+                        <div class="flex items-start">
+                          <i class="fas fa-book text-energy-green mr-3 mt-1"></i>
+                          <div>
+                            <div class="font-semibold">Complete Kopers Gids</div>
+                            <div class="text-xs text-gray-500">Capaciteit, merken, installatie, subsidie</div>
+                          </div>
+                        </div>
+                      </a>
+                      <a href="/gids/installatie" class="block px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-energy-blue border-b border-gray-100">
+                        <div class="flex items-start">
+                          <i class="fas fa-tools text-energy-blue mr-3 mt-1"></i>
+                          <div>
+                            <div class="font-semibold">Installatie Handleiding</div>
+                            <div class="text-xs text-gray-500">Van voorbereiding tot inbedrijfstelling</div>
+                          </div>
+                        </div>
+                      </a>
+                      <a href="/gids/onderhoud-garantie" class="block px-4 py-3 text-sm text-gray-700 hover:bg-orange-50 hover:text-battery-orange border-b border-gray-100">
+                        <div class="flex items-start">
+                          <i class="fas fa-shield-alt text-battery-orange mr-3 mt-1"></i>
+                          <div>
+                            <div class="font-semibold">Onderhoud &amp; Garantie</div>
+                            <div class="text-xs text-gray-500">Optimale conditie en levensduur</div>
+                          </div>
+                        </div>
+                      </a>
+                      <a href="/gids/besparing-maximaliseren" class="block px-4 py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-energy-green">
+                        <div class="flex items-start">
+                          <i class="fas fa-chart-line text-energy-green mr-3 mt-1"></i>
+                          <div>
+                            <div class="font-semibold">Besparing Maximaliseren</div>
+                            <div class="text-xs text-gray-500">Slim laden en energiegewoonten</div>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                
                 <a href="/blog" class="text-gray-700 hover:text-energy-green font-medium">Blog</a>
                 <a href="/faq" class="text-gray-700 hover:text-energy-green font-medium">FAQ</a>
               </div>
@@ -87,6 +136,26 @@ export const renderer = jsxRenderer(({ children, title, description, keywords })
               <a href="/vergelijken" class="block px-3 py-2 text-gray-700 hover:text-energy-green font-medium">Vergelijken</a>
               <a href="/kosten" class="block px-3 py-2 text-gray-700 hover:text-energy-green font-medium">Kosten</a>
               <a href="/subsidie" class="block px-3 py-2 text-gray-700 hover:text-energy-green font-medium">Subsidie</a>
+              
+              {/* Gidsen section voor mobiel */}
+              <div class="px-3 py-2">
+                <div class="text-gray-500 text-sm font-semibold uppercase mb-2">Gidsen</div>
+                <div class="space-y-1 pl-4">
+                  <a href="/gids/kopers-gids" class="block py-2 text-gray-600 hover:text-energy-green text-sm">
+                    <i class="fas fa-book mr-2"></i>Complete Kopers Gids
+                  </a>
+                  <a href="/gids/installatie" class="block py-2 text-gray-600 hover:text-energy-blue text-sm">
+                    <i class="fas fa-tools mr-2"></i>Installatie Handleiding
+                  </a>
+                  <a href="/gids/onderhoud-garantie" class="block py-2 text-gray-600 hover:text-battery-orange text-sm">
+                    <i class="fas fa-shield-alt mr-2"></i>Onderhoud &amp; Garantie
+                  </a>
+                  <a href="/gids/besparing-maximaliseren" class="block py-2 text-gray-600 hover:text-energy-green text-sm">
+                    <i class="fas fa-chart-line mr-2"></i>Besparing Maximaliseren
+                  </a>
+                </div>
+              </div>
+              
               <a href="/blog" class="block px-3 py-2 text-gray-700 hover:text-energy-green font-medium">Blog</a>
               <a href="/faq" class="block px-3 py-2 text-gray-700 hover:text-energy-green font-medium">FAQ</a>
             </div>
