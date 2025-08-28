@@ -1741,7 +1741,7 @@ app.get('/faq', (c) => {
                 {categorie.vragen.map((faq, faqIndex) => (
                   <div key={faqIndex} class="faq-item bg-white border border-gray-200 rounded-lg">
                     <button class="faq-question w-full px-6 py-4 text-left focus:outline-none hover:bg-gray-50" 
-                            onclick={`toggleFaq(${catIndex}, ${faqIndex})`}>
+                            data-cat-index={catIndex} data-faq-index={faqIndex}>
                       <div class="flex justify-between items-center">
                         <h3 class="text-lg font-semibold text-gray-900">{faq.vraag}</h3>
                         <i class={`faq-icon-${catIndex}-${faqIndex} fas fa-chevron-down text-gray-400 transform transition-transform`}></i>
@@ -1789,39 +1789,74 @@ app.get('/faq', (c) => {
       </section>
 
       <script>{`
-        // FAQ toggle functionaliteit
-        function toggleFaq(catIndex, faqIndex) {
-          const answer = document.querySelector('.faq-answer-' + catIndex + '-' + faqIndex);
-          const icon = document.querySelector('.faq-icon-' + catIndex + '-' + faqIndex);
+        // Wacht tot de DOM geladen is
+        document.addEventListener('DOMContentLoaded', function() {
           
-          if (answer.classList.contains('hidden')) {
-            answer.classList.remove('hidden');
-            icon.style.transform = 'rotate(180deg)';
-          } else {
-            answer.classList.add('hidden');
-            icon.style.transform = 'rotate(0deg)';
-          }
-        }
-
-        // Search functionaliteit
-        document.getElementById('faq-search').addEventListener('input', function(e) {
-          const searchTerm = e.target.value.toLowerCase();
-          const faqItems = document.querySelectorAll('.faq-item');
-          
-          faqItems.forEach(item => {
-            const question = item.querySelector('.faq-question h3').textContent.toLowerCase();
-            const answer = item.querySelector('[class*="faq-answer-"]').textContent.toLowerCase();
+          // FAQ toggle functionaliteit
+          function toggleFaq(catIndex, faqIndex) {
+            const answer = document.querySelector('.faq-answer-' + catIndex + '-' + faqIndex);
+            const icon = document.querySelector('.faq-icon-' + catIndex + '-' + faqIndex);
             
-            if (question.includes(searchTerm) || answer.includes(searchTerm) || searchTerm === '') {
-              item.style.display = 'block';
-            } else {
-              item.style.display = 'none';
+            if (answer && icon) {
+              if (answer.classList.contains('hidden')) {
+                answer.classList.remove('hidden');
+                icon.style.transform = 'rotate(180deg)';
+              } else {
+                answer.classList.add('hidden');
+                icon.style.transform = 'rotate(0deg)';
+              }
             }
+          }
+
+          // Event listeners voor FAQ buttons
+          const faqButtons = document.querySelectorAll('.faq-question');
+          faqButtons.forEach(button => {
+            button.addEventListener('click', function() {
+              const catIndex = this.getAttribute('data-cat-index');
+              const faqIndex = this.getAttribute('data-faq-index');
+              toggleFaq(catIndex, faqIndex);
+            });
           });
+
+          // Search functionaliteit
+          const searchInput = document.getElementById('faq-search');
+          if (searchInput) {
+            searchInput.addEventListener('input', function(e) {
+              const searchTerm = e.target.value.toLowerCase();
+              const faqItems = document.querySelectorAll('.faq-item');
+              
+              faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question h3');
+                const answer = item.querySelector('[class*="faq-answer-"]');
+                
+                if (question && answer) {
+                  const questionText = question.textContent.toLowerCase();
+                  const answerText = answer.textContent.toLowerCase();
+                  
+                  if (questionText.includes(searchTerm) || answerText.includes(searchTerm) || searchTerm === '') {
+                    item.style.display = 'block';
+                  } else {
+                    item.style.display = 'none';
+                  }
+                }
+              });
+            });
+          }
+
+          // Mobile menu functionaliteit (als nog niet gedaan)
+          const mobileMenuButton = document.getElementById('mobile-menu-button');
+          const mobileMenu = document.getElementById('mobile-menu');
+          
+          if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', function() {
+              mobileMenu.classList.toggle('hidden');
+            });
+          }
+          
         });
 
-        // FAQ data voor structured data
-        const faqData = ${JSON.stringify(faqCategorieen)};
+        // FAQ data voor structured data (globally accessible)
+        window.faqData = ${JSON.stringify(faqCategorieen)};
       `}</script>
     </div>,
     {
