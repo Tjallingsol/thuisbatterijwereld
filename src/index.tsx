@@ -815,73 +815,135 @@ app.get('/kosten', (c) => {
       </section>
 
       <script>{`
-        // Calculator functie
-        function berekenBesparing() {
-          const jaarverbruik = parseInt(document.getElementById('jaarverbruik').value);
-          const energieprijs = parseFloat(document.getElementById('energieprijs').value);
-          const heeftZonnepanelen = document.getElementById('zonnepanelen').value === 'ja';
-          const zonneproductie = heeftZonnepanelen ? parseInt(document.getElementById('zonneproductie').value || 0) : 0;
-          const batterijcapaciteit = parseFloat(document.getElementById('batterijcapaciteit').value);
-          const subsidie = parseFloat(document.getElementById('subsidie').value);
-
-          // Bereken kosten
-          const batterijKosten = batterijcapaciteit * 500; // €500 per kWh gemiddeld
-          const installatieKosten = Math.min(1500, batterijKosten * 0.2); // 20% van batterijkosten, max €1500
-          const totaleKosten = batterijKosten + installatieKosten - subsidie;
-
-          // Bereken besparingen
-          let energieBesparing = 0;
-          let zelfconsumptieBesparing = 0;
-
-          if (heeftZonnepanelen) {
-            // Met zonnepanelen: verhoogde zelfconsumptie
-            const huidigeZelfconsumptie = Math.min(jaarverbruik, zonneproductie) * 0.3; // 30% zonder batterij
-            const nieuweZelfconsumptie = Math.min(jaarverbruik, zonneproductie) * 0.8; // 80% met batterij
-            const extraZelfconsumptie = nieuweZelfconsumptie - huidigeZelfconsumptie;
-            zelfconsumptieBesparing = extraZelfconsumptie * energieprijs;
+        document.addEventListener('DOMContentLoaded', function() {
+          
+          // Calculator functie
+          function berekenBesparing() {
+            // Check if elements exist
+            const jaarverbruikEl = document.getElementById('jaarverbruik');
+            const energieprijsEl = document.getElementById('energieprijs');
+            const zonnepanelenEl = document.getElementById('zonnepanelen');
+            const zonneproductieEl = document.getElementById('zonneproductie');
+            const batterijcapaciteitEl = document.getElementById('batterijcapaciteit');
+            const subsidieEl = document.getElementById('subsidie');
             
-            // Ook besparing op dal/piek tarieven
-            energieBesparing = Math.min(batterijcapaciteit * 365, jaarverbruik * 0.4) * 0.15; // 15 cent verschil dal/piek
-          } else {
-            // Zonder zonnepanelen: dal/piek arbitrage
-            energieBesparing = Math.min(batterijcapaciteit * 365, jaarverbruik * 0.5) * 0.20; // 20 cent verschil dal/piek
+            if (!jaarverbruikEl || !energieprijsEl || !zonnepanelenEl || !batterijcapaciteitEl || !subsidieEl) {
+              console.log('Calculator elements not found');
+              return;
+            }
+
+            const jaarverbruik = parseInt(jaarverbruikEl.value) || 3500;
+            const energieprijs = parseFloat(energieprijsEl.value) || 0.40;
+            const heeftZonnepanelen = zonnepanelenEl.value === 'ja';
+            const zonneproductie = heeftZonnepanelen ? (parseInt(zonneproductieEl.value) || 4000) : 0;
+            const batterijcapaciteit = parseFloat(batterijcapaciteitEl.value) || 10;
+            const subsidie = parseFloat(subsidieEl.value) || 2500;
+
+            // Bereken kosten (realistischer)
+            let batterijKosten;
+            if (batterijcapaciteit <= 5) {
+              batterijKosten = batterijcapaciteit * 600; // €600 per kWh voor kleine systemen
+            } else if (batterijcapaciteit <= 10) {
+              batterijKosten = batterijcapaciteit * 520; // €520 per kWh voor gemiddelde
+            } else {
+              batterijKosten = batterijcapaciteit * 480; // €480 per kWh voor grote systemen
+            }
+            
+            const installatieKosten = Math.max(800, Math.min(1500, batterijKosten * 0.18)); // €800-1500
+            const totaleKosten = batterijKosten + installatieKosten - subsidie;
+
+            // Bereken besparingen (verbeterde berekening)
+            let energieBesparing = 0;
+            let zelfconsumptieBesparing = 0;
+
+            if (heeftZonnepanelen) {
+              // Met zonnepanelen: verhoogde zelfconsumptie
+              const overschotZonne = Math.max(0, zonneproductie - (jaarverbruik * 0.3)); // Overschot overdag
+              const bruikbaarOverschot = Math.min(overschotZonne, batterijcapaciteit * 300); // Max opslagcapaciteit per jaar
+              const extraZelfconsumptie = Math.min(bruikbaarOverschot, jaarverbruik * 0.5); // Max 50% van verbruik
+              zelfconsumptieBesparing = extraZelfconsumptie * energieprijs;
+              
+              // Dal/piek arbitrage (extra besparing)
+              const restCapaciteit = (batterijcapaciteit * 300) - extraZelfconsumptie;
+              energieBesparing = Math.min(restCapaciteit, jaarverbruik * 0.3) * 0.12; // 12 cent verschil
+            } else {
+              // Zonder zonnepanelen: pure dal/piek arbitrage
+              const dagelijkseCycli = Math.min(1, batterijcapaciteit / (jaarverbruik / 365)); // Max 1 cyclus per dag
+              const jaarlijkseOpslag = batterijcapaciteit * dagelijkseCycli * 320; // 320 dagen per jaar
+              energieBesparing = Math.min(jaarlijkseOpslag, jaarverbruik * 0.6) * 0.15; // 15 cent verschil dal/piek
+            }
+
+            const totaleBesparing = energieBesparing + zelfconsumptieBesparing;
+            const terugverdientijd = totaleBesparing > 0 ? totaleKosten / totaleBesparing : 999;
+
+            // Update resultaten (met error checking)
+            const updateElement = (id, text) => {
+              const el = document.getElementById(id);
+              if (el) el.textContent = text;
+            };
+            
+            updateElement('batterij-kosten', '€' + Math.round(batterijKosten).toLocaleString('nl-NL'));
+            updateElement('installatie-kosten', '€' + Math.round(installatieKosten).toLocaleString('nl-NL'));
+            updateElement('subsidie-bedrag', '-€' + Math.round(subsidie).toLocaleString('nl-NL'));
+            updateElement('totale-kosten', '€' + Math.round(totaleKosten).toLocaleString('nl-NL'));
+            
+            updateElement('energie-besparing', '€' + Math.round(energieBesparing).toLocaleString('nl-NL') + '/jaar');
+            updateElement('zelfconsumptie-besparing', '€' + Math.round(zelfconsumptieBesparing).toLocaleString('nl-NL') + '/jaar');
+            updateElement('totale-besparing', '€' + Math.round(totaleBesparing).toLocaleString('nl-NL') + '/jaar');
+            
+            updateElement('terugverdientijd', terugverdientijd < 50 ? terugverdientijd.toFixed(1) + ' jaar' : '50+ jaar');
+            updateElement('resterende-tijd', terugverdientijd < 50 ? Math.max(0, 15 - terugverdientijd).toFixed(1) : '0');
+            
+            // Update progress bar
+            const progressBar = document.getElementById('progress-bar');
+            if (progressBar) {
+              const progressPercentage = terugverdientijd < 15 ? ((15 - terugverdientijd) / 15) * 100 : 0;
+              progressBar.style.width = Math.max(5, progressPercentage) + '%';
+            }
+            
+            console.log('Calculator updated:', {
+              totaleBesparing: Math.round(totaleBesparing),
+              terugverdientijd: terugverdientijd.toFixed(1),
+              totaleKosten: Math.round(totaleKosten)
+            });
           }
 
-          const totaleBesparing = energieBesparing + zelfconsumptieBesparing;
-          const terugverdientijd = totaleKosten / totaleBesparing;
+          // Zonnepanelen zichtbaarheid
+          function updateZonnepanelenVisibility() {
+            const zonnepanelenEl = document.getElementById('zonnepanelen');
+            const detailsEl = document.getElementById('zonnepanelen-details');
+            if (zonnepanelenEl && detailsEl) {
+              detailsEl.style.display = zonnepanelenEl.value === 'nee' ? 'none' : 'block';
+            }
+          }
 
-          // Update resultaten
-          document.getElementById('batterij-kosten').textContent = '€' + batterijKosten.toLocaleString();
-          document.getElementById('installatie-kosten').textContent = '€' + installatieKosten.toLocaleString();
-          document.getElementById('subsidie-bedrag').textContent = '-€' + subsidie.toLocaleString();
-          document.getElementById('totale-kosten').textContent = '€' + totaleKosten.toLocaleString();
+          // Initialiseer
+          updateZonnepanelenVisibility();
           
-          document.getElementById('energie-besparing').textContent = '€' + Math.round(energieBesparing) + '/jaar';
-          document.getElementById('zelfconsumptie-besparing').textContent = '€' + Math.round(zelfconsumptieBesparing) + '/jaar';
-          document.getElementById('totale-besparing').textContent = '€' + Math.round(totaleBesparing) + '/jaar';
-          
-          document.getElementById('terugverdientijd').textContent = terugverdientijd.toFixed(1) + ' jaar';
-          document.getElementById('resterende-tijd').textContent = (10 - terugverdientijd).toFixed(1);
-          
-          // Update progress bar
-          const progressPercentage = Math.min((terugverdientijd / 10) * 100, 100);
-          document.getElementById('progress-bar').style.width = (100 - progressPercentage) + '%';
-        }
+          // Wacht even en bereken dan initiële waarden
+          setTimeout(berekenBesparing, 100);
 
-        // Bereken initiële waarden
-        berekenBesparing();
+          // Event listeners toevoegen
+          const addEventListenerSafe = (id, event, callback) => {
+            const el = document.getElementById(id);
+            if (el) {
+              el.addEventListener(event, callback);
+            }
+          };
 
-        // Update bij wijzigingen
-        document.getElementById('jaarverbruik').addEventListener('input', berekenBesparing);
-        document.getElementById('energieprijs').addEventListener('input', berekenBesparing);
-        document.getElementById('zonnepanelen').addEventListener('change', function() {
-          document.getElementById('zonnepanelen-details').style.display = 
-            this.value === 'nee' ? 'none' : 'block';
-          berekenBesparing();
+          addEventListenerSafe('jaarverbruik', 'input', berekenBesparing);
+          addEventListenerSafe('energieprijs', 'input', berekenBesparing);
+          addEventListenerSafe('zonnepanelen', 'change', () => {
+            updateZonnepanelenVisibility();
+            berekenBesparing();
+          });
+          addEventListenerSafe('zonneproductie', 'input', berekenBesparing);
+          addEventListenerSafe('batterijcapaciteit', 'change', berekenBesparing);
+          addEventListenerSafe('subsidie', 'change', berekenBesparing);
+
+          // Global functie voor onclick
+          window.berekenBesparing = berekenBesparing;
         });
-        document.getElementById('zonneproductie').addEventListener('input', berekenBesparing);
-        document.getElementById('batterijcapaciteit').addEventListener('change', berekenBesparing);
-        document.getElementById('subsidie').addEventListener('change', berekenBesparing);
       `}</script>
     </div>,
     {
