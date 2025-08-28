@@ -1,0 +1,107 @@
+name: Deploy to Vimexx Hosting
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Build project
+      run: npm run build
+      
+    - name: Generate static export
+      run: |
+        # Create static export directory
+        mkdir -p static-export
+        
+        # Start development server in background
+        npm run dev:sandbox &
+        DEV_PID=$!
+        
+        # Wait for server to start
+        sleep 10
+        
+        # Generate static pages
+        curl -f http://localhost:3000/ > static-export/index.html
+        curl -f http://localhost:3000/vergelijken > static-export/vergelijken.html
+        curl -f http://localhost:3000/kopen > static-export/kopen.html
+        curl -f http://localhost:3000/kosten > static-export/kosten.html
+        curl -f http://localhost:3000/subsidie > static-export/subsidie.html
+        curl -f http://localhost:3000/blog > static-export/blog.html
+        curl -f http://localhost:3000/faq > static-export/faq.html
+        curl -f http://localhost:3000/over-ons > static-export/over-ons.html
+        
+        # Create directories
+        mkdir -p static-export/gids
+        mkdir -p static-export/blog
+        mkdir -p static-export/merken
+        
+        # Generate guide pages
+        curl -f http://localhost:3000/gids/kopers-gids > static-export/gids/kopers-gids.html
+        curl -f http://localhost:3000/gids/installatie > static-export/gids/installatie.html
+        curl -f http://localhost:3000/gids/onderhoud-garantie > static-export/gids/onderhoud-garantie.html
+        curl -f http://localhost:3000/gids/besparing-maximaliseren > static-export/gids/besparing-maximaliseren.html
+        
+        # Generate blog pages
+        curl -f http://localhost:3000/blog/energieonafhankelijkheid > static-export/blog/energieonafhankelijkheid.html
+        
+        # Generate brand pages
+        curl -f http://localhost:3000/zonneplan-thuisbatterij > static-export/zonneplan-thuisbatterij.html
+        curl -f http://localhost:3000/growatt-thuisbatterij > static-export/growatt-thuisbatterij.html
+        
+        # Generate product pages
+        curl -f http://localhost:3000/merken/growatt-arb-10 > static-export/merken/growatt-arb-10.html
+        curl -f http://localhost:3000/merken/dyness-powerwall-b4850 > static-export/merken/dyness-powerwall-b4850.html
+        curl -f http://localhost:3000/merken/victron-multiplus > static-export/merken/victron-multiplus.html
+        curl -f http://localhost:3000/merken/homewizard-p1 > static-export/merken/homewizard-p1.html
+        curl -f http://localhost:3000/merken/zonneplan-battery > static-export/merken/zonneplan-battery.html
+        
+        # Stop development server
+        kill $DEV_PID
+        
+        # Copy static assets and config files
+        cp -r public/* static-export/ 2>/dev/null || true
+        cp static-export/.htaccess static-export/ 2>/dev/null || true
+        cp static-export/sitemap.xml static-export/ 2>/dev/null || true
+        cp static-export/robots.txt static-export/ 2>/dev/null || true
+        
+    - name: Deploy to Vimexx via FTP
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      with:
+        server: ${{ secrets.VIMEXX_FTP_SERVER }}
+        username: ${{ secrets.VIMEXX_FTP_USERNAME }}
+        password: ${{ secrets.VIMEXX_FTP_PASSWORD }}
+        local-dir: ./static-export/
+        server-dir: ./public_html/
+        exclude: |
+          **/.git*
+          **/.git*/**
+          **/node_modules/**
+          **/.DS_Store
+          **/Thumbs.db
+          
+    - name: Verify deployment
+      run: |
+        echo "🚀 Deployment completed!"
+        echo "🌐 Website should be available at: https://thuisbatterijwereld.nl"
+        echo "📝 Check these URLs:"
+        echo "   - https://thuisbatterijwereld.nl/"
+        echo "   - https://thuisbatterijwereld.nl/vergelijken"
+        echo "   - https://thuisbatterijwereld.nl/kopen"
+        echo "   - https://thuisbatterijwereld.nl/gids/kopers-gids"
