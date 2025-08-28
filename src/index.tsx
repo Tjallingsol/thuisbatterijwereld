@@ -1334,44 +1334,6 @@ app.get('/subsidie', (c) => {
 
 // Blog/Kennisbank sectie
 app.get('/blog', (c) => {
-  const artikelen = [
-    {
-      id: 'thuisbatterij-met-zonnepanelen',
-      titel: 'Thuisbatterij met zonnepanelen: de perfecte combinatie',
-      excerpt: 'Ontdek waarom een thuisbatterij en zonnepanelen samen de beste investering zijn voor je energietoekomst.',
-      datum: '2025-01-15',
-      leestijd: '8 min',
-      afbeelding: '/static/blog-zonnepanelen.jpg',
-      tags: ['zonnepanelen', 'combinatie', 'besparing']
-    },
-    {
-      id: 'wat-kost-thuisbatterij-2025',
-      titel: '10 redenen om in 2025 een thuisbatterij te kopen',
-      excerpt: 'Stijgende energieprijzen, nieuwe subsidies en verbeterde technologie maken 2025 het perfecte jaar.',
-      datum: '2025-01-10',
-      leestijd: '6 min',
-      afbeelding: '/static/blog-redenen.jpg',
-      tags: ['2025', 'voordelen', 'investering']
-    },
-    {
-      id: 'thuisbatterij-vs-dynamisch-contract',
-      titel: 'Thuisbatterij vs dynamisch energiecontract',
-      excerpt: 'Welke optie bespaart meer geld? Een vergelijking van beide strategieën voor energiebesparing.',
-      datum: '2025-01-05',
-      leestijd: '10 min',
-      afbeelding: '/static/blog-dynamisch.jpg',
-      tags: ['dynamisch tarief', 'besparing', 'vergelijking']
-    },
-    {
-      id: 'fouten-bij-aanschaf-thuisbatterij',
-      titel: 'Top 5 fouten bij de aanschaf van een thuisbatterij',
-      excerpt: 'Vermijd kostbare fouten bij je thuisbatterij aankoop. Leer van de ervaringen van anderen.',
-      datum: '2024-12-20',
-      leestijd: '7 min',
-      afbeelding: '/static/blog-fouten.jpg',
-      tags: ['fouten', 'tips', 'aanschaf']
-    }
-  ];
 
   return c.render(
     <div>
@@ -1417,8 +1379,8 @@ app.get('/blog', (c) => {
       <section class="py-12 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {artikelen.slice(1).map((artikel) => (
-              <div key={artikel.id} class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+            {Object.entries(blogArtikelen).slice(1).map(([id, artikel]) => (
+              <div key={id} class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
                 <div class="h-48 bg-gray-200 relative">
                   <div class="absolute inset-0 bg-gradient-to-br from-energy-green/20 to-energy-blue/20 flex items-center justify-center">
                     <i class="fas fa-image text-4xl text-gray-400"></i>
@@ -1440,7 +1402,7 @@ app.get('/blog', (c) => {
                         </span>
                       ))}
                     </div>
-                    <a href={`/blog/${artikel.id}`} class="text-energy-green hover:underline font-medium">
+                    <a href={`/blog/${id}`} class="text-energy-green hover:underline font-medium">
                       Lees meer →
                     </a>
                   </div>
@@ -1720,6 +1682,587 @@ app.get('/faq', (c) => {
       title: 'FAQ Thuisbatterij - Alle Antwoorden op je Vragen over Thuisbatterijen',
       description: 'Veelgestelde vragen thuisbatterij. ✓ Kosten & besparing ✓ Subsidie info ✓ Installatie ✓ Merken ✓ Capaciteit ✓ Levensduur. Alle antwoorden op één plek.',
       keywords: 'FAQ thuisbatterij, vragen thuisbatterij, thuisbatterij antwoorden, hulp thuisbatterij, thuisbatterij uitleg'
+    }
+  )
+})
+
+// Blog artikel data
+const blogArtikelen = {
+  'thuisbatterij-met-zonnepanelen': {
+    titel: 'Thuisbatterij met zonnepanelen: de perfecte combinatie',
+    excerpt: 'Ontdek waarom een thuisbatterij en zonnepanelen samen de beste investering zijn voor je energietoekomst.',
+    datum: '2025-01-15',
+    leestijd: '8 min',
+    auteur: 'Mark van der Berg',
+    tags: ['zonnepanelen', 'combinatie', 'besparing'],
+    content: `
+      <p class="lead">Een thuisbatterij en zonnepanelen vormen samen de perfecte combinatie voor maximale energiebesparing. In dit artikel leggen we uit waarom deze combinatie zo krachtig is en hoe je er optimaal van profiteert.</p>
+
+      <h2>Waarom zijn zonnepanelen en thuisbatterij de perfecte match?</h2>
+      
+      <p>Zonnepanelen produceren overdag energie, maar de meeste huishoudens verbruiken juist 's avonds en 's nachts de meeste stroom. Zonder batterij moet je overtollige zonne-energie terugleveren aan het net voor een lage vergoeding, en 's avonds dure stroom inkopen.</p>
+
+      <div class="bg-blue-50 border-l-4 border-blue-400 p-6 my-8">
+        <h3 class="text-lg font-semibold mb-2">💡 Slim opslaan = meer besparen</h3>
+        <p>Met een thuisbatterij sla je overtollige zonne-energie op en gebruik je deze 's avonds. Hierdoor verhoog je je zelfconsumptie van 30% naar 80%.</p>
+      </div>
+
+      <h2>Concrete voordelen van de combinatie</h2>
+
+      <h3>1. Verhoogde zelfconsumptie</h3>
+      <p>Zonder batterij gebruik je slechts 30% van je zonne-energie direct. Met een batterij stijgt dit naar 80%, wat betekent dat je veel minder stroom hoeft te kopen van het net.</p>
+
+      <h3>2. Bescherming tegen netcongestie</h3>
+      <p>Bij netcongestie kun je geen overtollige stroom terugleveren. Met een batterij ben je hier niet van afhankelijk en kun je je eigen opgewekte energie altijd opslaan.</p>
+
+      <h3>3. Maximale besparing op energiekosten</h3>
+      <p>De combinatie bespaart gemiddeld €800-1.500 per jaar op je energierekening, afhankelijk van je verbruik en de grootte van je installatie.</p>
+
+      <h2>Praktijkvoorbeeld: Familie Jansen</h2>
+      
+      <div class="bg-gray-50 p-6 rounded-lg my-8">
+        <p><strong>Situatie:</strong> Gezin met 4 personen, jaarverbruik 4.200 kWh</p>
+        <p><strong>Installatie:</strong> 12 zonnepanelen (4.800 kWh/jaar) + 10 kWh batterij</p>
+        <p><strong>Resultaat:</strong> €1.200 besparing per jaar, terugverdientijd 6 jaar</p>
+      </div>
+
+      <h2>Optimale dimensionering</h2>
+
+      <h3>Vuistregels voor de juiste verhouding:</h3>
+      <ul>
+        <li><strong>Batterijcapaciteit:</strong> 25-40% van je jaarlijkse zonnepaneel opbrengst</li>
+        <li><strong>Voor 10 panelen (3.600 kWh):</strong> 7,5-10 kWh batterij</li>
+        <li><strong>Voor 15 panelen (5.400 kWh):</strong> 10-15 kWh batterij</li>
+      </ul>
+
+      <h2>Installatie volgorde: eerst panelen of eerst batterij?</h2>
+      
+      <p>De meeste experts raden aan om eerst zonnepanelen te installeren en een jaar later een batterij toe te voegen. Zo kun je:</p>
+      <ul>
+        <li>Je werkelijke verbruikspatroon analyseren</li>
+        <li>De juiste batterijcapaciteit bepalen</li>
+        <li>Profiteren van technologische ontwikkelingen</li>
+      </ul>
+
+      <h2>Kosten en terugverdientijd</h2>
+      
+      <p>De totale investering voor zonnepanelen + batterij ligt tussen €12.000-18.000. Met de juiste subsidies en de huidige energieprijzen is de terugverdientijd 6-8 jaar.</p>
+
+      <h2>Conclusie</h2>
+      
+      <p>De combinatie van zonnepanelen en een thuisbatterij is de slimste investering voor energieonafhankelijkheid. Je maximaliseert je besparing, bent minder afhankelijk van het net en draagt bij aan een duurzame toekomst.</p>
+    `
+  },
+  'wat-kost-thuisbatterij-2025': {
+    titel: '10 redenen om in 2025 een thuisbatterij te kopen',
+    excerpt: 'Stijgende energieprijzen, nieuwe subsidies en verbeterde technologie maken 2025 het perfecte jaar.',
+    datum: '2025-01-10',
+    leestijd: '6 min',
+    auteur: 'Lisa Hendriks',
+    tags: ['2025', 'voordelen', 'investering'],
+    content: `
+      <p class="lead">2025 is het perfecte jaar om een thuisbatterij aan te schaffen. Van nieuwe subsidies tot verbeterde technologie - hier zijn 10 overtuigende redenen waarom je nu moet investeren.</p>
+
+      <h2>1. Nieuwe ISDE subsidie van €2.500</h2>
+      <p>Voor 2025 heeft de regering de ISDE subsidie voor thuisbatterijen verhoogd naar €2.500. Deze subsidie is beschikbaar voor batterijen vanaf 5 kWh in combinatie with zonnepanelen.</p>
+
+      <h2>2. Stijgende energieprijzen</h2>
+      <p>Energieprijzen blijven stijgen door geopolitieke spanningen en de energietransitie. Met een thuisbatterij bescherm je jezelf tegen toekomstige prijsstijgingen.</p>
+
+      <div class="bg-green-50 border-l-4 border-green-400 p-6 my-8">
+        <h3 class="text-lg font-semibold mb-2">💰 Besparing berekening</h3>
+        <p>Bij een energieprijs van €0,40 per kWh bespaar je met een 10 kWh batterij ongeveer €1.000 per jaar.</p>
+      </div>
+
+      <h2>3. Verbeterde batterijkwaliteit</h2>
+      <p>Moderne lithium batterijen hebben een levensduur van 15-20 jaar en behouden 90% van hun capaciteit na 10 jaar. De kwaliteit is de afgelopen jaren enorm verbeterd.</p>
+
+      <h2>4. Netcongestie problemen</h2>
+      <p>Steeds vaker kunnen huishoudens geen stroom terugleveren door netcongestie. Met een batterij kun je je energie altijd opslaan, onafhankelijk van netwerkproblemen.</p>
+
+      <h2>5. BTW verlaging naar 9%</h2>
+      <p>Voor woningen ouder dan 2 jaar betaal je slechts 9% BTW in plaats van 21%. Dit scheelt €600-1.200 op je totale investering.</p>
+
+      <h2>6. Dynamische energietarieven</h2>
+      <p>Steeds meer energieleveranciers bieden dynamische tarieven. Met een batterij kun je optimaal profiteren van lage nachttarieven door slim te laden en ontladen.</p>
+
+      <h2>7. Technologie wordt betaalbaarder</h2>
+      <p>De prijs per kWh batterijcapaciteit is de afgelopen 5 jaar met 60% gedaald. Tegelijkertijd is de kwaliteit en levensduur toegenomen.</p>
+
+      <h2>8. Eenvoudigere installatie</h2>
+      <p>Moderne thuisbatterijen zijn plug-and-play geworden. Een professionele installatie duurt slechts een halve dag en vereist minimale aanpassingen aan je woning.</p>
+
+      <h2>9. Slimme energie management</h2>
+      <p>Nieuwe batterijen hebben geavanceerde software die leert van je verbruikspatroon en automatisch optimaliseert voor maximale besparing.</p>
+
+      <h2>10. Waardestijging van je woning</h2>
+      <p>Een thuisbatterij verhoogt de waarde van je woning. Kopers waarderen energiezuinige woningen steeds meer, wat zich vertaalt in een hogere verkoopprijs.</p>
+
+      <h2>Actie ondernemen in 2025</h2>
+      
+      <p>Wacht niet langer met je investering. De combinatie van subsidies, technologische vooruitgang en stijgende energieprijzen maakt 2025 het ideale moment.</p>
+
+      <div class="bg-blue-50 p-6 rounded-lg my-8">
+        <h3 class="text-lg font-semibold mb-2">🚀 Stappenplan voor 2025</h3>
+        <ol class="list-decimal list-inside space-y-2">
+          <li>Bereken je besparing met onze calculator</li>
+          <li>Vergelijk batterijen op onze website</li>
+          <li>Vraag subsidie aan (vóór installatie!)</li>
+          <li>Kies een betrouwbare installateur</li>
+          <li>Begin met besparen vanaf dag 1</li>
+        </ol>
+      </div>
+
+      <h2>Conclusie</h2>
+      
+      <p>De sterren staan gunstig voor thuisbatterijen in 2025. Van financiële voordelen tot technologische vooruitgang - alle factoren wijzen naar dit jaar als het perfecte moment om te investeren in energieonafhankelijkheid.</p>
+    `
+  },
+  'thuisbatterij-vs-dynamisch-contract': {
+    titel: 'Thuisbatterij vs dynamisch energiecontract',
+    excerpt: 'Welke optie bespaart meer geld? Een vergelijking van beide strategieën voor energiebesparing.',
+    datum: '2025-01-05',
+    leestijd: '10 min',
+    auteur: 'Tom Bakker',
+    tags: ['dynamisch tarief', 'besparing', 'vergelijking'],
+    content: `
+      <p class="lead">Dynamische energiecontracten en thuisbatterijen zijn beide populaire manieren om te besparen op energiekosten. Maar welke optie is het meest voordelig voor jouw situatie?</p>
+
+      <h2>Wat is een dynamisch energiecontract?</h2>
+      
+      <p>Bij een dynamisch contract betaal je de actuele inkoopprijs voor energie, die elk uur kan wijzigen. Prijzen zijn laag bij veel aanbod (veel zon/wind) en hoog bij weinig aanbod.</p>
+
+      <h2>Hoe werkt een thuisbatterij?</h2>
+      
+      <p>Een thuisbatterij slaat energie op wanneer het goedkoop is (overdag met zonnepanelen of 's nachts) en gebruikt deze wanneer energie duur is (tijdens piekuren).</p>
+
+      <h2>Vergelijking: Besparing per jaar</h2>
+
+      <div class="overflow-x-auto my-8">
+        <table class="min-w-full bg-white border border-gray-200">
+          <thead class="bg-gray-50">
+            <tr>
+              <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Strategie</th>
+              <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Investering</th>
+              <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Jaarlijkse besparing</th>
+              <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Terugverdientijd</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200">
+            <tr>
+              <td class="px-6 py-4 whitespace-nowrap font-medium">Dynamisch contract</td>
+              <td class="px-6 py-4 whitespace-nowrap">€0</td>
+              <td class="px-6 py-4 whitespace-nowrap">€200-400</td>
+              <td class="px-6 py-4 whitespace-nowrap">Direct</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 whitespace-nowrap font-medium">Thuisbatterij (zonder zonnepanelen)</td>
+              <td class="px-6 py-4 whitespace-nowrap">€5.000</td>
+              <td class="px-6 py-4 whitespace-nowrap">€400-600</td>
+              <td class="px-6 py-4 whitespace-nowrap">8-12 jaar</td>
+            </tr>
+            <tr class="bg-green-50">
+              <td class="px-6 py-4 whitespace-nowrap font-medium">Thuisbatterij + zonnepanelen</td>
+              <td class="px-6 py-4 whitespace-nowrap">€12.000</td>
+              <td class="px-6 py-4 whitespace-nowrap">€1.000-1.500</td>
+              <td class="px-6 py-4 whitespace-nowrap">6-8 jaar</td>
+            </tr>
+            <tr class="bg-blue-50">
+              <td class="px-6 py-4 whitespace-nowrap font-medium">Batterij + dynamisch contract</td>
+              <td class="px-6 py-4 whitespace-nowrap">€5.000</td>
+              <td class="px-6 py-4 whitespace-nowrap">€600-900</td>
+              <td class="px-6 py-4 whitespace-nowrap">6-8 jaar</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Voor- en nadelen dynamisch contract</h2>
+
+      <h3>✅ Voordelen</h3>
+      <ul>
+        <li>Geen investering nodig</li>
+        <li>Direct besparing mogelijk</li>
+        <li>Profiteert van lage energieprijzen</li>
+        <li>Eenvoudig om te stappen</li>
+      </ul>
+
+      <h3>❌ Nadelen</h3>
+      <ul>
+        <li>Prijzen kunnen onvoorspelbaar zijn</li>
+        <li>Vereist actieve monitoring</li>
+        <li>Beperkte besparing (€200-400/jaar)</li>
+        <li>Geen bescherming tegen extreme prijspieken</li>
+      </ul>
+
+      <h2>Voor- en nadelen thuisbatterij</h2>
+
+      <h3>✅ Voordelen</h3>
+      <ul>
+        <li>Voorspelbare besparing</li>
+        <li>Onafhankelijkheid van netprijzen</li>
+        <li>Grotere besparing mogelijk</li>
+        <li>Bescherming tegen stroomuitval</li>
+        <li>Waardestijging woning</li>
+      </ul>
+
+      <h3>❌ Nadelen</h3>
+      <ul>
+        <li>Hoge initiële investering</li>
+        <li>Langere terugverdientijd</li>
+        <li>Technische complexiteit</li>
+        <li>Capaciteitsverlies over tijd</li>
+      </ul>
+
+      <h2>De ultieme combinatie: Batterij + Dynamisch</h2>
+      
+      <p>Waarom kiezen? De slimste strategie combineert beide opties:</p>
+
+      <div class="bg-yellow-50 border-l-4 border-yellow-400 p-6 my-8">
+        <h3 class="text-lg font-semibold mb-2">🔋⚡ Slimme combinatie strategie</h3>
+        <ul class="space-y-2">
+          <li><strong>Overdag:</strong> Batterij laden bij lage dynamische prijzen</li>
+          <li><strong>'s Avonds:</strong> Batterij gebruiken bij hoge prijzen</li>
+          <li><strong>Weekend:</strong> Extra laden bij zeer lage prijzen</li>
+          <li><strong>Resultaat:</strong> Maximale besparing van €600-900 per jaar</li>
+        </ul>
+      </div>
+
+      <h2>Welke optie past bij jou?</h2>
+
+      <h3>Kies voor een dynamisch contract als:</h3>
+      <ul>
+        <li>Je geen grote investering wilt doen</li>
+        <li>Je flexibel bent met energieverbruik</li>
+        <li>Je actief wilt blijven monitoren</li>
+        <li>Je woonsituatie tijdelijk is</li>
+      </ul>
+
+      <h3>Kies voor een thuisbatterij als:</h3>
+      <ul>
+        <li>Je al zonnepanelen hebt</li>
+        <li>Je voorspelbare kosten wilt</li>
+        <li>Je maximale onafhankelijkheid wilt</li>
+        <li>Je lange termijn wilt investeren</li>
+      </ul>
+
+      <h3>Kies voor de combinatie als:</h3>
+      <ul>
+        <li>Je maximale besparing wilt</li>
+        <li>Je technisch onderlegd bent</li>
+        <li>Je bereid bent te investeren</li>
+        <li>Je een smart home hebt</li>
+      </ul>
+
+      <h2>Praktijkvoorbeeld: Vergelijking drie huishoudens</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 my-8">
+        <div class="bg-white border border-gray-200 p-6 rounded-lg">
+          <h4 class="font-semibold mb-2">Starter (huurwoning)</h4>
+          <p class="text-sm text-gray-600 mb-4">Jonge professional, 2.800 kWh/jaar</p>
+          <p><strong>Beste optie:</strong> Dynamisch contract</p>
+          <p><strong>Besparing:</strong> €250/jaar</p>
+        </div>
+        <div class="bg-white border border-gray-200 p-6 rounded-lg">
+          <h4 class="font-semibold mb-2">Gezin (eigen woning)</h4>
+          <p class="text-sm text-gray-600 mb-4">Gezin met 2 kinderen, 4.200 kWh/jaar</p>
+          <p><strong>Beste optie:</strong> Batterij + zonnepanelen</p>
+          <p><strong>Besparing:</strong> €1.200/jaar</p>
+        </div>
+        <div class="bg-white border border-gray-200 p-6 rounded-lg">
+          <h4 class="font-semibold mb-2">Tech-savvy (smart home)</h4>
+          <p class="text-sm text-gray-600 mb-4">Early adopter, 3.800 kWh/jaar</p>
+          <p><strong>Beste optie:</strong> Batterij + dynamisch</p>
+          <p><strong>Besparing:</strong> €800/jaar</p>
+        </div>
+      </div>
+
+      <h2>Conclusie</h2>
+      
+      <p>Er is geen one-size-fits-all oplossing. Een dynamisch contract biedt snelle, risicoloze besparing. Een thuisbatterij biedt langetermijn voordelen en onafhankelijkheid. De combinatie van beide maximaliseert je besparing, maar vereist meer investering en kennis.</p>
+      
+      <p>Gebruik onze calculator om te berekenen welke optie het meest voordelig is voor jouw specifieke situatie.</p>
+    `
+  },
+  'fouten-bij-aanschaf-thuisbatterij': {
+    titel: 'Top 5 fouten bij de aanschaf van een thuisbatterij',
+    excerpt: 'Vermijd kostbare fouten bij je thuisbatterij aankoop. Leer van de ervaringen van anderen.',
+    datum: '2024-12-20',
+    leestijd: '7 min',
+    auteur: 'Peter de Vries',
+    tags: ['fouten', 'tips', 'aanschaf'],
+    content: `
+      <p class="lead">Bij de aanschaf van een thuisbatterij maken veel mensen dezelfde fouten. Deze kunnen leiden tot teleurstelling, extra kosten of suboptimale prestaties. Hier zijn de 5 meest gemaakte fouten en hoe je ze vermijdt.</p>
+
+      <h2>Fout #1: Verkeerde capaciteit kiezen</h2>
+      
+      <div class="bg-red-50 border-l-4 border-red-400 p-6 my-8">
+        <h3 class="text-lg font-semibold mb-2 text-red-800">❌ Veel voorkomende fout</h3>
+        <p>"Ik koop de grootste batterij die ik kan betalen, want meer is altijd beter."</p>
+      </div>
+
+      <p><strong>Waarom dit fout is:</strong> Een te grote batterij wordt nooit volledig benut, wat betekent dat je teveel betaalt per nuttige kWh. Een te kleine batterij beperkt je besparing.</p>
+
+      <div class="bg-green-50 border-l-4 border-green-400 p-6 my-8">
+        <h3 class="text-lg font-semibold mb-2 text-green-800">✅ Juiste aanpak</h3>
+        <p>Bereken je dagelijkse avond- en nachtverbruik. Kies een batterij die 80-100% hiervan kan dekken (meestal 30-50% van je totale dagverbruik).</p>
+      </div>
+
+      <h3>Praktische vuistregel:</h3>
+      <ul>
+        <li><strong>Klein huishouden (2.500 kWh/jaar):</strong> 5-7 kWh batterij</li>
+        <li><strong>Gemiddeld huishouden (3.500 kWh/jaar):</strong> 7-10 kWh batterij</li>
+        <li><strong>Groot huishouden (4.500+ kWh/jaar):</strong> 10-15 kWh batterij</li>
+      </ul>
+
+      <h2>Fout #2: Subsidie te laat aanvragen</h2>
+      
+      <div class="bg-red-50 border-l-4 border-red-400 p-6 my-8">
+        <h3 class="text-lg font-semibold mb-2 text-red-800">❌ Kostbare vergissing</h3>
+        <p>"Ik installeer eerst de batterij en vraag daarna subsidie aan."</p>
+      </div>
+
+      <p><strong>Gevolg:</strong> Je krijgt GEEN subsidie meer. Subsidie moet altijd vóór installatie worden aangevraagd.</p>
+
+      <div class="bg-green-50 border-l-4 border-green-400 p-6 my-8">
+        <h3 class="text-lg font-semibold mb-2 text-green-800">✅ Correct stappenplan</h3>
+        <ol class="list-decimal list-inside space-y-1">
+          <li>Subsidie aanvragen bij RVO</li>
+          <li>Wachten op beschikking (4-8 weken)</li>
+          <li>Bij goedkeuring: batterij laten installeren</li>
+          <li>Binnen 3 maanden: verantwoording insturen</li>
+        </ol>
+      </div>
+
+      <h2>Fout #3: Goedkoopste installateur kiezen</h2>
+      
+      <p>Een slechte installatie kan leiden tot:</p>
+      <ul>
+        <li>Veiligheidsrisico's</li>
+        <li>Suboptimale prestaties</li>
+        <li>Garantie problemen</li>
+        <li>Dure reparaties later</li>
+      </ul>
+
+      <h3>Waar op te letten bij installateur selectie:</h3>
+      <ul>
+        <li>✅ Erkend door fabrikant batterij</li>
+        <li>✅ Verzekerd voor schade</li>
+        <li>✅ Goede reviews van klanten</li>
+        <li>✅ Transparante offerte</li>
+        <li>✅ Nazorg en onderhoud mogelijk</li>
+      </ul>
+
+      <h2>Fout #4: Batterij zonder app/monitoring kopen</h2>
+      
+      <div class="bg-red-50 border-l-4 border-red-400 p-6 my-8">
+        <h3 class="text-lg font-semibold mb-2 text-red-800">❌ Gemiste kans</h3>
+        <p>"Een goedkope batterij zonder app werkt ook prima."</p>
+      </div>
+
+      <p><strong>Waarom monitoring essentieel is:</strong></p>
+      <ul>
+        <li>Inzicht in prestaties en besparing</li>
+        <li>Vroegtijdige detectie van problemen</li>
+        <li>Optimalisatie van laad/ontlaad schema's</li>
+        <li>Garantie claims onderbouwen</li>
+      </ul>
+
+      <h2>Fout #5: Batterij plaatsen in verkeerde ruimte</h2>
+      
+      <h3>Problemen bij verkeerde plaatsing:</h3>
+      <ul>
+        <li><strong>Woonkamer:</strong> Geluidshinder en veiligheidsrisico</li>
+        <li><strong>Ongeïsoleerde schuur:</strong> Prestatievermindering door kou</li>
+        <li><strong>Vochtige kelder:</strong> Corrosie en levensduurverkorting</li>
+        <li><strong>Zonnige plek:</strong> Oververhitting</li>
+      </ul>
+
+      <div class="bg-green-50 border-l-4 border-green-400 p-6 my-8">
+        <h3 class="text-lg font-semibold mb-2 text-green-800">✅ Ideale locatie</h3>
+        <ul class="space-y-1">
+          <li>Droge, geïsoleerde ruimte</li>
+          <li>Temperatuur tussen 5-25°C</li>
+          <li>Goede ventilatie</li>
+          <li>Bereikbaar voor onderhoud</li>
+          <li>Dicht bij meterkast</li>
+        </ul>
+      </div>
+
+      <h2>Bonus tip: Check compatibiliteit</h2>
+      
+      <p>Zorg ervoor dat je batterij compatibel is met:</p>
+      <ul>
+        <li>Je bestaande omvormer (bij zonnepanelen)</li>
+        <li>Je meterkast configuratie</li>
+        <li>Lokale netbeheerder eisen</li>
+        <li>Toekomstige uitbreidingen</li>
+      </ul>
+
+      <h2>Checklist: Voor je koopt</h2>
+
+      <div class="bg-blue-50 p-6 rounded-lg my-8">
+        <h3 class="text-lg font-semibold mb-4">📋 Verifieer voor aankoop:</h3>
+        <div class="space-y-2">
+          <label class="flex items-center">
+            <input type="checkbox" class="mr-2" />
+            <span>Juiste capaciteit berekend</span>
+          </label>
+          <label class="flex items-center">
+            <input type="checkbox" class="mr-2" />
+            <span>Subsidie aangevraagd (en goedgekeurd)</span>
+          </label>
+          <label class="flex items-center">
+            <input type="checkbox" class="mr-2" />
+            <span>Erkende installateur geselecteerd</span>
+          </label>
+          <label class="flex items-center">
+            <input type="checkbox" class="mr-2" />
+            <span>Batterij met app/monitoring</span>
+          </label>
+          <label class="flex items-center">
+            <input type="checkbox" class="mr-2" />
+            <span>Geschikte locatie geïdentificeerd</span>
+          </label>
+          <label class="flex items-center">
+            <input type="checkbox" class="mr-2" />
+            <span>Compatibiliteit gecontroleerd</span>
+          </label>
+        </div>
+      </div>
+
+      <h2>Conclusie</h2>
+      
+      <p>Een thuisbatterij is een geweldige investering, maar alleen als je de juiste keuzes maakt. Door deze veelgemaakte fouten te vermijden, zorg je ervoor dat je batterij optimaal presteert en maximale besparing oplevert.</p>
+      
+      <p>Neem je tijd voor onderzoek, vergelijk grondig en kies kwaliteit boven de laagste prijs. Je toekomstige zelf zal je dankbaar zijn!</p>
+    `
+  }
+};
+
+// Individuele blog artikel pagina's
+app.get('/blog/:articleId', (c) => {
+  const articleId = c.req.param('articleId')
+  const artikel = blogArtikelen[articleId]
+  
+  if (!artikel) {
+    return c.notFound()
+  }
+
+  return c.render(
+    <div>
+      {/* Breadcrumb */}
+      <nav class="bg-gray-50 py-4">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ol class="flex items-center space-x-2 text-sm">
+            <li><a href="/" class="text-energy-green hover:underline">Home</a></li>
+            <li><i class="fas fa-chevron-right text-gray-400 mx-2"></i></li>
+            <li><a href="/blog" class="text-energy-green hover:underline">Blog</a></li>
+            <li><i class="fas fa-chevron-right text-gray-400 mx-2"></i></li>
+            <li class="text-gray-600 truncate">{artikel.titel}</li>
+          </ol>
+        </div>
+      </nav>
+
+      {/* Article Header */}
+      <article class="py-12">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <header class="mb-8">
+            <div class="flex flex-wrap gap-2 mb-4">
+              {artikel.tags.map((tag) => (
+                <span key={tag} class="bg-energy-green/10 text-energy-green px-3 py-1 rounded-full text-sm font-medium">
+                  {tag}
+                </span>
+              ))}
+            </div>
+            
+            <h1 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900 leading-tight">
+              {artikel.titel}
+            </h1>
+            
+            <div class="flex items-center text-gray-600 mb-6">
+              <i class="fas fa-user-circle text-xl mr-2"></i>
+              <span class="mr-4">Door {artikel.auteur}</span>
+              <i class="fas fa-calendar text-sm mr-2"></i>
+              <span class="mr-4">{artikel.datum}</span>
+              <i class="fas fa-clock text-sm mr-2"></i>
+              <span>{artikel.leestijd} leestijd</span>
+            </div>
+            
+            <p class="text-xl text-gray-600 leading-relaxed">
+              {artikel.excerpt}
+            </p>
+          </header>
+
+          {/* Article Content */}
+          <div class="prose prose-lg max-w-none" dangerouslySetInnerHTML={{__html: artikel.content}}></div>
+
+          {/* Share & Navigation */}
+          <footer class="mt-12 pt-8 border-t border-gray-200">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center space-y-4 md:space-y-0">
+              <div>
+                <h3 class="font-semibold mb-2">Deel dit artikel:</h3>
+                <div class="flex space-x-3">
+                  <a href="#" class="bg-blue-600 text-white px-3 py-2 rounded hover:bg-blue-700">
+                    <i class="fab fa-facebook-f"></i>
+                  </a>
+                  <a href="#" class="bg-blue-400 text-white px-3 py-2 rounded hover:bg-blue-500">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                  <a href="#" class="bg-green-600 text-white px-3 py-2 rounded hover:bg-green-700">
+                    <i class="fab fa-whatsapp"></i>
+                  </a>
+                  <a href="#" class="bg-blue-700 text-white px-3 py-2 rounded hover:bg-blue-800">
+                    <i class="fab fa-linkedin-in"></i>
+                  </a>
+                </div>
+              </div>
+              
+              <div class="text-right">
+                <a href="/blog" class="inline-flex items-center text-energy-green hover:underline font-medium">
+                  <i class="fas fa-arrow-left mr-2"></i>
+                  Terug naar blog
+                </a>
+              </div>
+            </div>
+          </footer>
+        </div>
+      </article>
+
+      {/* Related Articles */}
+      <section class="py-12 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 class="text-3xl font-bold mb-8 text-center text-gray-900">Gerelateerde Artikelen</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {Object.entries(blogArtikelen).filter(([id]) => id !== articleId).slice(0, 3).map(([id, relatedArtikel]) => (
+              <div key={id} class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                <div class="h-48 bg-gray-200 relative">
+                  <div class="absolute inset-0 bg-gradient-to-br from-energy-green/20 to-energy-blue/20 flex items-center justify-center">
+                    <i class="fas fa-image text-4xl text-gray-400"></i>
+                  </div>
+                </div>
+                <div class="p-6">
+                  <div class="flex items-center text-sm text-gray-500 mb-3">
+                    <span>{relatedArtikel.datum}</span>
+                    <span class="mx-2">•</span>
+                    <span>{relatedArtikel.leestijd} leestijd</span>
+                  </div>
+                  <h3 class="text-xl font-bold mb-3 text-gray-900">{relatedArtikel.titel}</h3>
+                  <p class="text-gray-600 mb-4">{relatedArtikel.excerpt}</p>
+                  <a href={`/blog/${id}`} class="text-energy-green hover:underline font-medium">
+                    Lees meer →
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </div>,
+    {
+      title: artikel.titel + ' - Thuisbatterij Blog',
+      description: artikel.excerpt,
+      keywords: artikel.tags.join(', ') + ', thuisbatterij, blog, gids'
     }
   )
 })
