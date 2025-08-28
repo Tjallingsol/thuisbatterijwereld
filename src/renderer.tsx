@@ -8,7 +8,7 @@ export const renderer = jsxRenderer(({ children, title, description, keywords })
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>{title || 'Thuisbatterij – Bespaar energie en geld met slimme batterij-opslag'}</title>
         <meta name="description" content={description || 'Vergelijk de beste thuisbatterijen van 2025. Bespaar op energiekosten, verhoog zelfconsumptie zonne-energie. ✓ Subsidie ✓ Reviews ✓ Prijzen'} />
-        <meta name="keywords" content={keywords || 'thuisbatterij, thuisbatterij kopen, wat kost thuisbatterij, subsidie thuisbatterij 2025, zonnepanelen batterij, energieopslag'} />
+        <meta name="keywords" content={keywords || 'thuisbatterij, thuisbatterij kopen, wat kost thuisbatterij, growatt thuisbatterij, dyness thuisbatterij, victron thuisbatterij, zonneplan thuisbatterij, subsidie thuisbatterij 2025, terugverdientijd thuisbatterij'} />
         
         {/* Open Graph tags */}
         <meta property="og:title" content={title || 'Thuisbatterij – Bespaar energie en geld met slimme batterij-opslag'} />
@@ -68,6 +68,7 @@ export const renderer = jsxRenderer(({ children, title, description, keywords })
               <div class="hidden md:flex items-center space-x-8">
                 <a href="/" class="text-gray-700 hover:text-energy-green font-medium">Home</a>
                 <a href="/vergelijken" class="text-gray-700 hover:text-energy-green font-medium">Vergelijken</a>
+                <a href="/kopen" class="text-gray-700 hover:text-energy-green font-medium">Kopen</a>
                 <a href="/kosten" class="text-gray-700 hover:text-energy-green font-medium">Kosten</a>
                 <a href="/subsidie" class="text-gray-700 hover:text-energy-green font-medium">Subsidie</a>
                 
@@ -134,6 +135,7 @@ export const renderer = jsxRenderer(({ children, title, description, keywords })
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
               <a href="/" class="block px-3 py-2 text-gray-700 hover:text-energy-green font-medium">Home</a>
               <a href="/vergelijken" class="block px-3 py-2 text-gray-700 hover:text-energy-green font-medium">Vergelijken</a>
+              <a href="/kopen" class="block px-3 py-2 text-gray-700 hover:text-energy-green font-medium">Kopen</a>
               <a href="/kosten" class="block px-3 py-2 text-gray-700 hover:text-energy-green font-medium">Kosten</a>
               <a href="/subsidie" class="block px-3 py-2 text-gray-700 hover:text-energy-green font-medium">Subsidie</a>
               

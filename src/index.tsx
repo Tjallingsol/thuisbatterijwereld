@@ -112,10 +112,10 @@ app.get('/', (c) => {
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="text-center">
             <h1 class="text-4xl md:text-6xl font-bold mb-6">
-              Thuisbatterij – Bespaar energie en geld met slimme batterij-opslag
+              Thuisbatterij Kopen? Vergelijk Alle Merken & Prijzen 2025
             </h1>
             <p class="text-xl md:text-2xl mb-8 max-w-4xl mx-auto">
-              Vergelijk de beste thuisbatterijen van 2025. Bespaar tot 70% op je energiekosten en verhoog je zelfconsumptie van zonne-energie.
+              Wat kost een thuisbatterij? Vergelijk Growatt, Dyness, Victron, HomeWizard & Zonneplan. Met subsidie vanaf €3.500. Bespaar tot €1.200 per jaar op energiekosten.
             </p>
             <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
               <a href="/vergelijken" class="bg-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors" style="color: #10b981">
@@ -283,9 +283,613 @@ app.get('/', (c) => {
       </section>
     </div>,
     {
-      title: 'Thuisbatterij – Bespaar energie en geld met slimme batterij-opslag',
-      description: 'Vergelijk de beste thuisbatterijen van 2025. ✓ Bespaar tot 70% op energiekosten ✓ Subsidie informatie ✓ Onafhankelijke reviews ✓ Prijzen vergelijken',
-      keywords: 'thuisbatterij, thuisbatterij kopen, wat kost thuisbatterij, subsidie thuisbatterij 2025, zonnepanelen batterij, energieopslag'
+      title: 'Thuisbatterij Kopen? Vergelijk Alle Merken & Prijzen 2025',
+      description: 'Thuisbatterij kopen? Wat kost een thuisbatterij? ✓ Growatt ✓ Dyness ✓ Victron ✓ HomeWizard ✓ Zonneplan ✓ Subsidie 2025 ✓ Vanaf €3.500 ✓ Bespaar €1.200/jaar',
+      keywords: 'thuisbatterij, thuisbatterij kopen, wat kost thuisbatterij, growatt thuisbatterij, dyness thuisbatterij, victron thuisbatterij, homewizard thuisbatterij, zonneplan thuisbatterij, subsidie thuisbatterij 2025'
+    }
+  )
+})
+
+// Thuisbatterij Kopen landingspagina (8.1k searches - difficulty 36)
+app.get('/kopen', (c) => {
+  return c.render(
+    <div>
+      {/* Header */}
+      <section class="bg-white py-12 border-b">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+              Thuisbatterij Kopen - Complete Koopgids 2025
+            </h1>
+            <p class="text-xl text-gray-600 max-w-4xl mx-auto">
+              Wil je een thuisbatterij kopen? Ontdek welke thuisbatterij het beste bij jou past. Vergelijk alle merken, prijzen en krijg subsidie advies.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Waarom thuisbatterij kopen */}
+      <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold mb-4 text-gray-900">
+              Waarom een thuisbatterij kopen in 2025?
+            </h2>
+          </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <div class="bg-white p-8 rounded-lg shadow-md text-center">
+              <div class="w-16 h-16 bg-green-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                <i class="fas fa-euro-sign text-green-600 text-2xl"></i>
+              </div>
+              <h3 class="text-xl font-semibold mb-4">Bespaar €500-1.200 per jaar</h3>
+              <p class="text-gray-600">Met een thuisbatterij bespaar je aanzienlijk op je energierekening door goedkope stroom op te slaan.</p>
+            </div>
+            
+            <div class="bg-white p-8 rounded-lg shadow-md text-center">
+              <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                <i class="fas fa-leaf text-blue-600 text-2xl"></i>
+              </div>
+              <h3 class="text-xl font-semibold mb-4">80% meer zelfconsumptie</h3>
+              <p class="text-gray-600">Verhoog je zelfconsumptie van zonne-energie van 30% naar 80% met een thuisbatterij.</p>
+            </div>
+            
+            <div class="bg-white p-8 rounded-lg shadow-md text-center">
+              <div class="w-16 h-16 bg-orange-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                <i class="fas fa-shield-alt text-orange-600 text-2xl"></i>
+              </div>
+              <h3 class="text-xl font-semibold mb-4">Tot €2.500 subsidie</h3>
+              <p class="text-gray-600">Profiteer van de ISDE subsidie en BTW-teruggave. Bespaar tot €2.500 op je aanschaf.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Stappen thuisbatterij kopen */}
+      <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold mb-4 text-gray-900">
+              Thuisbatterij kopen in 5 stappen
+            </h2>
+          </div>
+          
+          <div class="space-y-8">
+            <div class="flex flex-col md:flex-row items-center">
+              <div class="flex-shrink-0 w-16 h-16 bg-energy-green text-white rounded-full flex items-center justify-center text-xl font-bold mb-4 md:mb-0 md:mr-8">
+                1
+              </div>
+              <div class="text-center md:text-left">
+                <h3 class="text-2xl font-semibold mb-2">Bereken je energiebehoefte</h3>
+                <p class="text-gray-600 mb-4">Bepaal hoeveel kWh capaciteit je nodig hebt op basis van je verbruik</p>
+                <a href="/kosten" class="text-energy-green hover:underline font-semibold">
+                  → Gebruik onze calculator
+                </a>
+              </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row items-center">
+              <div class="flex-shrink-0 w-16 h-16 bg-energy-green text-white rounded-full flex items-center justify-center text-xl font-bold mb-4 md:mb-0 md:mr-8">
+                2
+              </div>
+              <div class="text-center md:text-left">
+                <h3 class="text-2xl font-semibold mb-2">Vergelijk merken en prijzen</h3>
+                <p class="text-gray-600 mb-4">Bekijk alle beschikbare thuisbatterijen met reviews en specificaties</p>
+                <a href="/vergelijken" class="text-energy-green hover:underline font-semibold">
+                  → Vergelijk alle merken
+                </a>
+              </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row items-center">
+              <div class="flex-shrink-0 w-16 h-16 bg-energy-green text-white rounded-full flex items-center justify-center text-xl font-bold mb-4 md:mb-0 md:mr-8">
+                3
+              </div>
+              <div class="text-center md:text-left">
+                <h3 class="text-2xl font-semibold mb-2">Controleer subsidie mogelijkheden</h3>
+                <p class="text-gray-600 mb-4">Check welke subsidies je kunt krijgen en hoe je ze aanvraagt</p>
+                <a href="/subsidie" class="text-energy-green hover:underline font-semibold">
+                  → Bekijk subsidies
+                </a>
+              </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row items-center">
+              <div class="flex-shrink-0 w-16 h-16 bg-energy-green text-white rounded-full flex items-center justify-center text-xl font-bold mb-4 md:mb-0 md:mr-8">
+                4
+              </div>
+              <div class="text-center md:text-left">
+                <h3 class="text-2xl font-semibold mb-2">Kies een betrouwbare installateur</h3>
+                <p class="text-gray-600 mb-4">Laat je thuisbatterij professioneel installeren voor optimale prestaties</p>
+                <a href="/gids/installatie" class="text-energy-green hover:underline font-semibold">
+                  → Installatie gids
+                </a>
+              </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row items-center">
+              <div class="flex-shrink-0 w-16 h-16 bg-energy-green text-white rounded-full flex items-center justify-center text-xl font-bold mb-4 md:mb-0 md:mr-8">
+                5
+              </div>
+              <div class="text-center md:text-left">
+                <h3 class="text-2xl font-semibold mb-2">Geniet van lagere energiekosten</h3>
+                <p class="text-gray-600 mb-4">Monitor je besparing en optimaliseer je energieverbruik</p>
+                <a href="/gids/besparing-maximaliseren" class="text-energy-green hover:underline font-semibold">
+                  → Besparing tips
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Top batterijen om te kopen */}
+      <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold mb-4 text-gray-900">
+              Beste thuisbatterijen om te kopen in 2025
+            </h2>
+          </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {batterijen.slice(0, 6).map((batterij) => (
+              <div key={batterij.id} class="bg-white rounded-lg shadow-md overflow-hidden">
+                <div class="p-6">
+                  <h3 class="text-xl font-bold mb-2">{batterij.merk} {batterij.model}</h3>
+                  <div class="text-2xl font-bold text-energy-green mb-4">€{batterij.prijs.toLocaleString()}</div>
+                  
+                  <div class="space-y-2 mb-6">
+                    <div class="flex justify-between">
+                      <span class="text-gray-600">Capaciteit:</span>
+                      <span class="font-semibold">{batterij.capaciteit} kWh</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span class="text-gray-600">Garantie:</span>
+                      <span class="font-semibold">{batterij.garantie} jaar</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span class="text-gray-600">Efficiency:</span>
+                      <span class="font-semibold">{batterij.efficiency}%</span>
+                    </div>
+                  </div>
+
+                  <div class="space-y-2">
+                    <a href={batterij.affiliate_url} target="_blank" 
+                       class="block bg-energy-green text-white text-center py-3 rounded-lg font-bold hover:bg-energy-green/90 transition-colors">
+                      <i class="fas fa-shopping-cart mr-2"></i>
+                      Nu Kopen
+                    </a>
+                    <a href={`/merken/${batterij.id}`} 
+                       class="block bg-gray-100 text-gray-800 text-center py-3 rounded-lg font-bold hover:bg-gray-200 transition-colors">
+                      Volledige Review
+                    </a>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Call to Action */}
+      <section class="py-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div class="bg-energy-green text-white p-8 rounded-lg">
+            <h3 class="text-2xl font-bold mb-4">Klaar om je thuisbatterij te kopen?</h3>
+            <p class="mb-6">Bereken je besparing en vind de perfecte thuisbatterij voor jouw situatie</p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+              <a href="/kosten" class="bg-orange-500 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-orange-600 hover:scale-105 border-2 border-orange-500 transition-all duration-300 shadow-xl hover:shadow-2xl">
+                <i class="fas fa-calculator mr-2"></i>
+                Bereken Besparing
+              </a>
+              <a href="/vergelijken" class="bg-blue-600 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-700 hover:scale-105 border-2 border-blue-600 transition-all duration-300 shadow-xl hover:shadow-2xl">
+                <i class="fas fa-balance-scale mr-2"></i>
+                Vergelijk Nu
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>,
+    {
+      title: 'Thuisbatterij Kopen 2025 - Complete Koopgids & Beste Merken',
+      description: 'Thuisbatterij kopen? ✓ Complete koopgids 2025 ✓ Growatt, Dyness, Victron, HomeWizard ✓ Prijzen vanaf €3.500 ✓ Tot €2.500 subsidie ✓ Bespaar €1.200/jaar',
+      keywords: 'thuisbatterij kopen, thuisbatterij kopen 2025, beste thuisbatterij kopen, waar thuisbatterij kopen, thuisbatterij aanschaffen, thuisbatterij investeren'
+    }
+  )
+})
+
+// Zonneplan Thuisbatterij pagina (6600 searches - difficulty 50)
+app.get('/zonneplan-thuisbatterij', (c) => {
+  return c.render(
+    <div>
+      {/* Header */}
+      <section class="bg-white py-12 border-b">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+              Zonneplan Thuisbatterij - Complete Review & Ervaringen 2025
+            </h1>
+            <p class="text-xl text-gray-600 max-w-4xl mx-auto">
+              Alles over de Zonneplan thuisbatterij: prijs, capaciteit, installatie en ervaringen van klanten. Is de Zonneplan batterij de beste keuze?
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Zonneplan Battery Overview */}
+      <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div>
+              <h2 class="text-3xl font-bold mb-6">Zonneplan Thuisbatterij Specificaties</h2>
+              <div class="bg-gray-50 p-6 rounded-lg">
+                <div class="space-y-4">
+                  <div class="flex justify-between">
+                    <span class="text-gray-600">Capaciteit:</span>
+                    <span class="font-bold">13.5 kWh</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-gray-600">Prijs:</span>
+                    <span class="font-bold text-energy-green">€8.500 - €10.500</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-gray-600">Efficiency:</span>
+                    <span class="font-bold">97%</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-gray-600">Garantie:</span>
+                    <span class="font-bold">10 jaar</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-gray-600">Levensduur:</span>
+                    <span class="font-bold">6.000 cycli</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-gray-600">App:</span>
+                    <span class="font-bold text-green-600">Premium monitoring</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-8">
+                <h3 class="text-xl font-semibold mb-4">Voordelen Zonneplan Thuisbatterij</h3>
+                <ul class="space-y-3">
+                  <li class="flex items-start">
+                    <i class="fas fa-check text-green-600 mt-1 mr-3"></i>
+                    <span>All-in-one pakket inclusief installatie en monitoring</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fas fa-check text-green-600 mt-1 mr-3"></i>
+                    <span>Premium LiFePO4 batterijcellen</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fas fa-check text-green-600 mt-1 mr-3"></i>
+                    <span>Uitstekende app met real-time monitoring</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fas fa-check text-green-600 mt-1 mr-3"></i>
+                    <span>Professionele installatie door eigen technici</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-2xl font-bold mb-6">Zonneplan Thuisbatterij Ervaringen</h3>
+              <div class="space-y-6">
+                <div class="bg-green-50 p-6 rounded-lg">
+                  <div class="flex items-center mb-3">
+                    <div class="text-yellow-400 text-xl mr-3">★★★★★</div>
+                    <span class="font-semibold">- Jan uit Amsterdam</span>
+                  </div>
+                  <p class="text-gray-700">"Hele tevreden met de Zonneplan batterij. Installatie was professioneel en de app geeft perfect inzicht in mijn energieverbruik."</p>
+                </div>
+
+                <div class="bg-blue-50 p-6 rounded-lg">
+                  <div class="flex items-center mb-3">
+                    <div class="text-yellow-400 text-xl mr-3">★★★★☆</div>
+                    <span class="font-semibold">- Marie uit Utrecht</span>
+                  </div>
+                  <p class="text-gray-700">"Goede batterij, wel aan de prijzige kant. Kwaliteit is top en service uitstekend."</p>
+                </div>
+              </div>
+
+              <div class="mt-8">
+                <h4 class="text-lg font-semibold mb-4">Nadelen</h4>
+                <ul class="space-y-2">
+                  <li class="flex items-start">
+                    <i class="fas fa-times text-red-500 mt-1 mr-3"></i>
+                    <span>Hogere prijs dan alternatieven</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fas fa-times text-red-500 mt-1 mr-3"></i>
+                    <span>Alleen via Zonneplan beschikbaar</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Alternatives */}
+      <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 class="text-3xl font-bold text-center mb-12">Alternatieven voor Zonneplan Thuisbatterij</h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {batterijen.filter(b => b.merk !== 'Zonneplan').slice(0, 3).map((batterij) => (
+              <div key={batterij.id} class="bg-white rounded-lg shadow-md p-6">
+                <h3 class="text-xl font-bold mb-4">{batterij.merk} {batterij.model}</h3>
+                <div class="text-2xl font-bold text-energy-green mb-4">€{batterij.prijs.toLocaleString()}</div>
+                <div class="space-y-2 mb-6">
+                  <div class="flex justify-between">
+                    <span class="text-gray-600">Capaciteit:</span>
+                    <span class="font-semibold">{batterij.capaciteit} kWh</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-gray-600">Prijs verschil:</span>
+                    <span class="font-semibold text-green-600">€{(9000 - batterij.prijs).toLocaleString()} goedkoper</span>
+                  </div>
+                </div>
+                <a href={`/merken/${batterij.id}`} class="block bg-energy-green text-white text-center py-3 rounded-lg font-bold hover:bg-energy-green/90 transition-colors">
+                  Bekijk {batterij.merk}
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section class="py-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div class="bg-energy-green text-white p-8 rounded-lg">
+            <h3 class="text-2xl font-bold mb-4">Zonneplan Thuisbatterij kopen?</h3>
+            <p class="mb-6">Vergelijk de Zonneplan batterij met andere merken en vind de beste prijs</p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+              <a href="https://www.zonneplan.nl/thuisbatterij" target="_blank" class="bg-orange-500 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-orange-600 hover:scale-105 border-2 border-orange-500 transition-all duration-300 shadow-xl hover:shadow-2xl">
+                <i class="fas fa-external-link-alt mr-2"></i>
+                Zonneplan Offerte
+              </a>
+              <a href="/vergelijken" class="bg-blue-600 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-700 hover:scale-105 border-2 border-blue-600 transition-all duration-300 shadow-xl hover:shadow-2xl">
+                <i class="fas fa-balance-scale mr-2"></i>
+                Vergelijk Alternatieven
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>,
+    {
+      title: 'Zonneplan Thuisbatterij Review 2025 - Prijs, Ervaringen & Alternatieven',
+      description: 'Zonneplan thuisbatterij review ✓ Prijs €8.500-€10.500 ✓ 13.5 kWh capaciteit ✓ Echte klant ervaringen ✓ Vergelijk met Growatt, Dyness, Victron ✓ Beste alternatieven',
+      keywords: 'zonneplan thuisbatterij, zonneplan battery, zonneplan thuisbatterij prijs, zonneplan thuisbatterij ervaringen, zonneplan nexus thuisbatterij'
+    }
+  )
+})
+
+// Growatt Thuisbatterij pagina (590 searches - difficulty 2 - very low!)
+app.get('/growatt-thuisbatterij', (c) => {
+  const growatt = batterijen.find(b => b.merk === 'Growatt');
+  return c.render(
+    <div>
+      {/* Header */}
+      <section class="bg-white py-12 border-b">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+              Growatt Thuisbatterij - ARB 10.24kWh Review & Beste Prijs 2025
+            </h1>
+            <p class="text-xl text-gray-600 max-w-4xl mx-auto">
+              Complete Growatt thuisbatterij review: ARB 10.24kWh specificaties, prijs, installatie en waar je de beste deal krijgt.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Product Hero */}
+      <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div>
+              <h2 class="text-3xl font-bold mb-6">Growatt ARB 10.24kWh Thuisbatterij</h2>
+              <div class="bg-gradient-to-r from-energy-green to-blue-600 text-white p-6 rounded-lg mb-6">
+                <div class="text-3xl font-bold mb-2">€{growatt?.prijs.toLocaleString()}</div>
+                <div class="text-lg">Inclusief BTW, exclusief installatie</div>
+                <div class="text-sm opacity-90 mt-2">Prijs per kWh: €{growatt ? Math.round(growatt.prijs / growatt.capaciteit) : 440}</div>
+              </div>
+              
+              <div class="space-y-4">
+                <h3 class="text-xl font-semibold">Waarom Growatt ARB kiezen?</h3>
+                <ul class="space-y-3">
+                  <li class="flex items-start">
+                    <i class="fas fa-euro-sign text-green-600 mt-1 mr-3"></i>
+                    <span><strong>Beste prijs-kwaliteit:</strong> Premium LiFePO4 batterij voor een scherpe prijs</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fas fa-layer-group text-blue-600 mt-1 mr-3"></i>
+                    <span><strong>Modulair systeem:</strong> Uitbreidbaar tot 20.48kWh (2 modules)</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fas fa-shield-alt text-green-600 mt-1 mr-3"></i>
+                    <span><strong>10 jaar garantie:</strong> Lange waarborg op prestaties</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fas fa-tools text-orange-600 mt-1 mr-3"></i>
+                    <span><strong>Eenvoudige installatie:</strong> Compatibel met meeste omvormers</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <h3 class="text-xl font-semibold mb-6">Technische Specificaties</h3>
+              <div class="space-y-4">
+                <div class="flex justify-between border-b pb-2">
+                  <span class="text-gray-600">Totale capaciteit:</span>
+                  <span class="font-bold">10.24 kWh</span>
+                </div>
+                <div class="flex justify-between border-b pb-2">
+                  <span class="text-gray-600">Bruikbare capaciteit:</span>
+                  <span class="font-bold">9.216 kWh (90%)</span>
+                </div>
+                <div class="flex justify-between border-b pb-2">
+                  <span class="text-gray-600">Batterijtype:</span>
+                  <span class="font-bold">LiFePO4</span>
+                </div>
+                <div class="flex justify-between border-b pb-2">
+                  <span class="text-gray-600">Rond-trip efficiency:</span>
+                  <span class="font-bold">95%</span>
+                </div>
+                <div class="flex justify-between border-b pb-2">
+                  <span class="text-gray-600">Laad/ontlaadvermogen:</span>
+                  <span class="font-bold">5.12 kW</span>
+                </div>
+                <div class="flex justify-between border-b pb-2">
+                  <span class="text-gray-600">Cycli (80% DOD):</span>
+                  <span class="font-bold">6.000+</span>
+                </div>
+                <div class="flex justify-between border-b pb-2">
+                  <span class="text-gray-600">Werktemperatuur:</span>
+                  <span class="font-bold">-10°C tot +50°C</span>
+                </div>
+                <div class="flex justify-between border-b pb-2">
+                  <span class="text-gray-600">Afmetingen (H×B×D):</span>
+                  <span class="font-bold">580×490×185 mm</span>
+                </div>
+                <div class="flex justify-between border-b pb-2">
+                  <span class="text-gray-600">Gewicht:</span>
+                  <span class="font-bold">46 kg</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-gray-600">Garantie:</span>
+                  <span class="font-bold">10 jaar</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Comparison */}
+      <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 class="text-3xl font-bold text-center mb-12">Growatt vs Concurrentie</h2>
+          <div class="overflow-x-auto">
+            <table class="w-full bg-white rounded-lg shadow-md">
+              <thead class="bg-energy-green text-white">
+                <tr>
+                  <th class="px-4 py-3 text-left">Merk & Model</th>
+                  <th class="px-4 py-3 text-center">Capaciteit</th>
+                  <th class="px-4 py-3 text-center">Prijs</th>
+                  <th class="px-4 py-3 text-center">€/kWh</th>
+                  <th class="px-4 py-3 text-center">Efficiency</th>
+                </tr>
+              </thead>
+              <tbody>
+                {batterijen.slice(0, 4).map((batterij, index) => (
+                  <tr key={batterij.id} class={index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}>
+                    <td class="px-4 py-3">
+                      <div class="font-semibold">{batterij.merk} {batterij.model}</div>
+                    </td>
+                    <td class="px-4 py-3 text-center">{batterij.capaciteit} kWh</td>
+                    <td class="px-4 py-3 text-center">€{batterij.prijs.toLocaleString()}</td>
+                    <td class="px-4 py-3 text-center">€{Math.round(batterij.prijs / batterij.capaciteit)}</td>
+                    <td class="px-4 py-3 text-center">{batterij.efficiency}%</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* Installation */}
+      <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div>
+              <h2 class="text-3xl font-bold mb-6">Growatt Thuisbatterij Installatie</h2>
+              <p class="text-gray-600 mb-6">De Growatt ARB is compatibel met de meeste hybride omvormers en kan zowel AC- als DC-gekoppeld worden geïnstalleerd.</p>
+              
+              <h3 class="text-xl font-semibold mb-4">Compatibele Omvormers</h3>
+              <ul class="space-y-2 mb-6">
+                <li class="flex items-center">
+                  <i class="fas fa-check text-green-600 mr-3"></i>
+                  <span>Growatt SPH series (aanbevolen)</span>
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-check text-green-600 mr-3"></i>
+                  <span>SolarEdge StorEdge omvormers</span>
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-check text-green-600 mr-3"></i>
+                  <span>Huawei LUNA2000 series</span>
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-check text-green-600 mr-3"></i>
+                  <span>Victron MultiPlus-II</span>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 class="text-2xl font-bold mb-6">Installatiekosten</h3>
+              <div class="bg-blue-50 p-6 rounded-lg">
+                <div class="space-y-4">
+                  <div class="flex justify-between">
+                    <span>Growatt ARB batterij:</span>
+                    <span class="font-bold">€{growatt?.prijs.toLocaleString()}</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span>Installatie & bedrading:</span>
+                    <span class="font-bold">€800 - €1.200</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span>Configuratie & inbedrijfstelling:</span>
+                    <span class="font-bold">€200 - €400</span>
+                  </div>
+                  <hr class="border-gray-300" />
+                  <div class="flex justify-between text-lg">
+                    <span class="font-bold">Totaal all-in:</span>
+                    <span class="font-bold text-energy-green">€{growatt ? (growatt.prijs + 1200).toLocaleString() : '6.700'}</span>
+                  </div>
+                  <div class="text-sm text-gray-600">
+                    <span>Met ISDE subsidie: €{growatt ? (growatt.prijs + 1200 - 2500).toLocaleString() : '4.200'}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section class="py-16 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div class="bg-energy-green text-white p-8 rounded-lg">
+            <h3 class="text-2xl font-bold mb-4">Growatt Thuisbatterij Kopen?</h3>
+            <p class="mb-6">Vergelijk prijzen en vind de beste deal voor de Growatt ARB 10.24kWh</p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+              <a href={growatt?.affiliate_url} target="_blank" class="bg-orange-500 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-orange-600 hover:scale-105 border-2 border-orange-500 transition-all duration-300 shadow-xl hover:shadow-2xl">
+                <i class="fas fa-shopping-cart mr-2"></i>
+                Beste Prijs Bekijken
+              </a>
+              <a href="/kosten" class="bg-blue-600 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-700 hover:scale-105 border-2 border-blue-600 transition-all duration-300 shadow-xl hover:shadow-2xl">
+                <i class="fas fa-calculator mr-2"></i>
+                Bereken Besparing
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>,
+    {
+      title: 'Growatt Thuisbatterij ARB 10.24kWh Review 2025 - Prijs & Specificaties',
+      description: 'Growatt thuisbatterij review ✓ ARB 10.24kWh €4.500 ✓ LiFePO4 batterij ✓ 95% efficiency ✓ 10 jaar garantie ✓ Beste prijs-kwaliteit ✓ Vergelijk prijzen',
+      keywords: 'growatt thuisbatterij, growatt arb, growatt thuisbatterij prijs, growatt battery, growatt 10kwh, growatt batterij review'
     }
   )
 })
