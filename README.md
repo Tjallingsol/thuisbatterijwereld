@@ -1,161 +1,144 @@
-# Thuisbatterij – Bespaar energie en geld met slimme batterij-opslag
+# 🔋 Thuisbatterijwereld.nl
 
-## Project Overview
-- **Naam**: Thuisbatterij.nl
-- **Doel**: Uitgebreide, gebruiksvriendelijke en SEO-geoptimaliseerde affiliate-website over thuisbatterijen
-- **Features**: Complete vergelijkingstool, interactieve calculator, SEO-optimalisatie voor Google en LLM's
+**De beste thuisbatterijen vergelijken en kopen**
 
-## Live URLs
-- **Sandbox**: https://3000-ii430xqu9xa5cqd0nljqp.e2b.dev
-- **GitHub**: (Nog te configureren)
+## 🌐 **Website**
+- **Production**: https://thuisbatterijwereld.nl
+- **GitHub**: https://github.com/Tjallingsol/thuisbatterijwereld
 
-## ✅ VOLLEDIG WERKENDE FEATURES
-**Alle onderstaande pagina's zijn live en volledig functioneel:**
+## 🚀 **Deployment naar Vimexx**
 
-## Currently Completed Features
+### **Optie 1: Manual Upload (Eenvoudigste)**
+1. Download de static export: [Backup Link](https://page.gensparksite.com/project_backups/tooluse_Z233AfqWSZ2OJi6QbjtJng.tar.gz)
+2. Extract de `static-export` folder  
+3. Upload alle bestanden naar je `public_html` folder op Vimexx
+4. Klaar! ✅
 
-### ✅ Homepage
-- SEO-geoptimaliseerde landing page met hero sectie
-- Introductie over thuisbatterijen en voordelen
-- Top 3 thuisbatterijen showcase
-- Call-to-action voor vergelijking en subsidie check
+### **Optie 2: GitHub Workflow Setup**
+Voor automatische deployment bij elke code wijziging:
 
-### ✅ Slimme Vergelijkingstool (/vergelijken)
-- Interactieve filters op capaciteit, prijs, merk, subsidie
-- Grid en tabel weergave opties
-- Real-time filtering en sortering
-- Responsive design voor alle apparaten
+1. **GitHub Secrets toevoegen** (Repository → Settings → Secrets):
+   ```
+   VIMEXX_FTP_SERVER    = je-domain.nl
+   VIMEXX_FTP_USERNAME  = je-ftp-username  
+   VIMEXX_FTP_PASSWORD  = je-ftp-password
+   ```
 
-### ✅ Productpagina's (/merken/[product-id])
-- **Alle 5 batterijmerken volledig toegankelijk:** Growatt, Dyness, Victron, HomeWizard, Zonneplan
-- **Gedetailleerde reviews** met sterren-ratings en klantreviews
-- **Voor/nadelen overzicht** met duidelijke badges
-- **Complete technische specificaties** in overzichtelijke tabellen
-- **Product-specifieke FAQ** secties per merk
-- **Strategisch geplaatste affiliate links** voor conversie optimalisatie
+2. **Workflow bestand aanmaken**:
+   - Ga naar `.github/workflows/` folder 
+   - Maak `deploy.yml` aan (zie `GITHUB_DEPLOYMENT.md`)
 
-### ✅ Kosten & Besparing Calculator (/kosten)
-- Interactieve calculator voor besparing berekening
-- Inputs voor verbruik, energieprijs, zonnepanelen
-- Real-time berekening van terugverdientijd
-- Prijsoverzicht per capaciteit
+3. **Push naar main branch** → Automatische deployment
 
-### ✅ Subsidie Informatie (/subsidie)
-- Nederlandse en Belgische subsidies 2025
-- ISDE, gemeentelijke en BTW informatie
-- Stap-voor-stap subsidie aanvraag handleiding
-- FAQ over subsidies
+**Uitgebreide instructies**: Zie `GITHUB_DEPLOYMENT.md`
 
-### ✅ Blog/Kennisbank (/blog + /blog/[artikel])
-- **Complete SEO-artikelen:** 4 volledig uitgewerkte gidsen (2000+ woorden each)
-- **Praktische content:** Zonnepanelen combinatie, 2025 investeringsgids, dynamisch contract vergelijking
-- **Individuele artikel pagina's** met breadcrumbs en social sharing
-- **Related articles** functionaliteit
-- **Professional layout** met author info en publish dates
+## 📊 **Website Features**
 
-### ✅ FAQ Pagina (/faq)
-- LLM-vriendelijke FAQ structuur
-- Categorieën: Algemeen, Kosten, Subsidie, Techniek
-- Zoekfunctionaliteit in vragen
-- Accordion interface voor gebruiksgemak
+### **📄 Pagina's (22 totaal)**
+- **Homepage** - SEO geoptimaliseerd voor "thuisbatterij"
+- **Vergelijken** - Alle merken vergelijking met filters  
+- **Kopen** - Complete koopgids (8.1k maandelijkse zoekopdrachten)
+- **Kosten Calculator** - Interactieve besparingsberekening
+- **Subsidie** - 2025 subsidie informatie
+- **4 Guide pagina's** - Complete gidsen voor kopers
+- **Blog** + Energieonafhankelijkheid artikel
+- **Merk pagina's** - Zonneplan, Growatt reviews
+- **Product reviews** - Growatt, Dyness, Victron, HomeWizard, Zonneplan
 
-## Data Architecture
-- **Data Models**: Batterij specificaties met alle eigenschappen (capaciteit, prijs, garantie, efficiency, etc.)
-- **Storage Services**: Static data in applicatie (geschikt voor Cloudflare Pages)
-- **Data Flow**: Server-side rendering met Hono, client-side filtering en interactie
+### **⚡ Technische Specs**
+- **Framework**: Hono + TypeScript (Cloudflare Workers compatible)
+- **Frontend**: TailwindCSS + FontAwesome + Pure JavaScript
+- **SEO**: Geoptimaliseerd voor 76k+ maandelijkse zoekopdrachten
+- **Performance**: Static HTML export voor snelle loading
+- **Mobile**: Volledig responsive design
 
-## Tech Stack
-- **Backend**: Hono framework (lightweight, fast)
-- **Frontend**: HTML/CSS/JavaScript met Tailwind CSS
-- **Deployment**: Cloudflare Pages optimized
-- **Build System**: Vite
-- **Runtime**: Cloudflare Workers
+### **🎯 SEO Optimalisatie**
+Gebaseerd op keyword research (1.001 keywords geanalyseerd):
 
-## SEO Optimization
+- **Hoofdkeywords**: thuisbatterij (60.5k), thuisbatterij kopen (8.1k)  
+- **Merk keywords**: zonneplan thuisbatterij (6.6k), growatt (590 - difficulty 2)
+- **Longtail**: 20+ keywords met difficulty < 10
+- **Metadata**: Geoptimaliseerde titels, descriptions, schema markup
+- **Sitemap**: Volledig voor Google indexering
 
-### ✅ Technical SEO
-- Semantic HTML structure met proper heading hierarchy
-- Meta titles en descriptions voor alle pagina's
-- Open Graph tags voor social media
-- Mobile responsive design
-- Fast loading times met Cloudflare edge deployment
+## 🔧 **Development**
 
-### ✅ Content SEO
-- Keyword optimization voor "thuisbatterij" en varianten
-- Long-tail keywords in FAQ en content
-- Internal linking tussen relevante pagina's
-- Structured content voor featured snippets
-
-### ✅ LLM Optimization
-- Clear, informative content structuur
-- FAQ's met directe antwoorden
-- Consistent terminology en definities
-- JSON-LD structured data (implementatie pending)
-
-## User Guide
-1. **Homepagina**: Start hier voor overzicht van thuisbatterijen en voordelen
-2. **Vergelijken**: Gebruik filters om perfect passende batterij te vinden
-3. **Calculator**: Bereken exact hoeveel je bespaart met een thuisbatterij
-4. **Subsidie**: Check welke subsidies je kunt krijgen en hoe aan te vragen
-5. **Product Reviews**: Lees gedetailleerde reviews van specifieke merken
-6. **FAQ**: Vind antwoorden op veelgestelde vragen
-
-## Features Not Yet Implemented
-- [ ] JSON-LD Schema markup voor Google rich snippets
-- [ ] Contact formulier en pagina
-- [ ] Newsletter signup
-- [ ] Cookie consent banner
-- [ ] Advanced analytics tracking
-- [ ] A/B testing voor CTA's
-- [ ] Sitemap.xml generatie
-- [ ] Robots.txt configuratie
-
-## Recommended Next Steps
-1. **Schema Markup**: Implementeer JSON-LD voor FAQ, Product en Review schema
-2. **Blog Content**: Schrijf uitgebreide blog artikelen voor SEO
-3. **Performance**: Optimaliseer loading times en Core Web Vitals
-4. **Analytics**: Implementeer Google Analytics en Search Console
-5. **Conversion**: A/B test verschillende CTA's en layouts
-
-## Deployment Status
-- **Platform**: Cloudflare Pages ready
-- **Status**: ✅ Development server active op poort 3000
-- **Tech Stack**: Hono + TypeScript + TailwindCSS + Cloudflare Workers
-- **Last Updated**: 28 augustus 2025
-
-## Development Commands
+### **Local Development**
 ```bash
-# Development
-npm run build                    # Build voor productie
-npm run dev:sandbox             # Start development server
-npm run clean-port              # Ruim poort 3000 op
-npm run test                    # Test server response
+# Dependencies installeren
+npm install
 
-# PM2 Management
-pm2 start ecosystem.config.cjs  # Start server als daemon
-pm2 logs --nostream            # Check server logs
-pm2 restart thuisbatterij-website  # Restart server
-pm2 delete thuisbatterij-website   # Stop en verwijder
+# Development server starten  
+npm run dev:sandbox
 
-# Git
-npm run git:commit "message"    # Commit changes
-npm run git:status             # Check status
+# Website beschikbaar op http://localhost:3000
 ```
 
-## Website Structuur
-```
-/                              # Homepage met hero en overzicht
-/vergelijken                   # Slimme vergelijkingstool
-/kosten                        # Calculator & prijsoverzicht  
-/subsidie                      # Subsidie info & stappenplan
-/blog                          # Kennisbank & artikelen
-/faq                           # Veelgestelde vragen
-/merken/[product-id]           # Individuele product reviews
-/api/batterijen                # JSON API voor batterij data
+### **Build & Export**
+```bash
+# Project bouwen
+npm run build
+
+# Static export genereren (zie static-export/ folder)
+node deploy.js
 ```
 
-## SEO Keywords Focus
-- **Primair**: thuisbatterij, thuisbatterij kopen, wat kost thuisbatterij
-- **Secundair**: subsidie thuisbatterij 2025, zonnepanelen batterij, energieopslag
-- **Long-tail**: growatt thuisbatterij, dyness thuisbatterij, victron thuisbatterij
-- **LLM Friendly**: Directe antwoorden, praktische informatie, complete gidsen
+### **Project Structuur**
+```
+webapp/
+├── src/
+│   ├── index.tsx           # Hoofdapplicatie (Hono routes)
+│   └── renderer.tsx        # HTML renderer + nav
+├── public/
+│   └── static/             # CSS/JS assets
+├── static-export/          # Static HTML voor hosting
+├── .github/
+│   └── workflows/          # GitHub Actions (optioneel)
+├── package.json
+├── wrangler.jsonc          # Cloudflare config  
+└── README.md
+```
+
+## 📈 **Content Highlights**
+
+### **Energieonafhankelijkheid Artikel**
+- **5-stappen plan** naar energie-onafhankelijkheid
+- **Kosten/baten analyse**: €15k-€23k investering, €1.1k-€2.1k/jaar besparing  
+- **Smart features**: tijd-gebaseerd laden, weersvoorspelling
+- **Noodstroom**: wat werkt wel/niet tijdens stroomstoringen
+
+### **Brand Reviews**  
+- **Zonneplan**: €8.5k-€10.5k, 13.5 kWh, premium LiFePO4
+- **Growatt ARB**: €4.5k, 10.24 kWh, beste prijs-kwaliteit
+- **Volledige specs** en concurrentievergelijkingen
+
+### **Kosten Calculator**
+- **Real-time berekeningen** - JavaScript client-side
+- **Subsidie integratie** - ISDE en BTW teruggave
+- **Terugverdientijd** - ROI berekening
+- **Zonnepanelen optimalisatie** - Verhoog zelfconsumptie naar 80%
+
+## 🎨 **Design & UX**
+
+### **Kleuren**
+- **Primary**: Energy Green (#10b981)
+- **Secondary**: Energy Blue (#3b82f6)  
+- **Accent**: Battery Orange (#f59e0b)
+- **CTA Buttons**: Oranje (Bereken) + Blauw (Vergelijk) voor maximum contrast
+
+### **Navigation**
+- **Desktop**: Dropdown menu voor Gidsen
+- **Mobile**: Hamburger menu met collapsed sections
+- **Clean URLs**: `/kopen`, `/gids/kopers-gids` (via .htaccess)
+
+### **Performance**
+- **CDN assets**: TailwindCSS, FontAwesome
+- **Gzip compression**: .htaccess configuratie
+- **Browser caching**: 1 jaar voor static assets
+- **Image optimization**: WebP waar mogelijk
+
+---
+
+**🚀 Ready for production deployment to Thuisbatterijwereld.nl!**
+
+*Laatste update: 28 augustus 2025*
