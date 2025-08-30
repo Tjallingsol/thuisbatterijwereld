@@ -1,56 +1,23 @@
-# Enhanced .htaccess for Thuisbatterijwereld.nl
-# Generated: 2025-08-28T16:00:02.476Z
+# Vimexx Compatible .htaccess for Thuisbatterijwereld.nl
+# Generated: 2025-08-30T12:34:12.222Z
 
-# Enable rewrite engine
 RewriteEngine On
 
-# Force HTTPS redirect
-RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# Remove .html extension from URLs  
+RewriteCond %{THE_REQUEST} \s/+([^.\s]*?)\.html[\s?] [NC]
+RewriteRule ^ /%1? [R=301,L]
 
-# Remove .html extension from URLs
-RewriteCond %{REQUEST_FILENAME} !-d
+# Serve .html files for clean URLs
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^([^.]+)$ $1.html [NC,L]
+RewriteCond %{REQUEST_FILENAME} !-d  
+RewriteRule ^([^.]+)$ $1.html [L]
 
-# Remove .html extension from existing URLs
-RewriteCond %{THE_REQUEST} /([^.\s]*)\.html[\s?] [NC]
-RewriteRule ^ /%1? [NC,L,R=301]
-
-# Custom 404 error page
-ErrorDocument 404 /404.html
-
-# Enable compression
-<IfModule mod_deflate.c>
-    AddOutputFilterByType DEFLATE text/plain
-    AddOutputFilterByType DEFLATE text/html
-    AddOutputFilterByType DEFLATE text/xml
-    AddOutputFilterByType DEFLATE text/css
-    AddOutputFilterByType DEFLATE application/xml
-    AddOutputFilterByType DEFLATE application/xhtml+xml
-    AddOutputFilterByType DEFLATE application/rss+xml
-    AddOutputFilterByType DEFLATE application/javascript
-    AddOutputFilterByType DEFLATE application/x-javascript
-    AddOutputFilterByType DEFLATE application/json
-</IfModule>
-
-# Browser caching
-<IfModule mod_expires.c>
-    ExpiresActive on
-    ExpiresByType text/css "access plus 1 month"
-    ExpiresByType application/javascript "access plus 1 month"
-    ExpiresByType image/png "access plus 1 month"
-    ExpiresByType image/jpg "access plus 1 month"
-    ExpiresByType image/jpeg "access plus 1 month"
-    ExpiresByType image/gif "access plus 1 month"
-    ExpiresByType image/svg+xml "access plus 1 month"
-</IfModule>
-
-# Security headers
+# Security and performance
 <IfModule mod_headers.c>
     Header always set X-Content-Type-Options nosniff
     Header always set X-Frame-Options DENY
-    Header always set X-XSS-Protection "1; mode=block"
-    Header always set Referrer-Policy "strict-origin-when-cross-origin"
-    Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+</IfModule>
+
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/css text/javascript
 </IfModule>

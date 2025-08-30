@@ -166,7 +166,33 @@ ErrorDocument 404 /404.html
 </IfModule>
 `;
 
-  writeFileSync(join(exportDir, '.htaccess'), htaccess);
+  // Generate Vimexx-compatible .htaccess
+  const vimexxHtaccess = `# Vimexx Compatible .htaccess for Thuisbatterijwereld.nl
+# Generated: ${new Date().toISOString()}
+
+RewriteEngine On
+
+# Remove .html extension from URLs  
+RewriteCond %{THE_REQUEST} \\s/+([^.\\s]*?)\\.html[\\s?] [NC]
+RewriteRule ^ /%1? [R=301,L]
+
+# Serve .html files for clean URLs
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d  
+RewriteRule ^([^.]+)$ $1.html [L]
+
+# Security and performance
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options nosniff
+    Header always set X-Frame-Options DENY
+</IfModule>
+
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/css text/javascript
+</IfModule>
+`;
+
+  writeFileSync(join(exportDir, '.htaccess'), vimexxHtaccess);
   console.log('✅ Generated: .htaccess');
 
   // Generate enhanced sitemap.xml with schema references
