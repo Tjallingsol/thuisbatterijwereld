@@ -338,15 +338,46 @@ vergelijkenApp.get('/vergelijken', (c) => {
         function updateDisplay() {
           resultCount.textContent = filteredBatterijen.length;
 
-          // Update grid view
-          const cards = document.querySelectorAll('.battery-card');
-          cards.forEach(card => {
-            const merk = card.dataset.merk;
-            const isVisible = filteredBatterijen.some(b => b.merk === merk);
-            card.style.display = isVisible ? 'block' : 'none';
-          });
+          // Update grid view - show/hide cards based on filtering and sorting
+          const gridContainer = document.getElementById('grid-container');
+          if (gridContainer) {
+            // Clear and rebuild grid with filtered and sorted results
+            const cards = document.querySelectorAll('.battery-card');
+            cards.forEach(card => {
+              const merk = card.dataset.merk;
+              const isVisible = filteredBatterijen.some(b => b.merk === merk);
+              card.style.display = isVisible ? 'block' : 'none';
+            });
+            
+            // Reorder cards based on sort order
+            const sortedCards = Array.from(cards).sort((a, b) => {
+              const merkA = a.dataset.merk;
+              const merkB = b.dataset.merk;
+              const batterijA = filteredBatterijen.find(b => b.merk === merkA);
+              const batterijB = filteredBatterijen.find(b => b.merk === merkB);
+              
+              if (!batterijA || !batterijB) return 0;
+              
+              const sortValue = sortFilter.value;
+              switch (sortValue) {
+                case 'rating': return batterijB.rating - batterijA.rating;
+                case 'prijs-laag': return batterijA.prijs - batterijB.prijs;
+                case 'prijs-hoog': return batterijB.prijs - batterijA.prijs;
+                case 'capaciteit': return batterijB.capaciteit - batterijA.capaciteit;
+                case 'garantie': return batterijB.garantie - batterijA.garantie;
+                default: return 0;
+              }
+            });
+            
+            // Reappend sorted cards
+            sortedCards.forEach(card => {
+              if (card.style.display !== 'none') {
+                gridContainer.appendChild(card);
+              }
+            });
+          }
 
-          // Update table view
+          // Update table view (if exists)
           const rows = document.querySelectorAll('.battery-row');
           rows.forEach(row => {
             const merk = row.dataset.merk;
@@ -371,24 +402,20 @@ vergelijkenApp.get('/vergelijken', (c) => {
           filterBatterijen();
         });
 
-        // View toggle
+        // Initialize display
+        filterBatterijen();
+
+        // View toggle - currently only grid view is implemented
         gridView.addEventListener('click', () => {
-          gridContainer.classList.remove('hidden');
-          tableContainer.classList.add('hidden');
-          gridView.classList.add('bg-energy-green', 'text-white');
-          gridView.classList.remove('bg-gray-200', 'text-gray-600');
-          tableView.classList.add('bg-gray-200', 'text-gray-600');
-          tableView.classList.remove('bg-energy-green', 'text-white');
+          // Grid view is always active for now
         });
 
-        tableView.addEventListener('click', () => {
-          gridContainer.classList.add('hidden');
-          tableContainer.classList.remove('hidden');
-          tableView.classList.add('bg-energy-green', 'text-white');
-          tableView.classList.remove('bg-gray-200', 'text-gray-600');
-          gridView.classList.add('bg-gray-200', 'text-gray-600');
-          gridView.classList.remove('bg-energy-green', 'text-white');
-        });
+        // Disable table view for now since HTML table structure is not included
+        if (tableView) {
+          tableView.style.opacity = '0.5';
+          tableView.style.cursor = 'not-allowed';
+          tableView.title = 'Tabelweergave wordt binnenkort toegevoegd';
+        }
       `}</script>
     </div>,
     {

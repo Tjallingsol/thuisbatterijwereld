@@ -1,0 +1,17 @@
+SNELLE OPLOSSING VOOR BLOG PROBLEEM:
+
+Als /blog nog steeds niet werkt, verander in ALLE HTML bestanden:
+- href="/blog" naar href="/blog.html"
+
+Dit zorgt dat de navigatie direct naar de werkende blog.html pagina gaat.
+
+De HTML bestanden die je moet updaten:
+- Alle bestanden in de root directory
+- Alle bestanden in gids/ directory  
+- Alle bestanden in merken/ directory
+
+Zoek en vervang in alle bestanden:
+ZOEK: href="/blog"
+VERVANG DOOR: href="/blog.html"
+
+Dan werkt alles gegarandeerd!
