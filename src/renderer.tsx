@@ -10,6 +10,38 @@ export const renderer = jsxRenderer(({ children, title, description, keywords })
         <meta name="description" content={description || 'Thuisbatterijwereld: Vergelijk alle thuisbatterijen van 2025. ✓ Growatt ✓ Dyness ✓ Victron ✓ HomeWizard ✓ Zonneplan ✓ Subsidie ✓ Reviews ✓ Beste prijzen'} />
         <meta name="keywords" content={keywords || 'thuisbatterij, thuisbatterij kopen, wat kost thuisbatterij, growatt thuisbatterij, dyness thuisbatterij, victron thuisbatterij, zonneplan thuisbatterij, subsidie thuisbatterij 2025, terugverdientijd thuisbatterij'} />
         
+        {/* Google Analytics 4 - Global Site Tag with GDPR Consent */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-PD4KF244VP"></script>
+        <script dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            
+            // GDPR Consent Mode - Default deny
+            gtag('consent', 'default', {
+              'analytics_storage': 'denied'
+            });
+            
+            // Check existing consent
+            const consent = localStorage.getItem('cookie-consent');
+            if (consent === 'accepted') {
+              gtag('consent', 'update', {
+                'analytics_storage': 'granted'
+              });
+            }
+            
+            gtag('config', 'G-PD4KF244VP', {
+              page_title: document.title,
+              page_location: window.location.href,
+              anonymize_ip: true,
+              custom_map: {
+                'custom_parameter_1': 'thuisbatterij_page'
+              }
+            });
+          `
+        }} />
+        
         {/* Open Graph tags */}
         <meta property="og:title" content={title || 'Thuisbatterijwereld - Vergelijk de beste thuisbatterijen van 2025'} />
         <meta property="og:description" content={description || 'Thuisbatterijwereld: Vergelijk alle thuisbatterijen van 2025. Growatt, Dyness, Victron, HomeWizard, Zonneplan.'} />
@@ -390,9 +422,67 @@ export const renderer = jsxRenderer(({ children, title, description, keywords })
           </div>
         </footer>
 
+        {/* GDPR Cookie Consent Banner */}
+        <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-gray-800 text-white p-4 shadow-lg z-50 transform translate-y-full transition-transform duration-300">
+          <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between">
+            <div class="mb-4 md:mb-0 md:mr-4">
+              <p class="text-sm">
+                🍪 We gebruiken cookies om je ervaring te verbeteren en website statistieken bij te houden via Google Analytics. 
+                <a href="/privacy" class="underline hover:text-energy-green">Meer info</a>
+              </p>
+            </div>
+            <div class="flex space-x-3">
+              <button id="accept-cookies" class="bg-energy-green text-white px-4 py-2 rounded text-sm font-medium hover:bg-energy-green/90 transition-colors">
+                Accepteren
+              </button>
+              <button id="reject-cookies" class="bg-gray-600 text-white px-4 py-2 rounded text-sm font-medium hover:bg-gray-500 transition-colors">
+                Weigeren
+              </button>
+            </div>
+          </div>
+        </div>
+
         {/* JavaScript */}
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <script>{`
+          // Cookie Consent Management
+          function checkCookieConsent() {
+            const consent = localStorage.getItem('cookie-consent');
+            const banner = document.getElementById('cookie-banner');
+            
+            if (!consent && banner) {
+              // Show banner after 1 second delay
+              setTimeout(() => {
+                banner.classList.remove('translate-y-full');
+              }, 1000);
+            }
+          }
+
+          // Handle cookie consent
+          document.getElementById('accept-cookies')?.addEventListener('click', function() {
+            localStorage.setItem('cookie-consent', 'accepted');
+            document.getElementById('cookie-banner').classList.add('translate-y-full');
+            
+            // Enable Google Analytics
+            if (typeof gtag !== 'undefined') {
+              gtag('consent', 'update', {
+                'analytics_storage': 'granted'
+              });
+            }
+          });
+
+          document.getElementById('reject-cookies')?.addEventListener('click', function() {
+            localStorage.setItem('cookie-consent', 'rejected');
+            document.getElementById('cookie-banner').classList.add('translate-y-full');
+            
+            // Disable Google Analytics
+            if (typeof gtag !== 'undefined') {
+              gtag('consent', 'update', {
+                'analytics_storage': 'denied'
+              });
+            }
+          });
+
           // Mobile menu toggle
           document.getElementById('mobile-menu-button')?.addEventListener('click', function() {
             const menu = document.getElementById('mobile-menu');
@@ -411,6 +501,9 @@ export const renderer = jsxRenderer(({ children, title, description, keywords })
               }
             });
           });
+
+          // Initialize cookie consent check
+          document.addEventListener('DOMContentLoaded', checkCookieConsent);
         `}</script>
       </body>
     </html>
