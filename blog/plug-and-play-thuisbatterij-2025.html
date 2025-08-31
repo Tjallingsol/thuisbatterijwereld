@@ -208,28 +208,77 @@
         li { margin-bottom: 0.5rem; }
         
         .cta-section {
-            background: linear-gradient(135deg, var(--energy-green), var(--energy-blue));
+            background: linear-gradient(135deg, #059669, #047857);
             color: white;
-            padding: 2rem;
-            border-radius: 12px;
+            padding: 3rem 2rem;
+            border-radius: 16px;
             text-align: center;
             margin: 3rem 0;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
+            animation: shine 3s infinite;
+        }
+        
+        @keyframes shine {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        .cta-section h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .cta-section p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         .cta-button {
             display: inline-block;
-            background: white;
-            color: var(--energy-green);
-            padding: 1rem 2rem;
-            border-radius: 8px;
+            background: #ffffff;
+            color: #047857;
+            padding: 1.25rem 2.5rem;
+            border-radius: 12px;
             text-decoration: none;
-            font-weight: 700;
+            font-weight: 800;
+            font-size: 1.1rem;
             margin-top: 1rem;
-            transition: transform 0.2s;
+            transition: all 0.3s ease;
+            border: 3px solid transparent;
+            box-shadow: 0 8px 25px -8px rgba(0,0,0,0.3);
+            position: relative;
+            z-index: 10;
         }
         
         .cta-button:hover {
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            background: #f0fdf4;
+            border-color: #ffffff;
+            box-shadow: 0 12px 35px -8px rgba(0,0,0,0.4);
+            color: #065f46;
+        }
+        
+        .cta-button:active {
+            transform: translateY(-1px);
         }
         
         .reading-time {
@@ -679,9 +728,15 @@
         </div>
 
         <div class="cta-section">
-            <h2>🚀 Klaar om te Starten met een Plug & Play Thuisbatterij?</h2>
-            <p>Vergelijk alle merken, prijzen en specificaties op één plek. Bespaar tot €1.200 per jaar op je energierekening!</p>
-            <a href="/vergelijken" class="cta-button">🔍 Vergelijk Plug & Play Batterijen</a>
+            <h2>⚡ Start Nu met Besparen - Plug & Play in 30 Minuten!</h2>
+            <p><strong>Vanaf €2.995 installeer je zelf een thuisbatterij zonder elektricien.</strong><br>
+            Bespaar direct €650-€1.600 per jaar op je energierekening. Vergelijk alle merken en vind de perfecte plug & play oplossing voor jouw huis.</p>
+            <a href="/vergelijken" class="cta-button">
+                <span style="font-size: 1.2em;">🔋</span> Vergelijk Nu & Bespaar Direct
+            </a>
+            <div style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">
+                ✓ Gratis vergelijking ✓ Geen verplichtingen ✓ Direct prijzen
+            </div>
         </div>
 
         <div class="highlight-box">
