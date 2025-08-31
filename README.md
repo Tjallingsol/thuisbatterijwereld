@@ -2,6 +2,8 @@
 
 **De beste thuisbatterijen vergelijken en kopen**
 
+⚡ **LAATSTE UPDATE: 31 Aug 2025 - Plug & Play Thuisbatterij artikel toegevoegd**
+
 ## 🌐 **Website**
 - **Production**: https://thuisbatterijwereld.nl
 - **GitHub**: https://github.com/Tjallingsol/thuisbatterijwereld
