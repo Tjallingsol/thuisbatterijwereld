@@ -221,7 +221,7 @@
                         <h3 class="text-xl font-semibold text-gray-900 mb-3 hover:text-energy-green transition">
                             <a href="/blog/10-redenen-thuisbatterij-kopen-2025.html">10 Redenen om een Thuisbatterij te Kopen in 2025</a>
                         </h3>
-                        <p class="text-gray-600 mb-4">Ontdek waarom 2025 het perfecte jaar is om een thuisbatterij aan te schaffen. Van financiële voordelen tot duurzaamheid en onafhankelijkheid.</p>
+                        <p class="text-gray-600 mb-4">Ontdek waarom 2025 het perfecte jaar is om een thuisbatterij aan te schaffen. Van financiele voordelen tot duurzaamheid en onafhankelijkheid.</p>
                         <div class="flex items-center justify-between text-sm text-gray-500 mb-4">
                             <span><i class="fas fa-calendar-alt mr-1"></i>8 januari 2025</span>
                             <span><i class="fas fa-clock mr-1"></i>6 min lezen</span>
@@ -305,9 +305,9 @@
             </div>
         </section>
 
-        <!-- Blog Categorieën -->
+        <!-- Blog Categorieen -->
         <section class="mb-16">
-            <h2 class="text-3xl font-bold text-gray-900 mb-8">📂 Blog Categorieën</h2>
+            <h2 class="text-3xl font-bold text-gray-900 mb-8">📂 Blog Categorieen</h2>
             
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
                 <a href="/blog?categorie=kosten" class="group bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300 p-6 text-center">
@@ -340,14 +340,53 @@
         <section class="bg-gradient-to-r from-energy-green to-energy-blue rounded-xl p-8 text-white text-center">
             <h2 class="text-3xl font-bold mb-4">📧 Blijf op de Hoogte</h2>
             <p class="text-xl mb-6">Ontvang de nieuwste artikelen, subsidie updates en tips direct in je mailbox</p>
-            <div class="max-w-md mx-auto flex gap-4">
-                <input type="email" placeholder="Je e-mailadres" class="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-white">
-                <button class="bg-white text-energy-green px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
+            <form id="newsletter-form" class="max-w-md mx-auto flex gap-4">
+                <input type="email" id="subscriber-email" placeholder="Je e-mailadres" required class="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-white">
+                <button type="submit" class="bg-white text-energy-green px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
                     <i class="fas fa-paper-plane mr-2"></i>Aanmelden
                 </button>
-            </div>
+            </form>
             <p class="text-sm mt-4 opacity-80">Geen spam, alleen waardevolle content. Uitschrijven kan altijd.</p>
+            <div id="newsletter-message" class="mt-4 hidden"></div>
         </section>
+
+        <script>
+        document.getElementById('newsletter-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('subscriber-email').value;
+            const messageDiv = document.getElementById('newsletter-message');
+            
+            // Send email to Tjallingsol
+            const subject = encodeURIComponent('Nieuwe Newsletter Inschrijving - Thuisbatterijwereld');
+            const body = encodeURIComponent(`
+Nieuwe newsletter inschrijving:
+
+Email: ${email}
+Website: Thuisbatterijwereld.nl
+Pagina: Blog
+Datum: ${new Date().toLocaleString('nl-NL')}
+
+Deze persoon wil graag de nieuwste thuisbatterij artikelen, subsidie updates en tips ontvangen.
+            `.trim());
+            
+            // Open email client with pre-filled email
+            const mailtoLink = `mailto:tjallingsol@gmail.com?subject=${subject}&body=${body}`;
+            window.open(mailtoLink);
+            
+            // Show success message
+            messageDiv.className = 'mt-4 bg-white bg-opacity-20 rounded-lg p-4 text-white';
+            messageDiv.innerHTML = '✅ Bedankt voor je inschrijving! Je wordt zo snel mogelijk toegevoegd aan onze nieuwsbrief.';
+            
+            // Clear form
+            document.getElementById('subscriber-email').value = '';
+            
+            // Hide message after 5 seconds
+            setTimeout(() => {
+                messageDiv.className = 'mt-4 hidden';
+            }, 5000);
+        });
+        </script>
 
     </div>
 
@@ -363,7 +402,7 @@
                     <p class="text-gray-300">Nederlands platform voor thuisbatterij informatie, vergelijkingen en reviews.</p>
                 </div>
                 <div>
-                    <h3 class="text-lg font-semibold mb-4">Blog Categorieën</h3>
+                    <h3 class="text-lg font-semibold mb-4">Blog Categorieen</h3>
                     <ul class="space-y-2">
                         <li><a href="/blog?categorie=kosten" class="text-gray-300 hover:text-energy-green">Kosten & Prijzen</a></li>
                         <li><a href="/blog?categorie=installatie" class="text-gray-300 hover:text-energy-green">Installatie Tips</a></li>

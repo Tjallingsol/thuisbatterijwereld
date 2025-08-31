@@ -405,7 +405,7 @@
 
         <h2>💰 Kosten Plug and Play Thuisbatterij</h2>
         
-        <p>De <strong>thuisbatterij plug and play</strong> prijzen variëren tussen <strong>2.995 en 5.495 euro</strong>, afhankelijk van de capaciteit en het merk. Hier is een overzicht van alle kosten:</p>
+        <p>De <strong>thuisbatterij plug and play</strong> prijzen varieren tussen <strong>2.995 en 5.495 euro</strong>, afhankelijk van de capaciteit en het merk. Hier is een overzicht van alle kosten:</p>
 
         <div class="highlight-box">
             <h3>💵 Totale Kostenoverzicht</h3>
@@ -739,15 +739,74 @@
             </div>
         </div>
 
+        <!-- Newsletter Signup -->
+        <div class="cta-section">
+            <h2>📧 Blijf op de Hoogte van Nieuwe Thuisbatterij Ontwikkelingen</h2>
+            <p><strong>Ontvang de nieuwste artikelen, subsidie updates en plug & play tips.</strong><br>
+            Geen spam, alleen waardevolle content over thuisbatterijen en energiebesparing.</p>
+            <form id="newsletter-form-article" style="max-width: 400px; margin: 0 auto;">
+                <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+                    <input type="email" id="subscriber-email-article" placeholder="Je e-mailadres" required 
+                           style="flex: 1; padding: 0.75rem 1rem; border-radius: 8px; border: none; color: #047857; font-weight: 500;">
+                    <button type="submit" style="padding: 0.75rem 1.5rem; background: #ffffff; color: #047857; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; transition: all 0.3s ease;">
+                        📧 Aanmelden
+                    </button>
+                </div>
+            </form>
+            <div id="newsletter-message-article" style="margin-top: 1rem; display: none;"></div>
+        </div>
+
+        <script>
+        document.getElementById('newsletter-form-article').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('subscriber-email-article').value;
+            const messageDiv = document.getElementById('newsletter-message-article');
+            
+            // Send email to Tjallingsol
+            const subject = encodeURIComponent('Nieuwe Newsletter Inschrijving - Plug & Play Artikel');
+            const body = encodeURIComponent(`
+Nieuwe newsletter inschrijving via Plug & Play artikel:
+
+Email: ${email}
+Artikel: Plug and Play Thuisbatterij Complete Gids 2025
+Website: Thuisbatterijwereld.nl
+Datum: ${new Date().toLocaleString('nl-NL')}
+
+Deze persoon heeft interesse in plug & play thuisbatterijen en wil op de hoogte blijven van nieuwe ontwikkelingen.
+            `.trim());
+            
+            // Open email client
+            const mailtoLink = `mailto:tjallingsol@gmail.com?subject=${subject}&body=${body}`;
+            window.open(mailtoLink);
+            
+            // Show success message
+            messageDiv.style.display = 'block';
+            messageDiv.style.background = 'rgba(255,255,255,0.2)';
+            messageDiv.style.padding = '1rem';
+            messageDiv.style.borderRadius = '8px';
+            messageDiv.style.color = 'white';
+            messageDiv.innerHTML = '✓ Bedankt voor je inschrijving! Je wordt zo snel mogelijk toegevoegd aan onze nieuwsbrief.';
+            
+            // Clear form
+            document.getElementById('subscriber-email-article').value = '';
+            
+            // Hide message after 5 seconds
+            setTimeout(() => {
+                messageDiv.style.display = 'none';
+            }, 5000);
+        });
+        </script>
+
         <div class="highlight-box">
             <h3>📝 Samenvatting: Plug and Play Thuisbatterij</h3>
-            <p>Een <strong>plug and play thuisbatterij</strong> is de ideale keuze voor huishoudens die snel en eenvoudig willen beginnen met energie opslaan. Met prijzen vanaf <strong>euro2.995</strong> en een installatie van slechts 30 minuten, is het de meest toegankelijke manier om je energierekening te verlagen.</p>
+            <p>Een <strong>plug and play thuisbatterij</strong> is de ideale keuze voor huishoudens die snel en eenvoudig willen beginnen met energie opslaan. Met prijzen vanaf <strong>2.995 euro</strong> en een installatie van slechts 30 minuten, is het de meest toegankelijke manier om je energierekening te verlagen.</p>
             
             <p><strong>Belangrijkste voordelen:</strong></p>
             <ul>
-                <li>✓ Geen installatiekosten - bespaar euro500-euro1.500</li>
+                <li>✓ Geen installatiekosten - bespaar 500-1.500 euro</li>
                 <li>✓ Zelfinstallatie binnen 30 minuten</li>
-                <li>✓ Besparing van euro650-euro1.600 per jaar</li>
+                <li>✓ Besparing van 650-1.600 euro per jaar</li>
                 <li>✓ Draagbaar bij verhuizing</li>
                 <li>✓ Modulair uitbreidbaar</li>
                 <li>✓ 8-15 jaar garantie</li>
