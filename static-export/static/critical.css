@@ -1,0 +1,123 @@
+/* Critical CSS - Above the fold only */
+:root {
+  --energy-green: #10b981;
+  --energy-blue: #3b82f6;
+  --battery-orange: #f59e0b;
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+  --white: #ffffff;
+}
+
+/* Reset */
+*,*::before,*::after{box-sizing:border-box}
+*{margin:0}
+body{line-height:1.5;-webkit-font-smoothing:antialiased}
+img,picture,video,canvas,svg{display:block;max-width:100%}
+input,button,textarea,select{font:inherit}
+p,h1,h2,h3,h4,h5,h6{overflow-wrap:break-word}
+
+/* Base */
+body{font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background-color:var(--gray-50);color:var(--gray-900)}
+
+/* Layout utilities - Critical only */
+.hidden{display:none}
+.block{display:block}
+.flex{display:flex}
+.grid{display:grid}
+.max-w-7xl{max-width:80rem}
+.mx-auto{margin-left:auto;margin-right:auto}
+.px-4{padding-left:1rem;padding-right:1rem}
+.py-4{padding-top:1rem;padding-bottom:1rem}
+.py-12{padding-top:3rem;padding-bottom:3rem}
+.py-16{padding-top:4rem;padding-bottom:4rem}
+.py-20{padding-top:5rem;padding-bottom:5rem}
+.mb-4{margin-bottom:1rem}
+.mb-6{margin-bottom:1.5rem}
+.mb-8{margin-bottom:2rem}
+.space-x-2>*+*{margin-left:.5rem}
+.space-x-4>*+*{margin-left:1rem}
+.space-x-8>*+*{margin-left:2rem}
+
+/* Typography */
+.text-xl{font-size:1.25rem;line-height:1.75rem}
+.text-2xl{font-size:1.5rem;line-height:2rem}
+.text-4xl{font-size:2.25rem;line-height:2.5rem}
+.font-bold{font-weight:700}
+.font-medium{font-weight:500}
+.text-center{text-align:center}
+.leading-tight{line-height:1.25}
+
+/* Colors */
+.text-white{color:var(--white)}
+.text-gray-700{color:var(--gray-700)}
+.text-gray-900{color:var(--gray-900)}
+.text-energy-green{color:var(--energy-green)}
+.bg-white{background-color:var(--white)}
+.bg-gray-50{background-color:var(--gray-50)}
+.border-energy-green{border-color:var(--energy-green)}
+
+/* Layout */
+.h-16{height:4rem}
+.items-center{align-items:center}
+.justify-center{justify-content:center}
+.justify-between{justify-content:space-between}
+.flex-col{flex-direction:column}
+
+/* Responsive */
+@media (min-width:640px){
+  .sm\\:px-6{padding-left:1.5rem;padding-right:1.5rem}
+  .sm\\:flex-row{flex-direction:row}
+  .sm\\:space-y-0>*+*{margin-top:0;margin-left:0}
+  .sm\\:space-x-4>*+*{margin-left:1rem}
+}
+
+@media (min-width:768px){
+  .md\\:flex{display:flex}
+  .md\\:hidden{display:none}
+  .md\\:text-6xl{font-size:3.75rem;line-height:1}
+  .md\\:text-2xl{font-size:1.5rem;line-height:2rem}
+}
+
+@media (min-width:1024px){
+  .lg\\:px-8{padding-left:2rem;padding-right:2rem}
+}
+
+/* Navigation */
+nav{background-color:var(--white);box-shadow:0 10px 15px -3px rgba(0,0,0,.1);border-bottom:2px solid var(--energy-green)}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;padding:.75rem 2rem;border-radius:.5rem;font-weight:700;text-decoration:none;transition:all .2s}
+.btn-primary{background-color:var(--white);color:var(--energy-green)}
+.btn-primary:hover{background-color:var(--gray-100)}
+.btn-secondary{border:2px solid var(--white);color:var(--white)}
+.btn-secondary:hover{background-color:var(--white);color:var(--energy-green)}
+
+/* Utilities */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.transition-colors{transition-property:color,background-color,border-color;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}
+.rounded-lg{border-radius:.5rem}
+.shadow-lg{box-shadow:0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -2px rgba(0,0,0,.05)}
+.border-b-2{border-bottom-width:2px}
+.border-t{border-top-width:1px}
+.border-gray-200{border-color:var(--gray-200)}
+
+/* Mobile menu */
+#mobile-menu{background-color:var(--white);border-top:1px solid var(--gray-200)}
+#mobile-menu a{display:block;padding:.5rem .75rem;color:var(--gray-700);font-weight:500;text-decoration:none}
+#mobile-menu a:hover{color:var(--energy-green)}
+
+/* Hero gradient */
+.hero-gradient{background:linear-gradient(135deg,var(--energy-green),var(--energy-blue))}
+
+/* Max width container */
+.container{max-width:80rem;margin:0 auto;padding:0 1rem}
+@media (min-width:640px){.container{padding:0 1.5rem}}
+@media (min-width:1024px){.container{padding:0 2rem}}
