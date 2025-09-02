@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Menu Test</title>
+    <style>
+        * { margin: 0; box-sizing: border-box; }
+        body { font-family: sans-serif; }
+        .hidden { display: none; }
+        .flex { display: flex; }
+        .items-center { align-items: center; }
+        .justify-between { justify-content: space-between; }
+        .px-4 { padding: 0 1rem; }
+        .py-2 { padding: 0.5rem 0; }
+        .h-16 { height: 4rem; }
+        .bg-white { background: white; }
+        .shadow-lg { box-shadow: 0 10px 15px -3px rgba(0,0,0,.1); }
+        .text-gray-700 { color: #374151; }
+        .text-green { color: #10b981; }
+        .hover\:text-green:hover { color: #10b981; }
+        
+        @media (max-width:768px) {
+            .md\:hidden { display: none; }
+        }
+        @media (min-width:768px) {
+            .md\:flex { display: flex; }
+        }
+        
+        #mobile-menu { 
+            background: white; 
+            border-top: 1px solid #e5e7eb; 
+        }
+        #mobile-menu a { 
+            display: block; 
+            padding: 0.5rem 0.75rem; 
+            color: #374151; 
+            font-weight: 500; 
+            text-decoration: none; 
+        }
+        #mobile-menu a:hover { 
+            color: #10b981; 
+        }
+        
+        .test-info {
+            padding: 20px;
+            background: #f0f0f0;
+            margin: 20px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-info">
+        <h1>Mobile Menu Test</h1>
+        <p><strong>Instructions:</strong></p>
+        <ul>
+            <li>Resize window to mobile size (< 768px) to see hamburger menu</li>
+            <li>Click hamburger (☰) to toggle menu</li>
+            <li>Click outside menu to close it</li>
+        </ul>
+    </div>
+
+    <nav class="bg-white shadow-lg">
+        <div class="px-4">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span>🔋 Thuisbatterijwereld.nl</span>
+                </div>
+                <div class="hidden md:flex items-center">
+                    <a href="/" class="text-gray-700 hover:text-green">Home</a>
+                    <a href="/vergelijken" class="text-gray-700 hover:text-green">Vergelijken</a>
+                    <a href="/blog" class="text-gray-700 hover:text-green">Blog</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-green">
+                        <span style="font-size: 1.25rem;">☰</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden">
+            <div class="px-4 py-2">
+                <a href="/">Home</a>
+                <a href="/vergelijken">Vergelijken</a>
+                <a href="/kopen">Kopen</a>
+                <a href="/kosten">Kosten</a>
+                <a href="/subsidie">Subsidie</a>
+                <a href="/blog">Blog</a>
+                <a href="/faq">FAQ</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="test-info">
+        <h2>Test Results</h2>
+        <p id="status">Loading...</p>
+        <button onclick="testMenu()">Test Menu Toggle</button>
+    </div>
+
+    <script>
+        // Mobile menu - Same as homepage
+        (function(){
+            const btn = document.getElementById('mobile-menu-button');
+            const menu = document.getElementById('mobile-menu');
+            if(btn && menu) {
+                btn.onclick = () => {
+                    menu.classList.toggle('hidden');
+                    updateStatus();
+                };
+                document.onclick = (e) => {
+                    if(!btn.contains(e.target) && !menu.contains(e.target)) {
+                        menu.classList.add('hidden');
+                        updateStatus();
+                    }
+                };
+            }
+        })();
+
+        function updateStatus() {
+            const menu = document.getElementById('mobile-menu');
+            const isHidden = menu.classList.contains('hidden');
+            document.getElementById('status').innerHTML = 
+                `Menu is ${isHidden ? 'CLOSED' : 'OPEN'} - ${isHidden ? '✅' : '📱'}`;
+        }
+
+        function testMenu() {
+            const btn = document.getElementById('mobile-menu-button');
+            btn.click();
+        }
+
+        // Initial status
+        window.addEventListener('load', updateStatus);
+    </script>
+</body>
+</html>
