@@ -403,13 +403,38 @@
 <script>
 
 <script>
-          // Mobile menu toggle - Enhanced
-          (function() {
-            const btn = document.getElementById('mobile-menu-button');
-            const menu = document.getElementById('mobile-menu');
-            
-            if (btn && menu) {
-              // Toggle menu on button click
+          // Mobile Menu Toggle - Working Solution
+(function () {
+  var btn = document.getElementById('menuBtn');
+  var menu = document.getElementById('mobileMenu');
+  if (!btn || !menu) return;
+  btn.addEventListener('click', function () {
+    var open = menu.hasAttribute('hidden');
+    if (open) {
+      menu.removeAttribute('hidden');
+      btn.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    } else {
+      menu.setAttribute('hidden', '');
+      btn.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+  });
+  document.addEventListener('click', function(e) {
+    if (!btn.contains(e.target) && !menu.contains(e.target)) {
+      menu.setAttribute('hidden', '');
+      btn.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && !menu.hasAttribute('hidden')) {
+      menu.setAttribute('hidden', '');
+      btn.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+  });
+})();// Toggle menu on button click
               btn.addEventListener('click', function() {
                 menu.classList.toggle('hidden');
               });
